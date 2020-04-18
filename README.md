@@ -10,3 +10,7 @@ There are 2 banlists in this `lflist.conf` file. The 1st one bans all OCG/TCG ca
 # Contribution
 
 The card code formats are listed in `set.md`. Please follow this one.
+
+# Card image
+
+Due to legal reasons, the pics is not provided in this repo. Please make pics in your own releases.
