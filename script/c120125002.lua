@@ -1,5 +1,5 @@
-local m=120121002
-local list={120121001}
+local m=120125002
+local list={120125001}
 local cm=_G["c"..m]
 cm.name="黑龙之雏"
 function cm.initial_effect(c)
