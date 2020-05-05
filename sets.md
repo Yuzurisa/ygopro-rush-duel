@@ -16,6 +16,6 @@ https://yugipedia.com/wiki/Category:Rush_Duel_cards
 - **April 11, 2020** : Deck Modification Pack - Hyperspeed Rush Road!! (RD/KP01-JP) : `120120XXX`
 
 ## Promotional Cards
-- **April 27, 2020** : Weekly Shōnen Jump 2020, Issue 21–22 promotional card: `120106XXX`
+- **April 27, 2020** : Weekly Shōnen Jump 2020, Issue 21–22 promotional card (RD/WJMP-JP): `120106XXX`
 
 # Archived
