@@ -17,11 +17,11 @@ function cm.confilter(c,tp)
 	return c:GetPreviousControler()==tp and c:IsPreviousPosition(POS_FACEUP) and c:IsPreviousLocation(LOCATION_MZONE)
 		and bit.band(c:GetPreviousTypeOnField(),TYPE_NORMAL)~=0
 end
-function cm.condition(e,tp,eg,ep,ev,re,r,rp)
-	return rp==1-tp and eg:IsExists(cm.confilter,2,nil,tp)
-end
 function cm.spfilter(c,e,tp)
 	return c:IsType(TYPE_MONSTER) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+end
+function cm.condition(e,tp,eg,ep,ev,re,r,rp)
+	return rp==1-tp and eg:IsExists(cm.confilter,2,nil,tp)
 end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.GetMZoneCount(tp)>0

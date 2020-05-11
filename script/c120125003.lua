@@ -17,7 +17,7 @@ function cm.initial_effect(c)
 end
 --Activate
 function cm.confilter(c)
-	return c:IsFaceup() and c:GetOriginalCode()==list[1]
+	return c:IsFaceup() and RushDuel.IsLegendCode(c,list[1])
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	return Duel.IsExistingMatchingCard(cm.confilter,tp,LOCATION_MZONE,0,1,nil)
@@ -51,5 +51,5 @@ function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 	Duel.RegisterFlagEffect(tp,m,RESET_PHASE+PHASE_END,0,1)
 end
 function cm.atktg(e,c)
-	return (c:GetOriginalCode()==list[1] and c:IsCode(120000000)) or c:IsCode(list[1])
+	return RushDuel.IsLegendCode(c,list[1])
 end

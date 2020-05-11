@@ -14,7 +14,7 @@ function cm.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 --Atk Up
-function cm.filter(c)
+function cm.atkfilter(c)
 	return c:IsLevel(1)
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
@@ -23,7 +23,7 @@ function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(Card.IsFaceup,tp,LOCATION_MZONE,0,1,nil)
-		and Duel.GetMatchingGroupCount(cm.filter,tp,LOCATION_GRAVE,0,nil)>0 end
+		and Duel.GetMatchingGroupCount(cm.atkfilter,tp,LOCATION_GRAVE,0,nil)>0 end
 end
 function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	Duel.Hint(HINT_SELECTMSG,tp,aux.Stringid(m,1))
@@ -31,7 +31,7 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	if g:GetCount()>0 then
 		Duel.HintSelection(g)
 		local tc=g:GetFirst()
-		local atk=Duel.GetMatchingGroupCount(cm.filter,tp,LOCATION_GRAVE,0,nil)*100
+		local atk=Duel.GetMatchingGroupCount(cm.atkfilter,tp,LOCATION_GRAVE,0,nil)*100
 		local e1=Effect.CreateEffect(e:GetHandler())
 		e1:SetType(EFFECT_TYPE_SINGLE)
 		e1:SetCode(EFFECT_UPDATE_ATTACK)

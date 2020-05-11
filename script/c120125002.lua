@@ -17,7 +17,7 @@ function cm.initial_effect(c)
 end
 --Direct Attack
 function cm.spfilter(c,e,tp)
-	return c:GetOriginalCode()==list[1] and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+	return RushDuel.IsLegendCode(c,list[1]) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return e:GetHandler():IsAbleToGraveAsCost() end

@@ -22,5 +22,5 @@ function cm.initial_effect(c)
 end
 --Atk & Def Up
 function cm.adtg(e,c)
-	return c:IsRace(RACE_DRAGON) or c:IsRace(RACE_WINDBEAST) or c:IsRace(RACE_THUNDER)
+	return c:IsFaceup() and c:IsRace(RACE_DRAGON+RACE_WINDBEAST+RACE_THUNDER)
 end

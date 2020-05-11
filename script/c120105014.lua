@@ -12,12 +12,12 @@ function cm.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 --Activate
-function cm.filter(c)
+function cm.confilter(c)
 	return c:IsRace(RACE_SPELLCASTER)
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	return Duel.GetAttacker():IsControler(1-tp)
-		and Duel.IsExistingMatchingCard(cm.filter,tp,LOCATION_GRAVE,0,1,nil)
+		and Duel.IsExistingMatchingCard(cm.confilter,tp,LOCATION_GRAVE,0,1,nil)
 end
 function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 	local tc=Duel.GetAttacker()

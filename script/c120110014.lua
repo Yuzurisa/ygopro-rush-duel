@@ -14,11 +14,11 @@ function cm.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 --Activate
-function cm.filter(c,tp)
+function cm.confilter(c,tp)
 	return c:GetPreviousControler()==tp and c==Duel.GetAttackTarget() and c:IsRace(RACE_DRAGON)
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
-	return eg:IsExists(cm.filter,1,nil,tp)
+	return eg:IsExists(cm.confilter,1,nil,tp)
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(Card.IsAbleToGraveAsCost,tp,LOCATION_HAND,0,1,e:GetHandler()) end

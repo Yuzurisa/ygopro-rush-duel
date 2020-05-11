@@ -107,7 +107,7 @@ end
 function RushDuel.chaintime(e,rp,tp)
 		return not (e:IsHasType(EFFECT_TYPE_ACTIVATE) and e:IsActiveType(TYPE_TRAP)) 
 end
---Once per turn
+--Once Per Turn
 function RushDuel.OncePerTurnTarget(e,te,tp)
 	return te:GetHandler()==e:GetHandler()
 end
@@ -116,4 +116,8 @@ function RushDuel.OncePerTurnCost(e,te,tp)
 end
 function RushDuel.OncePerTurnOperation(e,tp,eg,ep,ev,re,r,rp)
 	e:GetHandler():RegisterFlagEffect(10001,RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END,0,1)
+end
+--Legend
+function RushDuel.IsLegendCode(c,code)
+	return (c:GetOriginalCode()==code and c:IsCode(120000000)) or c:IsCode(code)
 end
