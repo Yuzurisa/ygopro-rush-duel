@@ -50,6 +50,13 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 		e2:SetValue(cm.atlimit)
 		e2:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_DISABLE+RESET_PHASE+PHASE_END)
 		c:RegisterEffect(e2)
+		local e3=Effect.CreateEffect(c)
+		e3:SetDescription(aux.Stringid(m,2))
+		e3:SetType(EFFECT_TYPE_SINGLE)
+		e3:SetCode(EFFECT_CANNOT_DIRECT_ATTACK)
+		e3:SetProperty(EFFECT_FLAG_CLIENT_HINT)
+		e3:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_DISABLE+RESET_PHASE+PHASE_END)
+		c:RegisterEffect(e3)
 	end
 end
 function cm.atlimit(e,c)
