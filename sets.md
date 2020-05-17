@@ -2,7 +2,7 @@
 https://yugipedia.com/wiki/Category:Rush_Duel_cards
 
 - **2020** : Victory Pack Legendary Red-Eyes (RD/VJMP-JP): `120125XXX`
-- **August 1, 2020**: Deck Modification Pack - Shocking Lightning Attack!! (RDKP02): `120130XXX`
+- **August 1, 2020**: Deck Modification Pack - Shocking Lightning Attack!! (RDKP02-JP): `120130XXX`
 
 ## Starter decks
 - **April 4, 2020** : Starter Deck Yuga - Cut Through! Sevens Road!! (RD/ST01-JP): `120105XXX`
