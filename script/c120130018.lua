@@ -1,4 +1,4 @@
-local m=120121009
+local m=120130018
 local cm=_G["c"..m]
 cm.name="重陨击流星"
 function cm.initial_effect(c)
