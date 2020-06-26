@@ -1,6 +1,6 @@
 local m=120130027
 local cm=_G["c"..m]
-cm.name="逆玉之神 迪安·凯特"
+cm.name="招赘之神 迪安·凯特"
 function cm.initial_effect(c)
 	--Recover
 	local e1=Effect.CreateEffect(c)
