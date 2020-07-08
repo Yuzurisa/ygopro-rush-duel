@@ -21,7 +21,7 @@ end
 function cm.desfilter(c)
 	return c:IsFaceup() and c:IsLevelAbove(6)
 end
-function cm.condition(e)
+function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	return c:IsReason(REASON_SUMMON) and c:IsStatus(STATUS_SUMMON_TURN)
 		and Duel.IsExistingMatchingCard(cm.confilter,tp,LOCATION_MZONE,0,1,nil)
