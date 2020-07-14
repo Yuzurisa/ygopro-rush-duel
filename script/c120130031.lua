@@ -22,7 +22,7 @@ function cm.initial_effect(c)
 end
 --Destroy
 function cm.desfilter(c)
-	return c:IsFaceup() and c:IsLevelAbove(1)
+	return c:IsFaceup() and c:IsLevelBelow(8)
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
