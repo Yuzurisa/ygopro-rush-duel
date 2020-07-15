@@ -1,6 +1,6 @@
 local m=120130038
 local cm=_G["c"..m]
-cm.name="通宵发烧"
+cm.name="不眠夜狂热"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)

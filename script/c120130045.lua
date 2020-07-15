@@ -1,6 +1,6 @@
 local m=120130045
 local cm=_G["c"..m]
-cm.name="复活的泡沫 镜子球"
+cm.name="复活泡沫期-反射镜面球-"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)

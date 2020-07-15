@@ -1,6 +1,6 @@
 local m=120130039
 local cm=_G["c"..m]
-cm.name="世纪末兽机界 兽齿轮世界"
+cm.name="世纪末兽机界"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
