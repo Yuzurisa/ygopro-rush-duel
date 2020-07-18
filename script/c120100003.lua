@@ -1,6 +1,6 @@
 local m=120100003
 local cm=_G["c"..m]
-cm.name="大道魔法-倒流"
+cm.name="大道魔法-逆流"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)

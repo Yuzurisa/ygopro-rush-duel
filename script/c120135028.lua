@@ -1,6 +1,6 @@
 local m=120135028
 local cm=_G["c"..m]
-cm.name="梦弦之后援机械枪托"
+cm.name="梦弦之折叠式闪电吉他"
 function cm.initial_effect(c)
 	--Damage
 	local e1=Effect.CreateEffect(c)
