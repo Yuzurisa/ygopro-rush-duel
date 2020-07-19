@@ -1,6 +1,6 @@
 local m=120130032
 local cm=_G["c"..m]
-cm.name="波导炮 大鲔鱼"
+cm.name="波导炮 巨弹炮金枪鱼"
 function cm.initial_effect(c)
 	--Direct Attack
 	local e1=Effect.CreateEffect(c)

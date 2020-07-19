@@ -1,6 +1,6 @@
 local m=120130049
 local cm=_G["c"..m]
-cm.name="分2区"
+cm.name="2分区阻拦"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)

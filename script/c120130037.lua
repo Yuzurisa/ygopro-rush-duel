@@ -1,6 +1,6 @@
 local m=120130037
 local cm=_G["c"..m]
-cm.name="摇篮曲拘束"
+cm.name="摇篮曲连线缚"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)

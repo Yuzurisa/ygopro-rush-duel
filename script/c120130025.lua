@@ -1,6 +1,6 @@
 local m=120130025
 local cm=_G["c"..m]
-cm.name="碎光之超能力袭击者"
+cm.name="碎光之超能放松摇滚家"
 function cm.initial_effect(c)
 	--Destroy
 	local e1=Effect.CreateEffect(c)
