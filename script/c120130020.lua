@@ -3,7 +3,7 @@ local list={120130001}
 local cm=_G["c"..m]
 cm.name="龙队射手"
 function cm.initial_effect(c)
-	aux.AddCodeList(list[1])
+	aux.AddCodeList(c,list[1])
 	--Atk Up
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(m,0))
