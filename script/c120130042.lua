@@ -13,8 +13,11 @@ function cm.initial_effect(c)
 end
 --Activate
 function cm.desfilter(c,tp)
-	if c:IsControler(tp) then return c:IsFaceup() and c:IsType(TYPE_NORMAL)
-	else return c:IsFaceup() and c:IsLevelBelow(8) end
+	if c:IsControler(tp) then
+		return c:IsFaceup() and c:IsType(TYPE_NORMAL)
+	else
+		return c:IsFaceup() and c:IsLevelBelow(8)
+	end
 end
 function cm.check(g,tp)
 	return g:FilterCount(Card.IsControler,nil,tp)==2
