@@ -1,6 +1,6 @@
 local m=120130030
 local cm=_G["c"..m]
-cm.name="邪影 暗黑看守者"
+cm.name="邪影 暗黑潜伏者"
 function cm.initial_effect(c)
 	--Destroy
 	local e1=Effect.CreateEffect(c)

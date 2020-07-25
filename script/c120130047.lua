@@ -1,6 +1,6 @@
 local m=120130047
 local cm=_G["c"..m]
-cm.name="保持"
+cm.name="斗牛士午睡锁"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)

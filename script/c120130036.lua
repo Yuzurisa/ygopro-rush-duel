@@ -1,6 +1,6 @@
 local m=120130036
 local cm=_G["c"..m]
-cm.name="大道魔法-钻石风暴"
+cm.name="大道魔法-地壳变动"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
