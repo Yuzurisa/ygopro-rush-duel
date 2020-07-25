@@ -23,7 +23,7 @@ function cm.exfilter(c)
 	return c:IsFaceup() and c:IsCode(list[1])
 end
 function cm.atkfilter(c)
-	return c:IsType(TYPE_MONSTER)
+	return c:IsRace(RACE_SPELLCASTER)
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsPlayerCanDiscardDeckAsCost(tp,1) end
