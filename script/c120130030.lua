@@ -29,15 +29,16 @@ function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.SetOperationInfo(0,CATEGORY_TOHAND,e:GetHandler(),1,0,0)
 end
 function cm.operation(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DESTROY)
 	local g=Duel.SelectMatchingCard(tp,cm.desfilter,tp,0,LOCATION_ONFIELD,1,1,nil)
-	if g:GetCount()==0 then return end
-	Duel.HintSelection(g)
-	if Duel.Destroy(g,REASON_EFFECT)==0 then return end
-	Duel.Damage(1-tp,1000,REASON_EFFECT)
-	local c=e:GetHandler()
-	if c:IsFaceup() and c:IsRelateToEffect(e) then
-		Duel.BreakEffect()
-		Duel.SendtoHand(c,nil,REASON_EFFECT)
+	if g:GetCount()>0 then
+		Duel.HintSelection(g)
+		if Duel.Destroy(g,REASON_EFFECT)~=0
+			and Duel.Damage(1-tp,1000,REASON_EFFECT)~=0
+			and c:IsFaceup() and c:IsRelateToEffect(e) then
+			Duel.BreakEffect()
+			Duel.SendtoHand(c,nil,REASON_EFFECT)
+		end
 	end
 end
