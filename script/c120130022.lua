@@ -21,7 +21,9 @@ function cm.condition(e)
 	return c:IsReason(REASON_SUMMON) and c:IsStatus(STATUS_SUMMON_TURN)
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return Duel.IsPlayerCanDiscardDeckAsCost(tp,1) end
+	local ct=Duel.GetFieldGroupCount(tp,0,LOCATION_MZONE)
+	if chk==0 then return Duel.IsPlayerCanDiscardDeckAsCost(tp,1)
+		and Duel.GetFieldGroupCount(tp,LOCATION_DECK,0)>=ct+1 end
 	Duel.DiscardDeck(tp,1,REASON_COST)
 end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)

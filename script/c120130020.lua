@@ -21,10 +21,10 @@ function cm.confilter(c)
 	return c:IsFaceup() and c:IsCode(list[1])
 end
 function cm.filter(c)
-	return c:IsFaceup() and not c:IsHasEffect(EFFECT_PIERCE)
+	return c:IsFaceup()
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
-	return Duel.IsExistingMatchingCard(cm.confilter,tp,LOCATION_MZONE,0,1,nil) and Duel.IsAbleToEnterBP()
+	return Duel.IsExistingMatchingCard(cm.confilter,tp,LOCATION_MZONE,0,1,nil)
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(Card.IsAbleToGraveAsCost,tp,LOCATION_HAND,0,1,nil) end

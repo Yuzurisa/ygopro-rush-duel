@@ -1,6 +1,6 @@
 local m=120130031
 local cm=_G["c"..m]
-cm.name="王家魔族重金属歌手"
+cm.name="王家魔族·重金属歌手"
 function cm.initial_effect(c)
 	--Destroy
 	local e1=Effect.CreateEffect(c)
