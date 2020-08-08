@@ -1,4 +1,4 @@
-local m=120135001
+local m=120140001
 local cm=_G["c"..m]
 cm.name="魔将 岂灭鲁拉"
 function cm.initial_effect(c)

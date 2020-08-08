@@ -1,4 +1,4 @@
-local m=120135010
+local m=120140010
 local cm=_G["c"..m]
 cm.name="行礼石膏绷带"
 function cm.initial_effect(c)

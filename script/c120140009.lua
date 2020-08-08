@@ -1,4 +1,4 @@
-local m=120135009
+local m=120140009
 local cm=_G["c"..m]
 cm.name="右手持盾左手持剑"
 function cm.initial_effect(c)

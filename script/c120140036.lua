@@ -1,4 +1,4 @@
-local m=120135036
+local m=120140036
 local cm=_G["c"..m]
 cm.name="电气念力扩音安瓶"
 function cm.initial_effect(c)

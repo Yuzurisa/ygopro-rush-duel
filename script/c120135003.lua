@@ -1,4 +1,4 @@
-local m=120100003
+local m=120135003
 local cm=_G["c"..m]
 cm.name="大道魔法-逆流"
 function cm.initial_effect(c)

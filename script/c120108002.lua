@@ -1,4 +1,4 @@
-local m=120140002
+local m=120108002
 local cm=_G["c"..m]
 cm.name="正统的爆裂龙息"
 function cm.initial_effect(c)

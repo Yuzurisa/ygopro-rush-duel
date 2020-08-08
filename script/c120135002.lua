@@ -1,4 +1,4 @@
-local m=120100002
+local m=120135002
 local cm=_G["c"..m]
 cm.name="正义龙"
 function cm.initial_effect(c)

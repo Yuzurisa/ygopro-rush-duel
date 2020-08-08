@@ -1,4 +1,4 @@
-local m=120135019
+local m=120140019
 local cm=_G["c"..m]
 cm.name="宫殿的石像鬼"
 function cm.initial_effect(c)

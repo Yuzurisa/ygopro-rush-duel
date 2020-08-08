@@ -1,4 +1,4 @@
-local m=120135039
+local m=120140039
 local cm=_G["c"..m]
 cm.name="念动力前奏"
 function cm.initial_effect(c)
