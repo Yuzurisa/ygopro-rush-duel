@@ -5,6 +5,8 @@ https://yugipedia.com/wiki/Category:Rush_Duel_cards
 - **August 1, 2020**: Deck Modification Pack - Shocking Lightning Attack!! (RD/KP02-JP): `120130XXX`
 - **June 4, 2020**: Saikyō Jump July 2020 promotional card (RD/SJMP-JP): `120135XXX`
 - **September 19, 2020**: Character Pack - Gakuto/Roa/Romin (RD/CP01-JP): `120140XXX`
+- **October 28, 2020**: Yu-Gi-Oh! SEVENS Duel-1 Blu-ray & DVD promotional card (RD/BD01-JP): `120107XXX`
+- **September 18, 2020**: Rush Road Guide promotional cards (RD/JB01-JP): `120108XXX`
 
 ## Starter decks
 - **April 4, 2020** : Starter Deck Yuga - Cut Through! Sevens Road!! (RD/ST01-JP): `120105XXX`
