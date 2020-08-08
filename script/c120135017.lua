@@ -1,6 +1,6 @@
 local m=120135017
 local cm=_G["c"..m]
-cm.name="王家魔族 潘库"
+cm.name="王家魔族·扎胎朋克乐手"
 function cm.initial_effect(c)
 	--Cannot Summon
 	local e1=Effect.CreateEffect(c)
