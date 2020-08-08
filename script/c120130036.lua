@@ -37,7 +37,7 @@ function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 		and Duel.IsExistingMatchingCard(cm.filter,tp,LOCATION_GRAVE,0,1,nil) end
 end
 function cm.activate(e,tp,eg,ep,ev,re,r,rp)
-	local sg=Duel.GetMatchingGroup(cm.filter,tp,0,LOCATION_GRAVE,nil)
+	local sg=Duel.GetMatchingGroup(cm.filter,tp,LOCATION_GRAVE,0,nil)
 	if sg:GetCount()==0 then return end
 	local _,atk=sg:GetMaxGroup(Card.GetAttack)
 	Duel.Hint(HINT_SELECTMSG,tp,aux.Stringid(m,1))
