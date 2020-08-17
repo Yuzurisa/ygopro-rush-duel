@@ -1,6 +1,6 @@
 local m=120140040
 local cm=_G["c"..m]
-cm.name="断绝的回旋壁"
+cm.name="断绝念力壁"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
