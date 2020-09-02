@@ -2,7 +2,7 @@ local m=120140017
 local cm=_G["c"..m]
 cm.name="王家魔族·扎胎朋克乐手"
 function cm.initial_effect(c)
-	--Cannot Summon
+	--To Hand
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(m,0))
 	e1:SetCategory(CATEGORY_TOHAND)
@@ -13,7 +13,7 @@ function cm.initial_effect(c)
 	e1:SetOperation(cm.operation)
 	c:RegisterEffect(e1)
 end
---Special Summon
+--To Hand
 function cm.thfilter(c)
 	return c:IsLevelAbove(6) and c:IsRace(RACE_FIEND) and c:IsAbleToHand()
 end
