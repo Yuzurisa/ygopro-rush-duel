@@ -1,6 +1,6 @@
 local m=120140030
 local cm=_G["c"..m]
-cm.name="工程·电子路径"
+cm.name="传心特工"
 function cm.initial_effect(c)
 	--Damage
 	local e1=Effect.CreateEffect(c)
