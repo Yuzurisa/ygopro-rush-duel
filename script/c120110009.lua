@@ -13,7 +13,7 @@ function cm.initial_effect(c)
 	e1:SetOperation(cm.operation)
 	c:RegisterEffect(e1)
 end
---Atk & Def Down
+--To Hand
 function cm.thfilter(c)
 	return c:IsLevelAbove(5) and c:IsRace(RACE_DRAGON) and c:IsAbleToHand()
 end

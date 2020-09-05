@@ -15,7 +15,8 @@ function cm.initial_effect(c)
 end
 --Activate
 function cm.confilter(c,tp)
-	return c:GetPreviousControler()==tp and c==Duel.GetAttackTarget() and c:IsRace(RACE_DRAGON)
+	return c:GetPreviousControler()==tp and c==Duel.GetAttackTarget()
+		and bit.band(c:GetPreviousRaceOnField(),RACE_DRAGON)~=0
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	return eg:IsExists(cm.confilter,1,nil,tp)
