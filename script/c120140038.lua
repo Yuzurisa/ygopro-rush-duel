@@ -1,6 +1,6 @@
 local m=120140038
 local cm=_G["c"..m]
-cm.name="高潮结局"
+cm.name="高潮终场"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
