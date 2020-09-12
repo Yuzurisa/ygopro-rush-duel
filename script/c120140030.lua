@@ -2,7 +2,7 @@ local m=120140030
 local cm=_G["c"..m]
 cm.name="传心特工"
 function cm.initial_effect(c)
-	--Damage
+	--Direct Attack
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(m,0))
 	e1:SetType(EFFECT_TYPE_IGNITION)
@@ -12,13 +12,13 @@ function cm.initial_effect(c)
 	e1:SetOperation(cm.operation)
 	c:RegisterEffect(e1)
 end
---Damage
+--Direct Attack
 function cm.costfilter(c)
 	return c:IsRace(RACE_PSYCHO) and c:IsAbleToDeckAsCost()
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
-	return Duel.GetLP(1-tp)-Duel.GetLP(tp)>=1000 and c:IsAttackable()
+	return Duel.GetLP(1-tp)-Duel.GetLP(tp)>=1000 and Duel.IsAbleToEnterBP() and c:IsAttackable()
 		and not c:IsHasEffect(EFFECT_DIRECT_ATTACK)
 		and not c:IsHasEffect(EFFECT_CANNOT_ATTACK)
 		and not c:IsHasEffect(EFFECT_CANNOT_DIRECT_ATTACK)
