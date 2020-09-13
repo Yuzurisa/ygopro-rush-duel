@@ -1,6 +1,6 @@
 local m=120140037
 local cm=_G["c"..m]
-cm.name="念力散射"
+cm.name="念动力分歧"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
