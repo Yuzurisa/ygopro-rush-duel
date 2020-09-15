@@ -39,6 +39,7 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 		Duel.Destroy(g,REASON_EFFECT)
 	end
 end
+--Tribute
 function cm.tricheck(e,c)
 	local g=c:GetMaterial()
 	if g:IsExists(Card.IsLevelAbove,2,nil,5) then

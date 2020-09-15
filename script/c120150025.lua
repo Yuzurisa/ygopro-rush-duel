@@ -1,6 +1,6 @@
 local m=120150025
 local cm=_G["c"..m]
-cm.name="幻击龙 齿车镜龙"
+cm.name="幻击龙 齿车戒幻龙"
 function cm.initial_effect(c)
 	--Atk Down
 	local e1=Effect.CreateEffect(c)
@@ -56,9 +56,9 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 			e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END)
 			c:RegisterEffect(e1)
 			local e2=Effect.CreateEffect(c)
-			e2:SetDescription(aux.Stringid(m,1))
+			e2:SetDescription(aux.Stringid(m,2))
 			e2:SetType(EFFECT_TYPE_SINGLE)
-			e2:SetCode(EFFECT_EXTRA_ATTACK)
+			e2:SetCode(EFFECT_EXTRA_ATTACK_MONSTER)
 			e2:SetProperty(EFFECT_FLAG_CLIENT_HINT)
 			e2:SetCondition(cm.atkcon)
 			e2:SetValue(1)
@@ -68,7 +68,7 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 function cm.chop(e,tp,eg,ep,ev,re,r,rp)
-	e:GetHandler():RegisterFlagEffect(m,RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END,0,1)
+	e:GetHandler():RegisterFlagEffect(m,RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_BATTLE,0,1)
 end
 function cm.atkcon(e)
 	return e:GetHandler():GetFlagEffect(m)~=0
