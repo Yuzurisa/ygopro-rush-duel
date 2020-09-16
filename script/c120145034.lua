@@ -1,30 +1,29 @@
-local m=120145035
+local m=120145034
+local list={120145052,120145050}
 local cm=_G["c"..m]
-cm.name="戏法鸽"
+cm.name="锚海鳝"
 function cm.initial_effect(c)
+	aux.AddCodeList(c,list[1],list[2])
 	--To Hand
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(m,0))
 	e1:SetCategory(CATEGORY_TOHAND)
 	e1:SetType(EFFECT_TYPE_IGNITION)
 	e1:SetRange(LOCATION_MZONE)
-	e1:SetCost(cm.cost)
+	e1:SetCondition(cm.condition)
 	e1:SetTarget(cm.target)
 	e1:SetOperation(cm.operation)
 	c:RegisterEffect(e1)
 end
 --To Hand
-function cm.costfilter(c)
-	return c:IsType(TYPE_SPELL+TYPE_TRAP) and c:IsAbleToGraveAsCost()
+function cm.confilter(c)
+	return c:IsFaceup() and c:IsCode(list[1],list[2])
 end
 function cm.thfilter(c)
-	return c:IsRace(RACE_WINDBEAST) and c:IsAttackAbove(1500) and c:IsAbleToHand()
+	return c:IsType(TYPE_NORMAL) and c:IsLevelBelow(3) and c:IsRace(RACE_FISH) and c:IsAbleToHand()
 end
-function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return Duel.IsExistingMatchingCard(cm.costfilter,tp,LOCATION_HAND,0,1,nil) end
-	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOGRAVE)
-	local g=Duel.SelectMatchingCard(tp,cm.costfilter,tp,LOCATION_HAND,0,1,1,nil)
-	Duel.SendtoGrave(g,REASON_COST)
+function cm.condition(e,tp,eg,ep,ev,re,r,rp)
+	return Duel.IsExistingMatchingCard(cm.confilter,tp,LOCATION_ONFIELD,0,1,nil)
 end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(cm.thfilter,tp,LOCATION_GRAVE,0,1,nil) end
