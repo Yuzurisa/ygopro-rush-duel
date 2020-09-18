@@ -17,13 +17,12 @@ function cm.spfilter(c,e,tp)
 	return c:IsType(TYPE_NORMAL) and c:IsAttack(0) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
-	local tc=Duel.GetAttackTarget()
-	return Duel.GetAttacker():IsControler(1-tp) and tc and tc:IsFaceup() and tc:IsAttack(0)
+	local c=Duel.GetAttackTarget()
+	return Duel.GetAttacker():IsControler(1-tp) and c and c:IsFaceup() and c:IsAttack(0)
 end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	local tc=Duel.GetAttacker()
 	if chk==0 then return tc:IsAttackPos() and tc:IsCanChangePosition() end
-	Duel.SetTargetCard(tc)
 	Duel.SetOperationInfo(0,CATEGORY_POSITION,tc,1,0,0)
 end
 function cm.activate(e,tp,eg,ep,ev,re,r,rp)

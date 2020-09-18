@@ -13,7 +13,7 @@ function cm.initial_effect(c)
 end
 --Activate
 function cm.filter(c)
-	return c:IsFaceup() and not c:IsHasEffect(EFFECT_PIERCE)
+	return c:IsFaceup() and not c:IsHasEffect(EFFECT_CANNOT_ATTACK)
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	return Duel.IsAbleToEnterBP()

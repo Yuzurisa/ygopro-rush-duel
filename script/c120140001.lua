@@ -2,7 +2,7 @@ local m=120140001
 local cm=_G["c"..m]
 cm.name="魔将 岂灭鲁拉"
 function cm.initial_effect(c)
-	--Cannot Summon
+	--Direct Attack
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(m,0))
 	e1:SetType(EFFECT_TYPE_IGNITION)
@@ -12,10 +12,11 @@ function cm.initial_effect(c)
 	e1:SetOperation(cm.operation)
 	c:RegisterEffect(e1)
 end
---Special Summon
+--Direct Attack
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
-	return c:IsReason(REASON_SUMMON) and c:IsStatus(STATUS_SUMMON_TURN) and c:IsAttackable()
+	return c:IsReason(REASON_SUMMON) and c:IsStatus(STATUS_SUMMON_TURN)
+		and Duel.IsAbleToEnterBP() and c:IsAttackable()
 		and not c:IsHasEffect(EFFECT_DIRECT_ATTACK)
 		and not c:IsHasEffect(EFFECT_CANNOT_ATTACK)
 		and not c:IsHasEffect(EFFECT_CANNOT_DIRECT_ATTACK)

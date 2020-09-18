@@ -14,7 +14,7 @@ function cm.initial_effect(c)
 end
 --Activate
 function cm.filter(c)
-	return c:IsFaceup() and not c:IsHasEffect(EFFECT_PIERCE)
+	return c:IsFaceup() and not c:IsHasEffect(EFFECT_CANNOT_ATTACK)
 end
 function cm.check(g)
 	return g:GetClassCount(Card.GetLevel)==1

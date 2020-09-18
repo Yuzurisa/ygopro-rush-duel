@@ -2,7 +2,7 @@ local m=120140018
 local cm=_G["c"..m]
 cm.name="王家魔族·嘶吼歌手"
 function cm.initial_effect(c)
-	--To Hand
+	--Handes
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(m,0))
 	e1:SetCategory(CATEGORY_TOGRAVE)
@@ -14,7 +14,7 @@ function cm.initial_effect(c)
 	e1:SetOperation(cm.operation)
 	c:RegisterEffect(e1)
 end
---To Hand
+--Handes
 function cm.confilter(c)
 	return c:IsFaceup() and c:IsLevelAbove(7)
 end

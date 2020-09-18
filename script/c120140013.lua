@@ -37,9 +37,9 @@ function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 	if g:GetCount()>0 then
 		Duel.HintSelection(g)
 		Duel.SendtoHand(g,nil,REASON_EFFECT)
-	end
-	local sg=Duel.GetMatchingGroup(cm.posfilter,tp,LOCATION_MZONE,0,nil)
-	if sg:GetCount()>0 and Duel.SelectYesNo(tp,aux.Stringid(m,1)) then
-		Duel.ChangePosition(sg,POS_FACEUP_DEFENSE)
+		local sg=Duel.GetMatchingGroup(cm.posfilter,tp,LOCATION_MZONE,0,nil)
+		if sg:GetCount()>0 and Duel.SelectYesNo(tp,aux.Stringid(m,1)) then
+			Duel.ChangePosition(sg,POS_FACEUP_DEFENSE)
+		end
 	end
 end

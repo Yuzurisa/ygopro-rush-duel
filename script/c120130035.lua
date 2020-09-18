@@ -14,7 +14,7 @@ function cm.initial_effect(c)
 end
 --Pierce
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
-	return Duel.IsAbleToEnterBP() and not e:GetHandler():IsHasEffect(EFFECT_PIERCE)
+	return Duel.IsAbleToEnterBP() and not e:GetHandler():IsHasEffect(EFFECT_CANNOT_ATTACK)
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(Card.IsAbleToGraveAsCost,tp,LOCATION_HAND,0,1,nil) end
