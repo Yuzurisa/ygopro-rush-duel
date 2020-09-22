@@ -1,6 +1,6 @@
 local m=120145036
 local cm=_G["c"..m]
-cm.name="明亮鹦鹉"
+cm.name="亮光鹦鹉"
 function cm.initial_effect(c)
 	--Attribute Change
 	local e1=Effect.CreateEffect(c)
