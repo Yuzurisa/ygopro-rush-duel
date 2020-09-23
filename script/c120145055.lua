@@ -1,6 +1,6 @@
 local m=120145055
 local cm=_G["c"..m]
-cm.name="杀手·诱饵球"
+cm.name="噬杀饵球"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
