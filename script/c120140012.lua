@@ -38,7 +38,7 @@ function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 	Duel.Hint(HINT_SELECTMSG,tp,aux.Stringid(m,1))
 	local sg=g:SelectSubGroup(tp,cm.check,false,2,2)
 	Duel.HintSelection(sg)
-	local tc=g:GetFirst()
+	local tc=sg:GetFirst()
 	while tc do
 		local e1=Effect.CreateEffect(e:GetHandler())
 		e1:SetDescription(aux.Stringid(m,2))
@@ -47,6 +47,6 @@ function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 		e1:SetProperty(EFFECT_FLAG_CLIENT_HINT)
 		e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END)
 		tc:RegisterEffect(e1)
-		tc=g:GetNext()
+		tc=sg:GetNext()
 	end
 end
