@@ -18,7 +18,7 @@ end
 function cm.confilter(c)
 	return c:IsRace(RACE_DRAGON)
 end
-function cm.condition(e)
+function cm.condition(e,tp,eg,ep,ev,re,r,rp,chk)
 	local c=e:GetHandler()
 	return c:IsPreviousLocation(LOCATION_HAND+LOCATION_GRAVE)
 		and c:IsReason(REASON_SPSUMMON) and c:IsStatus(STATUS_SPSUMMON_TURN)
