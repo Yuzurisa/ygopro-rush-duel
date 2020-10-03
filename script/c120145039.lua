@@ -1,6 +1,6 @@
 local m=120145039
 local cm=_G["c"..m]
-cm.name="生存剑鱼"
+cm.name="救生刀剑鱼"
 function cm.initial_effect(c)
 	--Atk Up
 	local e1=Effect.CreateEffect(c)
