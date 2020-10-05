@@ -1,6 +1,6 @@
 local m=120145038
 local cm=_G["c"..m]
-cm.name="哨艇 艾尔达因"
+cm.name="哨艇 神力旧印号"
 function cm.initial_effect(c)
 	--Confirm
 	local e1=Effect.CreateEffect(c)
