@@ -8,6 +8,7 @@ https://yugipedia.com/wiki/Category:Rush_Duel_cards
 - **October 1, 2020**: Saikyō Jump November 2020 promotional card (RD/SJMP-JP): `120109XXX`
 - **December 28, 2020**: Yu-Gi-Oh! SEVENS Duel-2 Blu-ray & DVD promotional card (RD/BD02-JP): `120111XXX`
 - **November 14, 2020**: Deck Modification Pack - Fantastrike Mirage Impact!! (RD/KP03-JP): `120145XXX`
+- **December 12, 2020**: Maximum Ultra Enhancement Pack (RD/MAX1-JP): `120150XXX`
 
 ## Starter decks
 - **April 4, 2020** : Starter Deck Yuga - Cut Through! Sevens Road!! (RD/ST01-JP): `120105XXX`
