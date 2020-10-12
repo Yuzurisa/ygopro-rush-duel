@@ -1,6 +1,6 @@
 local m=120145047
 local cm=_G["c"..m]
-cm.name="3K伏特"
+cm.name="3K雷击"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
