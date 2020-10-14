@@ -1,6 +1,6 @@
 local m=120145022
 local cm=_G["c"..m]
-cm.name="清透冰龙"
+cm.name="明冰龙"
 function cm.initial_effect(c)
 	--To Deck
 	local e1=Effect.CreateEffect(c)
