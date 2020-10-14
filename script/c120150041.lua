@@ -15,6 +15,7 @@ end
 --Activate
 function cm.confilter(c,tp)
 	return c:GetPreviousControler()==tp and c==Duel.GetAttackTarget()
+		and c:IsPreviousPosition(POS_FACEUP_ATTACK)
 		and bit.band(c:GetPreviousAttributeOnField(),ATTRIBUTE_DARK)~=0
 		and c:GetPreviousAttackOnField()==0
 end
