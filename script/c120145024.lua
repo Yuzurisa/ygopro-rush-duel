@@ -1,7 +1,7 @@
 local m=120145024
 local list={120145022,120145023}
 local cm=_G["c"..m]
-cm.name="引擎起动龙"
+cm.name="古代同盟龙"
 function cm.initial_effect(c)
 	aux.AddCodeList(c,list[1],list[2])
 	--Atk Up

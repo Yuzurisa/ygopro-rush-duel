@@ -1,6 +1,6 @@
 local m=120150041
 local cm=_G["c"..m]
-cm.name="被压垮的椅子"
+cm.name="倒塌之椅"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
