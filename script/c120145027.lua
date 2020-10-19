@@ -1,6 +1,6 @@
 local m=120145027
 local cm=_G["c"..m]
-cm.name="杂乱饭海马兽"
+cm.name="饭票海马兽"
 function cm.initial_effect(c)
 	--Recover
 	local e1=Effect.CreateEffect(c)

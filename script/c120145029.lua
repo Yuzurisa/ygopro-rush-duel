@@ -1,7 +1,7 @@
 local m=120145029
 local list={120145048}
 local cm=_G["c"..m]
-cm.name="女夜魔舞伴"
+cm.name="女夜魔伦巴达战士"
 function cm.initial_effect(c)
 	aux.AddCodeList(c,list[1])
 	--To Hand
