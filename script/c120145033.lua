@@ -1,6 +1,6 @@
 local m=120145033
 local cm=_G["c"..m]
-cm.name="火面上忍 续极粗面推助"
+cm.name="火面上忍 加面音爆极粗面"
 function cm.initial_effect(c)
 	--Damage & Draw
 	local e1=Effect.CreateEffect(c)

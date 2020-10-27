@@ -1,6 +1,6 @@
 local m=120145045
 local cm=_G["c"..m]
-cm.name="火面激辛红之术"
+cm.name="火面激辣赤热之术"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
