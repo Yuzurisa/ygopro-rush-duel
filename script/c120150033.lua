@@ -1,6 +1,6 @@
 local m=120150033
 local cm=_G["c"..m]
-cm.name="雷霆鼓点·礼物"
+cm.name="鼓点雷甲赠礼"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)

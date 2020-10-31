@@ -19,7 +19,7 @@ function cm.spfilter(c,e,tp)
 	return c:IsType(TYPE_NORMAL) and c:IsLevelBelow(6) and c:IsRace(RACE_DINOSAUR)
 		and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
-function cm.condition(e)
+function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	return (c:IsReason(REASON_SUMMON) and c:IsStatus(STATUS_SUMMON_TURN))
 		or (c:IsReason(REASON_SPSUMMON) and c:IsStatus(STATUS_SPSUMMON_TURN))
