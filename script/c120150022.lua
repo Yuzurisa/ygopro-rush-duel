@@ -1,6 +1,6 @@
 local m=120150022
 local cm=_G["c"..m]
-cm.name="洗净的圣诞克罗斯"
+cm.name="洗净的圣布老人"
 function cm.initial_effect(c)
 	--Draw & Recover
 	local e1=Effect.CreateEffect(c)
