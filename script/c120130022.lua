@@ -30,7 +30,7 @@ function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	local ct=Duel.GetFieldGroupCount(tp,0,LOCATION_MZONE)
 	if chk==0 then return ct>0 and Duel.IsPlayerCanDraw(tp,ct) end
 	Duel.SetTargetPlayer(tp)
-	Duel.SetTargetParam(4)
+	Duel.SetTargetParam(ct)
 	Duel.SetOperationInfo(0,CATEGORY_DRAW,nil,0,tp,ct)
 	Duel.SetOperationInfo(0,CATEGORY_TODECK,nil,0,tp,ct)
 end
