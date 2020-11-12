@@ -16,7 +16,7 @@ function cm.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 --Draw
-function cm.condition(e)
+function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	return c:IsReason(REASON_SUMMON) and c:IsStatus(STATUS_SUMMON_TURN)
 end

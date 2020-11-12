@@ -16,7 +16,7 @@ end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	return c:IsReason(REASON_SUMMON) and c:IsStatus(STATUS_SUMMON_TURN)
-		and Duel.IsAbleToEnterBP() and c:IsAttackable()
+		and Duel.IsAbleToEnterBP()
 		and not c:IsHasEffect(EFFECT_DIRECT_ATTACK)
 		and not c:IsHasEffect(EFFECT_CANNOT_ATTACK)
 		and not c:IsHasEffect(EFFECT_CANNOT_DIRECT_ATTACK)
