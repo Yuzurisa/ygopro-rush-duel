@@ -1,6 +1,6 @@
 local m=120145059
 local cm=_G["c"..m]
-cm.name="三倍3"
+cm.name="三三3纪录"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
