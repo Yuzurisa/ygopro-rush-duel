@@ -8,6 +8,7 @@ function cm.initial_effect(c)
 	e1:SetCategory(CATEGORY_ATKCHANGE)
 	e1:SetType(EFFECT_TYPE_IGNITION)
 	e1:SetRange(LOCATION_MZONE)
+	e1:SetCondition(cm.condition)
 	e1:SetCost(cm.cost)
 	e1:SetTarget(cm.target)
 	e1:SetOperation(cm.operation)
@@ -19,6 +20,9 @@ function cm.costfilter(c)
 end
 function cm.filter(c)
 	return c:IsFaceup() and c:IsLevelBelow(7)
+end
+function cm.condition(e,tp,eg,ep,ev,re,r,rp)
+	return Duel.IsAbleToEnterBP()
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(cm.costfilter,tp,LOCATION_HAND,0,1,nil) end

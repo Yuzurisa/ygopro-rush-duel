@@ -1,7 +1,7 @@
 local m=120150015
 local list={120150014}
 local cm=_G["c"..m]
-cm.name="原子粒子机"
+cm.name="阿米粒子机"
 function cm.initial_effect(c)
 	aux.AddCodeList(c,list[1])
 	--Draw

@@ -1,6 +1,6 @@
 local m=120109005
 local cm=_G["c"..m]
-cm.name="机动砦的血管"
+cm.name="机动城的开启桥人"
 function cm.initial_effect(c)
 	--Position
 	local e1=Effect.CreateEffect(c)
