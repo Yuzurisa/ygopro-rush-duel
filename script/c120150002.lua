@@ -17,6 +17,6 @@ function cm.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 --Indes
-function cm.efilter(e,re)
-	return rp==1-e:GetHandlerPlayer() and re:GetOwner():IsType(TYPE_TRAP)
+function cm.efilter(e,re,rp)
+	return rp==1-e:GetHandlerPlayer() and re:IsActiveType(TYPE_TRAP)
 end

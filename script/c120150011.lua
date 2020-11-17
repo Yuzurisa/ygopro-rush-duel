@@ -18,5 +18,5 @@ function cm.initial_effect(c)
 end
 --Indes
 function cm.efilter(e,re)
-	return rp==1-e:GetHandlerPlayer() and re:GetOwner():IsType(TYPE_TRAP)
+	return rp==1-e:GetHandlerPlayer() and re:IsActiveType(TYPE_TRAP)
 end
