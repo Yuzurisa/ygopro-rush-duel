@@ -15,7 +15,7 @@ function cm.initial_effect(c)
 end
 --Def Down
 function cm.filter(c)
-	return c:IsFaceup() and c:IsDefenseAbove(0)
+	return c:IsFaceup() and RushDuel.IsHasDefense(c)
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.CheckLPCost(tp,600) end

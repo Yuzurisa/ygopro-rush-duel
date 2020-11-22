@@ -22,7 +22,7 @@ function cm.tdfilter2(c)
 	return c:IsCode(list[1],list[2]) and c:IsAbleToDeck()
 end
 function cm.desfilter(c)
-	return c:IsFaceup() and c:IsDefenseBelow(1500)
+	return c:IsFaceup() and c:IsDefenseBelow(1500) and RushDuel.IsHasDefense(c)
 end
 function cm.tdcheck(g)
 	return g:GetClassCount(Card.GetCode)==g:GetCount()

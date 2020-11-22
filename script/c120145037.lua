@@ -15,7 +15,7 @@ function cm.initial_effect(c)
 end
 --Atk Up
 function cm.filter(c)
-	return c:IsFaceup() and c:IsType(TYPE_NORMAL) and c:IsDefenseAbove(2000)
+	return c:IsFaceup() and c:IsType(TYPE_NORMAL) and c:IsDefenseAbove(2000) and RushDuel.IsHasDefense(c)
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return e:GetHandler():IsCanChangePosition() end

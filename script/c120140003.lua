@@ -15,7 +15,7 @@ function cm.initial_effect(c)
 end
 --Position
 function cm.filter(c)
-	return c:IsAttackPos() and c:IsCanChangePosition()
+	return c:IsAttackPos() and c:IsCanChangePosition() and RushDuel.IsHasDefense(c)
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	local c=e:GetHandler()
