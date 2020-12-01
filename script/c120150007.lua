@@ -1,6 +1,6 @@
 local m=120150007
 local cm=_G["c"..m]
-cm.name="10分激情"
+cm.name="干劲10足最大级！！！"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)

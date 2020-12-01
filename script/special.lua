@@ -181,6 +181,14 @@ function RushDuel.AddMaximumProcedure(c,max_atk,left_code,right_code)
 	e7:SetCondition(RushDuel.IsMaximumMode)
 	e7:SetValue(1)
 	c:RegisterEffect(e7)
+	--Leave Field
+    local e8=Effect.CreateEffect(c)
+    e8:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_CONTINUOUS)
+    e8:SetCode(EVENT_LEAVE_FIELD_P)
+    e8:SetProperty(EFFECT_FLAG_CANNOT_DISABLE+EFFECT_FLAG_UNCOPYABLE)
+	e8:SetCondition(RushDuel.IsMaximumMode)
+    e8:SetOperation(RushDuel.LeaveOperation)
+    c:RegisterEffect(e8)
 end
 function RushDuel.MaximumSummonFilter(c,e,tp,left_code,right_code)
 	return c:IsCode(left_code,right_code) and c:IsCanBeSpecialSummoned(e,0,tp,false,false,POS_FACEUP)
@@ -220,6 +228,18 @@ function RushDuel.MaximumMaterial(e,tp,eg,ep,ev,re,r,rp)
 	local mg=c:GetMaterial()
 	Duel.Overlay(c,mg)
 	Duel.MoveSequence(c,2)
+end
+function RushDuel.LeaveOperation(e,tp,eg,ep,ev,re,r,rp)
+	local c=e:GetHandler()
+	local loc=c:GetDestination()
+	local g=c:GetOverlayGroup()
+	if loc==LOCATION_HAND then
+		Duel.SendtoHand(g,nil,REASON_RULE)
+	elseif loc==LOCATION_DECK then
+		Duel.SendtoDeck(g,nil,2,REASON_RULE)
+	elseif loc==LOCATION_REMOVED then
+		Duel.Remove(g,POS_FACEUP,REASON_RULE)
+	end
 end
 --Def Check
 function RushDuel.IsHasDefense(c)
