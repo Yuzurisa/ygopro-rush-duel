@@ -29,7 +29,7 @@ end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(cm.filter,tp,0,LOCATION_SZONE,1,nil) end
 end
-function cm.operation(e,tp,eg,ep,ev,re,r,rp)
+function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_FACEDOWN)
 	local g=Duel.SelectMatchingCard(tp,cm.filter,tp,0,LOCATION_SZONE,1,1,nil)
 	if g:GetCount()>0 then
