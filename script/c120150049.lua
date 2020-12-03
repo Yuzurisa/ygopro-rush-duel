@@ -1,6 +1,6 @@
 local m=120150049
 local cm=_G["c"..m]
-cm.name="收缩机虾"
+cm.name="收缩虾"
 function cm.initial_effect(c)
 	--Atk Down
 	local e1=Effect.CreateEffect(c)
