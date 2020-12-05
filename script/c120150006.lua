@@ -1,6 +1,6 @@
 local m=120150006
 local cm=_G["c"..m]
-cm.name="沉默习得"
+cm.name="沉默学习"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
