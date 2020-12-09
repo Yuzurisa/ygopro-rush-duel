@@ -1,6 +1,6 @@
 local m=120150008
 local cm=_G["c"..m]
-cm.name="魔法四重冲击"
+cm.name="魔力四震击"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
