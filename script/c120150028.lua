@@ -17,7 +17,7 @@ function cm.confilter(c)
 	return c:IsFaceup() and c:IsRace(RACE_BEAST)
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
-	return Duel.GetMatchingGroupCount(cm.confilter,tp,LOCATION_MZONE,0,nil)==3
+	return Duel.IsAbleToEnterBP() and Duel.GetMatchingGroupCount(cm.confilter,tp,LOCATION_MZONE,0,nil)==3
 end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsPlayerCanDiscardDeck(1-tp,1) end
