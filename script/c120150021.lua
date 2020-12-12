@@ -4,7 +4,7 @@ local cm=_G["c"..m]
 cm.name="清洁贝雷帽·拖把大佐"
 function cm.initial_effect(c)
 	aux.AddCodeList(c,list[1])
-	--Draw
+	--To Deck
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(m,0))
 	e1:SetCategory(CATEGORY_TODECK)
@@ -15,7 +15,7 @@ function cm.initial_effect(c)
 	e1:SetOperation(cm.operation)
 	c:RegisterEffect(e1)
 end
---Draw
+--To Deck
 function cm.confilter(c)
 	return c:IsFaceup() and c:IsLevelAbove(7)
 end

@@ -1,6 +1,6 @@
 local m=120150009
 local cm=_G["c"..m]
-cm.name="扩散耳语"
+cm.name="传开的耳语"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)

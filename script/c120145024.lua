@@ -24,9 +24,6 @@ end
 function cm.desfilter(c)
 	return c:IsFaceup() and c:IsDefenseBelow(1500) and RushDuel.IsHasDefense(c)
 end
-function cm.tdcheck(g)
-	return g:GetClassCount(Card.GetCode)==g:GetCount()
-end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsPlayerCanDiscardDeckAsCost(tp,1) end
 	Duel.DiscardDeck(tp,1,REASON_COST)
@@ -45,7 +42,7 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 			and Duel.SelectYesNo(tp,aux.Stringid(m,1)) then
 			local mg=Duel.GetMatchingGroup(aux.NecroValleyFilter(cm.tdfilter2),tp,LOCATION_GRAVE,0,nil)
 			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TODECK)
-			local sg=mg:SelectSubGroup(tp,cm.tdcheck,true,2,2)
+			local sg=mg:SelectSubGroup(tp,aux.dncheck,true,2,2)
 			Duel.ConfirmCards(1-tp,sg)
 			if Duel.SendtoDeck(sg,nil,2,REASON_EFFECT)~=0
 				and Duel.IsExistingMatchingCard(cm.desfilter,tp,0,LOCATION_MZONE,1,nil)

@@ -4,7 +4,7 @@ local cm=_G["c"..m]
 cm.name="宇宙弦之面条女德鲁伊"
 function cm.initial_effect(c)
 	aux.AddCodeList(c,list[1])
-	--Atk Up
+	--Destroy
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(m,0))
 	e1:SetCategory(CATEGORY_DESTROY)
@@ -16,7 +16,7 @@ function cm.initial_effect(c)
 	e1:SetOperation(cm.operation)
 	c:RegisterEffect(e1)
 end
---Atk Up
+--Destroy
 function cm.confilter(c)
 	return c:IsFaceup() and c:IsCode(list[1])
 end

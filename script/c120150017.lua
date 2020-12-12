@@ -19,14 +19,11 @@ end
 function cm.costfilter(c)
 	return c:IsCode(list[1],list[2],list[3]) and c:IsAbleToDeckAsCost()
 end
-function cm.costcheck(g)
-	return g:GetClassCount(Card.GetCode)==g:GetCount()
-end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	local g=Duel.GetMatchingGroup(cm.costfilter,tp,LOCATION_GRAVE,0,nil)
-	if chk==0 then return g:CheckSubGroup(cm.costcheck,3,3) end
+	if chk==0 then return g:CheckSubGroup(aux.dncheck,3,3) end
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TODECK)
-	local sg=g:SelectSubGroup(tp,cm.costcheck,false,3,3)
+	local sg=g:SelectSubGroup(tp,aux.dncheck,false,3,3)
 	Duel.ConfirmCards(1-tp,sg)
 	Duel.SendtoDeck(sg,nil,0,REASON_COST)
 	Duel.SortDecktop(tp,tp,3)

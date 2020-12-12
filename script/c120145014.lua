@@ -22,9 +22,6 @@ end
 function cm.setfilter(c)
 	return c:IsCode(list[1],list[2]) and c:IsSSetable()
 end
-function cm.setcheck(g)
-	return g:GetClassCount(Card.GetCode)==g:GetCount()
-end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(cm.costfilter,tp,LOCATION_HAND,0,1,nil) end
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOGRAVE)
@@ -53,7 +50,7 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 			Duel.BreakEffect()
 			local mg=Duel.GetMatchingGroup(aux.NecroValleyFilter(cm.setfilter),tp,LOCATION_GRAVE,0,nil)
 			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SET)
-			local sg=mg:SelectSubGroup(tp,cm.setcheck,true,1,ct)
+			local sg=mg:SelectSubGroup(tp,aux.dncheck,true,1,ct)
 			Duel.SSet(tp,sg)
 		end
 	end
