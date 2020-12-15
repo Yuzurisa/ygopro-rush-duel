@@ -1,6 +1,6 @@
 local m=120155030
 local cm=_G["c"..m]
-cm.name="特上寿司天使 伽利布艾鲁"
+cm.name="特上寿司天使 加百列腌姜"
 function cm.initial_effect(c)
 	--Damage
 	local e1=Effect.CreateEffect(c)
