@@ -18,7 +18,7 @@ function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	return c:IsReason(REASON_SUMMON) and c:IsStatus(STATUS_SUMMON_TURN)
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return e:GetHandler():IsCanChangePosition() end
+	if chk==0 then return e:GetHandler():IsCanChangePosition() and RushDuel.IsHasDefense(e:GetHandler()) end
 	Duel.ChangePosition(e:GetHandler(),POS_FACEUP_DEFENSE,POS_FACEDOWN_DEFENSE,POS_FACEUP_ATTACK,POS_FACEUP_ATTACK)
 end
 function cm.operation(e,tp,eg,ep,ev,re,r,rp)

@@ -13,7 +13,7 @@ function cm.initial_effect(c)
 end
 --Activate
 function cm.posfilter(c)
-	return c:IsPosition(POS_FACEUP_ATTACK) and c:IsRace(RACE_AQUA) and c:IsCanChangePosition()
+	return c:IsPosition(POS_FACEUP_ATTACK) and c:IsRace(RACE_AQUA) and c:IsCanChangePosition() and RushDuel.IsHasDefense(c)
 end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(cm.posfilter,tp,LOCATION_MZONE,0,1,nil) end

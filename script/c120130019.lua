@@ -22,9 +22,9 @@ function cm.confilter(c)
 end
 function cm.posfilter(c,tp)
 	if c:IsControler(tp) then
-		return c:IsPosition(POS_FACEUP_ATTACK) and c:IsCode(list[1]) and c:IsCanChangePosition()
+		return c:IsPosition(POS_FACEUP_ATTACK) and c:IsCode(list[1]) and c:IsCanChangePosition() and RushDuel.IsHasDefense(c)
 	else
-		return c:IsAttackPos() and c:IsCanChangePosition()
+		return c:IsAttackPos() and c:IsCanChangePosition() and RushDuel.IsHasDefense(c)
 	end
 end
 function cm.check(g,tp)

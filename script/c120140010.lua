@@ -15,7 +15,7 @@ function cm.initial_effect(c)
 end
 --Activate
 function cm.costfilter(c)
-	return c:IsAttackPos() and c:IsLevelAbove(7) and c:IsRace(RACE_WARRIOR) and c:IsCanChangePosition()
+	return c:IsAttackPos() and c:IsLevelAbove(7) and c:IsRace(RACE_WARRIOR) and c:IsCanChangePosition() and RushDuel.IsHasDefense(c)
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(cm.costfilter,tp,LOCATION_MZONE,0,1,nil) end

@@ -19,7 +19,7 @@ function cm.filter(c)
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	local c=e:GetHandler()
-	if chk==0 then return c:IsAttackPos() and c:IsCanChangePosition() end
+	if chk==0 then return c:IsAttackPos() and c:IsCanChangePosition() and RushDuel.IsHasDefense(c) end
 	Duel.ChangePosition(c,POS_FACEUP_DEFENSE)
 end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)

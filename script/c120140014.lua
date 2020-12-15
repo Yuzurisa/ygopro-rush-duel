@@ -22,7 +22,7 @@ function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	local tc=Duel.GetAttacker()
-	if chk==0 then return tc:IsAttackPos() and tc:IsCanChangePosition() end
+	if chk==0 then return tc:IsAttackPos() and tc:IsCanChangePosition() and RushDuel.IsHasDefense(tc) end
 	Duel.SetOperationInfo(0,CATEGORY_POSITION,tc,1,0,0)
 end
 function cm.activate(e,tp,eg,ep,ev,re,r,rp)

@@ -20,7 +20,7 @@ function cm.confilter2(c,tp)
 	return c:GetSummonPlayer()==tp
 end
 function cm.posfilter(c)
-	return c:IsAttackPos() and c:IsCanChangePosition()
+	return c:IsAttackPos() and c:IsCanChangePosition() and RushDuel.IsHasDefense(c)
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	return Duel.IsExistingMatchingCard(cm.confilter1,tp,LOCATION_MZONE,0,2,nil)
