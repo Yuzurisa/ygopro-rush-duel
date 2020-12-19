@@ -1,6 +1,6 @@
 local m=120155059
 local cm=_G["c"..m]
-cm.name="珠宝的落穴"
+cm.name="珠宝落穴"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
