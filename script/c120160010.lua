@@ -14,7 +14,7 @@ end
 --Activate
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.GetFieldGroupCount(tp,0,LOCATION_DECK)>4 end
-	Duel.SetTargetPlayer(tp)
+	Duel.SetTargetPlayer(1-tp)
 	Duel.SetTargetParam(5)
 end
 function cm.activate(e,tp,eg,ep,ev,re,r,rp)
