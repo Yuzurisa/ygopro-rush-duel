@@ -1,6 +1,6 @@
 local m=120155019
 local cm=_G["c"..m]
-cm.name="祭神 莫德里纳"
+cm.name="祭神 莫多丽娜"
 function cm.initial_effect(c)
 	--To Hand
 	local e1=Effect.CreateEffect(c)

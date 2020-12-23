@@ -1,6 +1,6 @@
 local m=120155031
 local cm=_G["c"..m]
-cm.name="钻环·山魈钻头"
+cm.name="钻机山魈"
 function cm.initial_effect(c)
 	--Position
 	local e1=Effect.CreateEffect(c)
