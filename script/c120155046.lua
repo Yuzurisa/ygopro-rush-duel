@@ -1,6 +1,6 @@
 local m=120155046
 local cm=_G["c"..m]
-cm.name="重骑屋战法"
+cm.name="重骑师战法"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
