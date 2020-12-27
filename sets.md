@@ -10,6 +10,7 @@ https://yugipedia.com/wiki/Category:Rush_Duel_cards
 - **November 14, 2020**: Deck Modification Pack - Fantastrike Mirage Impact!! (RD/KP03-JP): `120145XXX`
 - **December 12, 2020**: Maximum Ultra Enhancement Pack (RD/MAX1-JP): `120150XXX`
 - **February 13, 2021**: Deck Modification Pack - Destined Power Destruction!! (RD/KP04-JP): `120155XXX`
+- **January 2021**: Battle Pack Vol.1 (RD/B001-JP): `120160XXX`
 
 ## Starter decks
 - **April 4, 2020** : Starter Deck Yuga - Cut Through! Sevens Road!! (RD/ST01-JP): `120105XXX`
