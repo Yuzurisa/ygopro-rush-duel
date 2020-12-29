@@ -1,6 +1,6 @@
 local m=120155028
 local cm=_G["c"..m]
-cm.name="重乐鬼 合奏斗士"
+cm.name="重乐鬼 合奏武斗家"
 function cm.initial_effect(c)
 	--Cannot Activate
 	local e1=Effect.CreateEffect(c)
