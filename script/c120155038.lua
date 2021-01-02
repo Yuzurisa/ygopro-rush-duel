@@ -1,6 +1,6 @@
 local m=120155038
 local cm=_G["c"..m]
-cm.name="阴阳士 坂风"
+cm.name="阴阳士 逆风"
 function cm.initial_effect(c)
 	--To Deck
 	local e1=Effect.CreateEffect(c)
