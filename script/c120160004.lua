@@ -1,6 +1,6 @@
 local m=120160004
 local cm=_G["c"..m]
-cm.name="最古念力埋葬"
+cm.name="念力的埋葬"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
