@@ -1,6 +1,6 @@
 local m=120155057
 local cm=_G["c"..m]
-cm.name="蚂蚁同志之旗"
+cm.name="自由蚁旗"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)

@@ -166,6 +166,7 @@ function RushDuel.AddMaximumProcedure(c,max_atk,left_code,right_code)
 	c:RegisterEffect(e5)
 	local e6=e5:Clone()
 	e6:SetCode(EFFECT_CANNOT_CHANGE_POS_E)
+	e6:SetCondition(RushDuel.MaxPosCondition)
 	c:RegisterEffect(e6)
 	local e7=Effect.CreateEffect(c)
 	e7:SetType(EFFECT_TYPE_SINGLE)
@@ -225,6 +226,9 @@ function RushDuel.MaximumSummonOperation(left_code,right_code)
 end
 function RushDuel.IsMaximumMode(e)
 	return e:GetHandler():IsSummonType(SUMMON_TYPE_MAXIMUM)
+end
+function RushDuel.MaxPosCondition(e)
+	return RushDuel.IsMaximumMode(e) and e:GetHandler():IsAttackPos()
 end
 function RushDuel.MaximumMaterial(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()

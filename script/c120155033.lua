@@ -1,6 +1,6 @@
 local m=120155033
 local cm=_G["c"..m]
-cm.name="叛逆的蚂蚁叛乱"
+cm.name="叛逆之叛乱蚁"
 function cm.initial_effect(c)
 	--Atk Up
 	local e1=Effect.CreateEffect(c)
@@ -15,7 +15,7 @@ function cm.initial_effect(c)
 end
 --Atk Up
 function cm.filter(c)
-	return c:IsFaceup() and c:IsRace(RACE_INSECT) and c:IsAttackBelow(100)
+	return c:IsPosition(POS_FACEUP_ATTACK) and c:IsRace(RACE_INSECT) and c:IsAttackBelow(100)
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.CheckLPCost(tp,100) end
