@@ -55,5 +55,5 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 function cm.indval(e,re,r,rp)
-	return bit.band(r,REASON_EFFECT)~=0 and re:IsActiveType(TYPE_TRAP)
+	return rp==1-e:GetHandlerPlayer() and bit.band(r,REASON_EFFECT)~=0 and re:IsActiveType(TYPE_TRAP)
 end
