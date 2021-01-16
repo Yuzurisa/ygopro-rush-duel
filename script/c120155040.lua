@@ -1,6 +1,6 @@
 local m=120155040
 local cm=_G["c"..m]
-cm.name="同盟屏障"
+cm.name="古代障壁"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
