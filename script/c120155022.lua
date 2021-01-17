@@ -1,7 +1,7 @@
 local m=120155022
 local list={120155021,120155023}
 local cm=_G["c"..m]
-cm.name="幻龙重骑异虫 Ex骑士"
+cm.name="幻龙重骑 超斗轮挖掘鳞虫"
 function cm.initial_effect(c)
 	aux.AddCodeList(c,list[1],list[2])
 	--Maximum Summon

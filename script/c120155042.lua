@@ -1,6 +1,6 @@
 local m=120155042
 local cm=_G["c"..m]
-cm.name="幻透乡的险峻"
+cm.name="透幻乡的崄峻"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)

@@ -1,6 +1,6 @@
 local m=120155021
 local cm=_G["c"..m]
-cm.name="幻龙重骑异虫 Ex骑士[L]"
+cm.name="幻龙重骑 超斗轮挖掘鳞虫［L］"
 function cm.initial_effect(c)
 	--Atk Up
 	local e1=Effect.CreateEffect(c)
