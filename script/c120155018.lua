@@ -1,6 +1,6 @@
 local m=120155018
 local cm=_G["c"..m]
-cm.name="死反之玉"
+cm.name="死返小玉"
 function cm.initial_effect(c)
 	--Discard Deck
 	local e1=Effect.CreateEffect(c)
