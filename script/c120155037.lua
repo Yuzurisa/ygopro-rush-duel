@@ -1,6 +1,6 @@
 local m=120155037
 local cm=_G["c"..m]
-cm.name="熔岩最大 披风吠陀"
+cm.name="最大岩浆之地幔阿育吠陀医师"
 function cm.initial_effect(c)
 	--Destroy
 	local e1=Effect.CreateEffect(c)
