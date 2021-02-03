@@ -1,6 +1,6 @@
 local m=120155035
 local cm=_G["c"..m]
-cm.name="芳香熊"
+cm.name="芳香岩浆熊"
 function cm.initial_effect(c)
 	--Recover
 	local e1=Effect.CreateEffect(c)
