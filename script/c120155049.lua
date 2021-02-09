@@ -1,6 +1,6 @@
 local m=120155049
 local cm=_G["c"..m]
-cm.name="崇高至尊"
+cm.name="大极流"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
