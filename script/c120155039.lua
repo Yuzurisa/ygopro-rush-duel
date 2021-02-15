@@ -1,6 +1,6 @@
 local m=120155039
 local cm=_G["c"..m]
-cm.name="TCB"
+cm.name="种族变更光线"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
