@@ -20,32 +20,29 @@ end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	local tc=Duel.GetAttacker()
 	local bc=Duel.GetAttackTarget()
-	return tc:IsControler(1-tp) and tc:IsLevelBelow(9) and RushDuel.IsHasDefense(tc) and bc and bc:IsAttackPos()
+	return tc:IsControler(1-tp) and tc:IsLevelBelow(9) and RushDuel.IsHasDefense(tc)
+		and bc and bc:IsAttackPos() and RushDuel.IsHasDefense(bc)
 end
 function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 	local tc=Duel.GetAttacker()
 	local bc=Duel.GetAttackTarget()
-	if tc:IsRelateToBattle() and tc:IsFaceup() and RushDuel.IsHasDefense(tc) then
+	if tc:IsRelateToBattle() and tc:IsFaceup() and RushDuel.IsHasDefense(tc)
+		and bc:IsRelateToBattle() and bc:IsFaceup() and RushDuel.IsHasDefense(bc) then
 		local e1=Effect.CreateEffect(e:GetHandler())
 		e1:SetType(EFFECT_TYPE_SINGLE)
 		e1:SetCode(EFFECT_SWAP_BASE_AD)
 		e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END)
 		tc:RegisterEffect(e1)
-		if bc:IsRelateToBattle() and bc:IsFaceup() and RushDuel.IsHasDefense(bc) then
-			local e1=Effect.CreateEffect(e:GetHandler())
-			e1:SetType(EFFECT_TYPE_SINGLE)
-			e1:SetCode(EFFECT_SWAP_BASE_AD)
-			e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END)
-			bc:RegisterEffect(e1)
-			if Duel.IsExistingMatchingCard(aux.NecroValleyFilter(cm.thfilter),tp,LOCATION_GRAVE,0,1,nil)
-				and Duel.SelectYesNo(tp,aux.Stringid(m,1)) then
-				Duel.BreakEffect()
-				Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_ATOHAND)
-				local g=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(cm.thfilter),tp,LOCATION_GRAVE,0,1,1,nil)
-				if g:GetCount()>0 then
-					Duel.SendtoHand(g,nil,REASON_EFFECT)
-					Duel.ConfirmCards(1-tp,g)
-				end
+		local e2=e1:Clone()
+		bc:RegisterEffect(e2)
+		if Duel.IsExistingMatchingCard(aux.NecroValleyFilter(cm.thfilter),tp,LOCATION_GRAVE,0,1,nil)
+			and Duel.SelectYesNo(tp,aux.Stringid(m,1)) then
+			Duel.BreakEffect()
+			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_ATOHAND)
+			local g=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(cm.thfilter),tp,LOCATION_GRAVE,0,1,1,nil)
+			if g:GetCount()>0 then
+				Duel.SendtoHand(g,nil,REASON_EFFECT)
+				Duel.ConfirmCards(1-tp,g)
 			end
 		end
 	end
