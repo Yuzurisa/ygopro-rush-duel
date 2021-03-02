@@ -27,6 +27,6 @@ https://yugipedia.com/wiki/Category:Rush_Duel_cards
 - **October 1, 2020**: Saikyō Jump November 2020 promotional card (RD/SJMP-JP): `120109XXX`
 - **April 3, 2020** : Saikyō Jump May 2020 promotional card (RD/SJMP-JP) : `120100XXX`
 - **June 4, 2020**: Saikyō Jump July 2020 promotional card (RD/SJMP-JP): `120135XXX`
-- **February 4, 2021**: Saikyō Jump March 2021 promotional card (RD/SJMP-JP): ``120112XXX`
+- **February 4, 2021**: Saikyō Jump March 2021 promotional card (RD/SJMP-JP): `120112XXX`
 
 # Archived
