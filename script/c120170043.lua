@@ -1,6 +1,6 @@
 local m=120170043
 local cm=_G["c"..m]
-cm.name="摄理之流转"
+cm.name="摄理的流转"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
