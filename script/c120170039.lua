@@ -27,7 +27,7 @@ function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOGRAVE)
 	local g=Duel.SelectMatchingCard(tp,cm.costfilter,tp,LOCATION_MZONE,0,1,1,nil,tp)
 	local tc=g:GetFirst()
-	if tc:IsCode(list[1]) and Duel.SendtoGrave(tc,REASON_COST)~=0 then
+	if Duel.SendtoGrave(tc,REASON_COST)~=0 and tc:GetPreviousCodeOnField()==list[1] then
 		e:SetLabel(2)
 	end
 end
