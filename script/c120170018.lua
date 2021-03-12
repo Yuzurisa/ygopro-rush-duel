@@ -17,7 +17,7 @@ function cm.initial_effect(c)
 end
 --Set
 function cm.costfilter(c)
-	return c:IsLevelBelow(4) and c:IsAbleToGraveAsCost()
+	return c:IsType(TYPE_MONSTER) and c:IsAbleToGraveAsCost()
 end
 function cm.setfilter(c)
 	return c:IsCode(list[1],list[2]) and c:IsSSetable()
