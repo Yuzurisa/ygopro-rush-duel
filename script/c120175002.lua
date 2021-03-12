@@ -21,9 +21,9 @@ end
 function cm.confilter2(c)
 	return c:IsFaceup() and not c:IsLevel(3) and c:IsRace(RACE_DRAGON)
 end
-function cm.condition(e,tp,eg,ep,ev,re,r,rp,chk)
+function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	return Duel.IsExistingMatchingCard(cm.confilter1,tp,0,LOCATION_MZONE,1,nil)
-		and Duel.GetMatchingGroup(cm.confilter2,tp,LOCATION_MZONE,0,nil)==2
+		and Duel.GetMatchingGroupCount(cm.confilter2,tp,LOCATION_MZONE,0,nil)==2
 end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsPlayerCanDraw(tp,1) end
