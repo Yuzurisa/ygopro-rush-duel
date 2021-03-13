@@ -1,7 +1,7 @@
 local m=120170040
 local list={120170002}
 local cm=_G["c"..m]
-cm.name="果酱跳：P开始！"
+cm.name="即兴果酱：P激活！"
 function cm.initial_effect(c)
 	aux.AddCodeList(c,list[1])
 	--Activate

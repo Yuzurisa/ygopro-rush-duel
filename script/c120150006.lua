@@ -4,7 +4,7 @@ cm.name="沉默学习"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
-	e1:SetCategory(CATEGORY_TODECK+CATEGORY_DRAW)
+	e1:SetCategory(CATEGORY_TODECK+CATEGORY_DRAW+CATEGORY_GRAVE_ACTION)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_FREE_CHAIN)
 	e1:SetCondition(cm.condition)
@@ -27,7 +27,9 @@ function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	return g:GetClassCount(Card.GetCode)>=3
 end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return Duel.IsExistingMatchingCard(cm.filter,tp,0,LOCATION_SZONE,1,nil) end
+	if chk==0 then return Duel.IsExistingMatchingCard(cm.filter,tp,0,LOCATION_SZONE,1,nil)
+		and Duel.IsExistingMatchingCard(cm.tdfilter,tp,LOCATION_GRAVE,0,1,nil)
+		and Duel.IsPlayerCanDraw(tp,1) end
 end
 function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_FACEDOWN)

@@ -4,7 +4,7 @@ cm.name="三角重生"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
-	e1:SetCategory(CATEGORY_TODECK+CATEGORY_SPECIAL_SUMMON)
+	e1:SetCategory(CATEGORY_TODECK+CATEGORY_SPECIAL_SUMMON+CATEGORY_GRAVE_SPSUMMON)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_SUMMON_SUCCESS)
 	e1:SetCondition(cm.condition)

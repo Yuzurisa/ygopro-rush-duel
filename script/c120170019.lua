@@ -1,6 +1,6 @@
 local m=120170019
 local cm=_G["c"..m]
-cm.name="可能-准备：D"
+cm.name="可能甜心女郎-返：D"
 function cm.initial_effect(c)
 	--To Hand
 	local e1=Effect.CreateEffect(c)

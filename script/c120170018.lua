@@ -1,13 +1,13 @@
 local m=120170018
 local list={120140038,120140039}
 local cm=_G["c"..m]
-cm.name="再来一次人偶"
+cm.name="安可人偶"
 function cm.initial_effect(c)
 	aux.AddCodeList(c,list[1],list[2])
 	--Set
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(m,0))
-	e1:SetCategory(CATEGORY_TOGRAVE+CATEGORY_LEAVE_GRAVE)
+	e1:SetCategory(CATEGORY_TOGRAVE+CATEGORY_GRAVE_ACTION)
 	e1:SetType(EFFECT_TYPE_IGNITION)
 	e1:SetRange(LOCATION_MZONE)
 	e1:SetCost(cm.cost)

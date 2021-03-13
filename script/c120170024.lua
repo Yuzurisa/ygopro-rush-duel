@@ -1,6 +1,6 @@
 local m=120170024
 local cm=_G["c"..m]
-cm.name="王家魔族·死亡厄运"
+cm.name="王家魔族·死亡厄运歌手"
 function cm.initial_effect(c)
 	--Destroy
 	local e1=Effect.CreateEffect(c)
@@ -42,9 +42,12 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 --Tribute
+function cm.trifilter(c)
+	return c:IsLevelAbove(7) and c:IsRace(RACE_FIEND)
+end
 function cm.tricheck(e,c)
 	local g=c:GetMaterial()
-	if g:IsExists(Card.IsLevelAbove,2,nil,7) then
+	if g:IsExists(cm.trifilter,2,nil) then
 		e:GetLabelObject():SetLabel(1)
 	else
 		e:GetLabelObject():SetLabel(0)

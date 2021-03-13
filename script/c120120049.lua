@@ -4,7 +4,7 @@ cm.name="暴虐的报应"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
-	e1:SetCategory(CATEGORY_DESTROY)
+	e1:SetCategory(CATEGORY_SPECIAL_SUMMON)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_DESTROYED)
 	e1:SetCondition(cm.condition)
