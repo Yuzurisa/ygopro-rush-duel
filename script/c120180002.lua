@@ -30,7 +30,7 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 		Duel.ConfirmCards(tp,g)
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOGRAVE)
 		local sg=g:Select(tp,1,1,nil)
-		if Duel.SendtoGrave(sg,REASON_EFFECT)~=0 and g:GetFirst():IsLevelAbove(7) then
+		if Duel.SendtoGrave(sg,REASON_EFFECT)~=0 and sg:GetFirst():IsLevelAbove(7) then
 			Duel.Recover(tp,1000,REASON_EFFECT)
 		end
 		Duel.ShuffleHand(1-tp)
