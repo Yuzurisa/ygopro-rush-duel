@@ -1,10 +1,10 @@
-local m=120155048
+local m=120170047
 local cm=_G["c"..m]
-cm.name="火炎"
+cm.name="水分补给"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
-	e1:SetCategory(CATEGORY_DAMAGE+CATEGORY_DESTROY)
+	e1:SetCategory(CATEGORY_RECOVER+CATEGORY_DESTROY)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_FREE_CHAIN)
 	e1:SetCondition(cm.condition)
@@ -14,7 +14,7 @@ function cm.initial_effect(c)
 end
 --Activate
 function cm.confilter(c)
-	return c:IsFaceup() and c:IsRace(RACE_PYRO)
+	return c:IsFaceup() and c:IsRace(RACE_AQUA)
 end
 function cm.desfilter(c)
 	return c:IsType(TYPE_SPELL+TYPE_TRAP)
@@ -24,10 +24,10 @@ function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return true end
-	Duel.SetOperationInfo(0,CATEGORY_DAMAGE,nil,0,1-tp,300)
+	Duel.SetOperationInfo(0,CATEGORY_RECOVER,nil,0,tp,500)
 end
 function cm.activate(e,tp,eg,ep,ev,re,r,rp)
-	if Duel.Damage(1-tp,300,REASON_EFFECT)~=0 
+	if Duel.Recover(tp,500,REASON_EFFECT)~=0 
 		and Duel.IsExistingMatchingCard(cm.desfilter,tp,0,LOCATION_ONFIELD,1,nil)
 		and Duel.SelectYesNo(tp,aux.Stringid(m,1)) then
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DESTROY)
