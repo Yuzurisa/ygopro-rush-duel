@@ -1,4 +1,4 @@
-local m=120170202
+local m=120170048
 local cm=_G["c"..m]
 cm.name="花牙孢子"
 function cm.initial_effect(c)
