@@ -17,7 +17,7 @@ function cm.confilter(c)
 	return c:IsFaceup() and c:IsRace(RACE_PSYCHO)
 end
 function cm.filter(c)
-	return c:IsFaceup() and c:IsCanTurnSet()
+	return c:IsFaceup() and RushDuel.IsHasDefense(c) and c:IsCanTurnSet()
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	return Duel.IsExistingMatchingCard(cm.confilter,tp,LOCATION_MZONE,0,2,nil)

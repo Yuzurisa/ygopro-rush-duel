@@ -14,7 +14,7 @@ function cm.initial_effect(c)
 end
 --Activate
 function cm.filter(c)
-	return c:IsFaceup() and c:IsCanTurnSet()
+	return c:IsFaceup() and RushDuel.IsHasDefense(c) and c:IsCanTurnSet()
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(Card.IsAbleToGraveAsCost,tp,LOCATION_HAND,0,2,e:GetHandler()) end

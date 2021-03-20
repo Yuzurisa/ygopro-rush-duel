@@ -21,7 +21,7 @@ function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	local tc=eg:GetFirst()
-	if chk==0 then return tc:IsCanTurnSet() end
+	if chk==0 then return RushDuel.IsHasDefense(tc) and tc:IsCanTurnSet() end
 	Duel.SetTargetCard(tc)
 	Duel.SetOperationInfo(0,CATEGORY_POSITION,tc,1,0,0)
 end

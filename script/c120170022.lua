@@ -21,7 +21,7 @@ function cm.spfilter(c,e,tp)
 	return c:IsLevelAbove(7) and c:IsRace(RACE_WARRIOR) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
 function cm.costcheck(g,e,tp)
-	return g:GetClassCount(Card.GetCode)==g:GetCount()
+	return g:GetClassCount(Card.GetCode,nil)==g:GetCount()
 		and Duel.IsExistingMatchingCard(cm.spfilter,tp,LOCATION_GRAVE,0,1,g,e,tp)
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)

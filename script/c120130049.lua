@@ -18,7 +18,7 @@ function cm.costfilter(c)
 	return c:IsType(TYPE_NORMAL) and c:IsLevel(2) and c:IsAbleToGraveAsCost()
 end
 function cm.filter(c)
-	return c:IsFaceup() and c:IsCanTurnSet()
+	return c:IsFaceup() and RushDuel.IsHasDefense(c) and c:IsCanTurnSet()
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	return Duel.GetAttacker():IsControler(1-tp)

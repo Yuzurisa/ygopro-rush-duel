@@ -1,6 +1,6 @@
-local m=120170023
+local m=120170021
 local cm=_G["c"..m]
-cm.name="王家魔族·相位效果乐手"
+cm.name="和仮真战士"
 function cm.initial_effect(c)
 	--Special Summon
 	local e1=Effect.CreateEffect(c)
@@ -15,14 +15,13 @@ function cm.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 --Special Summon
-function cm.confilter(c)
-	return c:IsFaceup() and c:IsLevelAbove(7) and c:IsRace(RACE_FIEND)
-end
 function cm.spfilter(c,e,tp)
-	return c:IsLevelAbove(7) and c:IsRace(RACE_FIEND) and c:IsCanBeSpecialSummoned(e,0,tp,false,false,POS_FACEUP_DEFENSE)
+	return c:IsType(TYPE_NORMAL) and c:IsRace(RACE_WARRIOR+RACE_WINDBEAST)
+		and c:IsCanBeSpecialSummoned(e,0,tp,false,false,POS_FACEDOWN_DEFENSE)
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
-	return Duel.IsExistingMatchingCard(cm.confilter,tp,LOCATION_MZONE,0,1,nil)
+	local c=e:GetHandler()
+	return c:IsReason(REASON_SUMMON) and c:IsStatus(STATUS_SUMMON_TURN)
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return e:GetHandler():IsAbleToGraveAsCost() end
@@ -34,10 +33,13 @@ function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.SetOperationInfo(0,CATEGORY_SPECIAL_SUMMON,nil,1,tp,LOCATION_GRAVE)
 end
 function cm.operation(e,tp,eg,ep,ev,re,r,rp)
-	if Duel.GetMZoneCount(tp)<1 then return end
+	local ct=Duel.GetMZoneCount(tp)
+	if ct<1 then return end
+	if ct>2 then ct=2 end
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
-	local g=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(cm.spfilter),tp,LOCATION_GRAVE,0,1,1,nil,e,tp)
+	local g=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(cm.spfilter),tp,LOCATION_GRAVE,0,1,ct,nil,e,tp)
 	if g:GetCount()>0 then
-		Duel.SpecialSummon(g,0,tp,tp,false,false,POS_FACEUP_DEFENSE)
+		Duel.SpecialSummon(g,0,tp,tp,false,false,POS_FACEDOWN_DEFENSE)
+		Duel.ConfirmCards(1-tp,g)
 	end
 end
