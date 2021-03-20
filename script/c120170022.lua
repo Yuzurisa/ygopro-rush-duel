@@ -36,6 +36,7 @@ function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 		local tg=Duel.GetDecktopGroup(tp,1)
 		Duel.MoveSequence(tg:GetFirst(),1)
 	end
+end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.GetMZoneCount(tp)>0
 		and Duel.IsExistingMatchingCard(cm.spfilter,tp,LOCATION_GRAVE,0,1,nil,e,tp) end
