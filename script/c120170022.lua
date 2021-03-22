@@ -1,6 +1,6 @@
 local m=120170022
 local cm=_G["c"..m]
-cm.name="魔仙斗 冰朱雀"
+cm.name="魔仙斗 霭朱雀"
 function cm.initial_effect(c)
 	--Special Summon
 	local e1=Effect.CreateEffect(c)

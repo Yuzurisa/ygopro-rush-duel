@@ -12,7 +12,8 @@ function cm.initial_effect(c)
 end
 --Activate
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
-	return Duel.GetFieldGroupCount(tp,LOCATION_MZONE,0)==1 and Duel.GetAttacker():IsControler(1-tp)
+	local tc=Duel.GetAttacker()
+	return Duel.GetFieldGroupCount(tp,LOCATION_MZONE,0)==1 and tc:IsControler(1-tp) and tc:IsLevelBelow(8)
 end
 function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 	Duel.NegateAttack()
