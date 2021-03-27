@@ -19,7 +19,7 @@ function cm.costfilter(c)
 	return c:IsLevelAbove(7) and c:IsRace(RACE_DRAGON) and c:IsAbleToGraveAsCost()
 end
 function cm.filter(c)
-	return c:IsFaceup() and c:IsLevelBelow(7)
+	return c:IsFaceup() and c:IsLevelBelow(8)
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	return Duel.IsAbleToEnterBP()
@@ -35,7 +35,7 @@ function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 end
 function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	Duel.Hint(HINT_SELECTMSG,tp,aux.Stringid(m,1))
-	local g=Duel.SelectMatchingCard(tp,cm.filter,tp,0,LOCATION_MZONE,1,2,nil)
+	local g=Duel.SelectMatchingCard(tp,cm.filter,tp,0,LOCATION_MZONE,1,1,nil)
 	if g:GetCount()>0 then
 		Duel.HintSelection(g)
 		local c=e:GetHandler()
