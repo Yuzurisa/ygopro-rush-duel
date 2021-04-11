@@ -11,6 +11,7 @@ https://yugipedia.com/wiki/Category:Rush_Duel_cards
 - **January 2021**: Battle Pack Vol.1 (RD/B001-JP): `120160XXX`
 - **January 16, 2021**: "Amabie-San" Present Campaign (RD/21CC-JP): `120165001`
 - **April 24, 2021**: Deck Modification Pack - Dynamic Eternal Live!! (RD/KP05-JP): `120170XXX`
+- **March 20, 2021**: Rush Duel Starter Deck Enhancement Pack (RD/P003-JP): `120175XXX`
 
 ## Starter decks
 - **April 4, 2020** : Starter Deck Yuga - Cut Through! Sevens Road!! (RD/ST01-JP): `120105XXX`
