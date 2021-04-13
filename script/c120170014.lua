@@ -1,6 +1,6 @@
 local m=120170014
 local cm=_G["c"..m]
-cm.name="灰霸炎神 辽阔火山［L］"
+cm.name="灰霸炎神 烈破火神［L］"
 function cm.initial_effect(c)
 	--Atk Down
 	local e1=Effect.CreateEffect(c)

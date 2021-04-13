@@ -1,7 +1,7 @@
 local m=120170015
 local list={120170014,120170016}
 local cm=_G["c"..m]
-cm.name="灰霸炎神 辽阔火山"
+cm.name="灰霸炎神 烈破火神"
 function cm.initial_effect(c)
 	aux.AddCodeList(c,list[1],list[2])
 	--Maximum Summon
