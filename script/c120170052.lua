@@ -1,6 +1,6 @@
 local m=120170052
 local cm=_G["c"..m]
-cm.name="昂光之裁决"
+cm.name="昂光的裁决"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
