@@ -34,6 +34,7 @@ function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 		local sg=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(cm.tdfilter),tp,0,LOCATION_GRAVE,1,5,nil)
 		if sg:GetCount()>0 then
 			Duel.BreakEffect()
+			Duel.ConfirmCards(1-tp,sg)
 			Duel.SendtoDeck(sg,nil,2,REASON_EFFECT)
 		end
 	end

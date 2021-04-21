@@ -36,7 +36,7 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TODECK)
 	local g=Duel.SelectMatchingCard(tp,cm.tdfilter,tp,0,LOCATION_GRAVE,1,2,nil)
 	if g:GetCount()>0 then
-		Duel.HintSelection(g)
+		Duel.ConfirmCards(1-tp,g)
 		Duel.SendtoDeck(g,nil,2,REASON_EFFECT)
 	end
 end
