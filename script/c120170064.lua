@@ -1,6 +1,6 @@
 local m=120170064
 local cm=_G["c"..m]
-cm.name="草叶生"
+cm.name="草叶生援"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)

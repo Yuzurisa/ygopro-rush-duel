@@ -1,6 +1,6 @@
 local m=120170056
 local cm=_G["c"..m]
-cm.name="水之泡-崩坏的泡沫-"
+cm.name="水之泡-崩坏泡沫期-"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
@@ -29,9 +29,8 @@ function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 		e1:SetValue(-600)
 		e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END)
 		tc:RegisterEffect(e1)
-		if Duel.IsExistingMatchingCard(cm.exfilter,tp,0,LOCATION_MZONE,1,nil)
-			and Duel.SelectYesNo(tp,aux.Stringid(m,1)) then
-			Duel.Hint(HINT_SELECTMSG,tp,aux.Stringid(m,2))
+		if Duel.IsExistingMatchingCard(cm.exfilter,tp,0,LOCATION_MZONE,1,nil) then
+			Duel.Hint(HINT_SELECTMSG,tp,aux.Stringid(m,1))
 			local sg=Duel.SelectMatchingCard(tp,Card.IsFaceup,tp,0,LOCATION_MZONE,1,1,nil)
 			if sg:GetCount()>0 then
 				Duel.HintSelection(sg)

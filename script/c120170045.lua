@@ -1,6 +1,6 @@
 local m=120170045
 local cm=_G["c"..m]
-cm.name="监狱岛"
+cm.name="监狱岛 大姐头巨岩"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)

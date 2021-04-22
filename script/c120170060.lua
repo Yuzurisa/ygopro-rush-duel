@@ -1,7 +1,7 @@
 local m=120170060
 local list={120170034}
 local cm=_G["c"..m]
-cm.name="鸽心道化"
+cm.name="鸽心道化钟"
 function cm.initial_effect(c)
 	aux.AddCodeList(c,list[1])
 	--Activate

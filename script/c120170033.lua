@@ -1,6 +1,6 @@
 local m=120170033
 local cm=_G["c"..m]
-cm.name="爆心鸟"
+cm.name="爆破心鸽"
 function cm.initial_effect(c)
 	--Extra Tribute
 	local e1=Effect.CreateEffect(c)

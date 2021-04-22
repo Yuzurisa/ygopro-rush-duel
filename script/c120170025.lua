@@ -1,6 +1,6 @@
 local m=120170025
 local cm=_G["c"..m]
-cm.name="钳劫者"
+cm.name="恶德劫脑虫"
 function cm.initial_effect(c)
 	--Attack Twice
 	local e1=Effect.CreateEffect(c)

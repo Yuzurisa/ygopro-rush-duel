@@ -1,11 +1,11 @@
-local m=120170034
+local m=120117001
 local cm=_G["c"..m]
-cm.name="幻书鸽之骑士"
+cm.name="七星道魔术师"
 function cm.initial_effect(c)
 	--Atk Up
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(m,0))
-	e1:SetCategory(CATEGORY_ATKCHANGE+CATEGORY_DAMAGE)
+	e1:SetCategory(CATEGORY_ATKCHANGE)
 	e1:SetType(EFFECT_TYPE_IGNITION)
 	e1:SetRange(LOCATION_MZONE)
 	e1:SetCost(cm.cost)
@@ -15,7 +15,7 @@ function cm.initial_effect(c)
 end
 --Atk Up
 function cm.filter(c)
-	return c:IsType(TYPE_TRAP)
+	return c:IsType(TYPE_MONSTER)
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsPlayerCanDiscardDeckAsCost(tp,1) end
@@ -27,16 +27,13 @@ end
 function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
 	if c:IsFaceup() and c:IsRelateToEffect(e) then
-		local ct=Duel.GetMatchingGroupCount(cm.filter,tp,LOCATION_GRAVE,0,nil)
-		local atk=ct*200
+		local g=Duel.GetMatchingGroup(cm.filter,tp,LOCATION_GRAVE,0,nil)
+		local atk=g:GetClassCount(Card.GetAttribute)*300
 		local e1=Effect.CreateEffect(c)
 		e1:SetType(EFFECT_TYPE_SINGLE)
 		e1:SetCode(EFFECT_UPDATE_ATTACK)
 		e1:SetValue(atk)
 		e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_DISABLE+RESET_PHASE+PHASE_END)
 		c:RegisterEffect(e1)
-		if ct>=5 then
-			Duel.Damage(1-tp,1000,REASON_EFFECT)
-		end
 	end
 end
