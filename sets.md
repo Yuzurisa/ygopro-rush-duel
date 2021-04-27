@@ -12,6 +12,7 @@ https://yugipedia.com/wiki/Category:Rush_Duel_cards
 - **January 16, 2021**: "Amabie-San" Present Campaign (RD/21CC-JP): `120165001`
 - **April 24, 2021**: Deck Modification Pack - Dynamic Eternal Live!! (RD/KP05-JP): `120170XXX`
 - **March 20, 2021**: Rush Duel Starter Deck Enhancement Pack (RD/P003-JP): `120175XXX`
+- **2021**: Legendary Monsters Pack (VP21-JP): `120185XXX`
 
 ## Starter decks
 - **April 4, 2020** : Starter Deck Yuga - Cut Through! Sevens Road!! (RD/ST01-JP): `120105XXX`
@@ -30,5 +31,6 @@ https://yugipedia.com/wiki/Category:Rush_Duel_cards
 - **June 4, 2020**: Saikyō Jump July 2020 promotional card (RD/SJMP-JP): `120135XXX`
 - **February 4, 2021**: Saikyō Jump March 2021 promotional card (RD/SJMP-JP): `120112XXX`
 - **April 30, 2021**: Yu-Gi-Oh! SEVENS Luke! Explosive Supremacy Legend!! Volume 1 promotional card (RD/CL01-JP): `120180XXX`
+- **August 12, 2021**: Yu-Gi-Oh! Rush Duel Saikyo Battle Royale promotional cards (RD/G001-JP): `120181XXX`
 
 # Archived
