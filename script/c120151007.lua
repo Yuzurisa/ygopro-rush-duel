@@ -1,6 +1,6 @@
-local m=120195007
+local m=120151007
 local cm=_G["c"..m]
-cm.name="大恐龙驾 激情［R］"
+cm.name="大恐龙驾 联力恐龙车［R］"
 function cm.initial_effect(c)
 	--Indes
 	local e1=Effect.CreateEffect(c)

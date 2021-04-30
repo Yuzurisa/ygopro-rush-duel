@@ -1,4 +1,4 @@
-local m=120190001
+local m=120181001
 local cm=_G["c"..m]
 cm.name="最强战旗 王牌破坏者"
 function cm.initial_effect(c)

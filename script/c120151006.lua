@@ -1,7 +1,7 @@
-local m=120195006
-local list={120195005,120195007}
+local m=120151006
+local list={120151005,120151007}
 local cm=_G["c"..m]
-cm.name="大恐龙驾 激情"
+cm.name="大恐龙驾 联力恐龙车"
 function cm.initial_effect(c)
 	aux.AddCodeList(c,list[1],list[2])
 	--Maximum Summon
