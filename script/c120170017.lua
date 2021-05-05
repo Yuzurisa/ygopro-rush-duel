@@ -43,7 +43,7 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 		tc:RegisterEffect(e1)
 		if Duel.GetLocationCount(tp,LOCATION_SZONE)>0
 			and Duel.IsExistingMatchingCard(aux.NecroValleyFilter(cm.setfilter),tp,LOCATION_GRAVE,0,1,nil)
-			and Duel.SelectYesNo(tp,aux.Stringid(m,1)) then
+			and Duel.SelectYesNo(tp,aux.Stringid(m,2)) then
 			Duel.BreakEffect()
 			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SET)
 			local sg=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(cm.setfilter),tp,LOCATION_GRAVE,0,1,1,nil)

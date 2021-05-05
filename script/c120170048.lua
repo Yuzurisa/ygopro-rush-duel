@@ -32,7 +32,7 @@ function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 	local g=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(cm.spfilter),tp,LOCATION_GRAVE,0,1,1,nil,e,tp)
 	local tc=g:GetFirst()
 	if tc and Duel.SpecialSummon(tc,0,tp,tp,false,false,POS_FACEUP)~=0 then
-		tc:RegisterFlagEffect(0,RESET_EVENT+RESETS_STANDARD,EFFECT_FLAG_CLIENT_HINT,1,0,aux.Stringid(m,1))
+		tc:RegisterFlagEffect(0,RESET_EVENT+RESETS_STANDARD,EFFECT_FLAG_CLIENT_HINT,1,m,aux.Stringid(m,1))
 		local e1=Effect.CreateEffect(e:GetHandler())
 		e1:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
 		e1:SetCode(EVENT_PHASE+PHASE_END)
@@ -46,12 +46,12 @@ function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 end
 function cm.tdcon(e,tp,eg,ep,ev,re,r,rp)
 	local tc=e:GetLabelObject()
-	if tc:IsLocation(LOCATION_MZONE) and tc:IsSummonType(SUMMON_TYPE_SPECIAL)
-		and tc:GetReasonEffect():GetHandler()==e:GetHandler() then return true
-	else
-		e:Reset()
-		return false
+	local fids={tc:GetFlagEffectLabel(tc,0)}
+	for i=1,#fids do
+		if fids[i]==m then return true end
 	end
+	e:Reset()
+	return false
 end
 function cm.tdop(e,tp,eg,ep,ev,re,r,rp)
 	Duel.SendtoDeck(e:GetLabelObject(),nil,1,REASON_EFFECT)

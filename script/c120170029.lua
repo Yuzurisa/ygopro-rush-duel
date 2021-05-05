@@ -44,7 +44,7 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 		Duel.BreakEffect()
 		local c=e:GetHandler()
 		if Duel.SpecialSummon(tc,0,tp,tp,false,false,POS_FACEUP)~=0 then
-			tc:RegisterFlagEffect(0,RESET_EVENT+RESETS_STANDARD,EFFECT_FLAG_CLIENT_HINT,1,0,aux.Stringid(m,1))
+			tc:RegisterFlagEffect(0,RESET_EVENT+RESETS_STANDARD,EFFECT_FLAG_CLIENT_HINT,1,m,aux.Stringid(m,1))
 			local e1=Effect.CreateEffect(c)
 			e1:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
 			e1:SetCode(EVENT_PHASE+PHASE_END)
@@ -55,25 +55,25 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 			e1:SetOperation(cm.tdop)
 			Duel.RegisterEffect(e1,tp)
 			if c:IsFaceup() and c:IsRelateToEffect(e) then
-				local e1=Effect.CreateEffect(c)
-				e1:SetDescription(aux.Stringid(m,2))
-				e1:SetType(EFFECT_TYPE_SINGLE)
-				e1:SetCode(EFFECT_CANNOT_DIRECT_ATTACK)
-				e1:SetProperty(EFFECT_FLAG_CLIENT_HINT)
-				e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END)
-				c:RegisterEffect(e1)
+				local e2=Effect.CreateEffect(c)
+				e2:SetDescription(aux.Stringid(m,2))
+				e2:SetType(EFFECT_TYPE_SINGLE)
+				e2:SetCode(EFFECT_CANNOT_DIRECT_ATTACK)
+				e2:SetProperty(EFFECT_FLAG_CLIENT_HINT)
+				e2:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END)
+				c:RegisterEffect(e2)
 			end
 		end
 	end
 end
 function cm.tdcon(e,tp,eg,ep,ev,re,r,rp)
 	local tc=e:GetLabelObject()
-	if tc:IsLocation(LOCATION_MZONE) and tc:IsSummonType(SUMMON_TYPE_SPECIAL)
-		and tc:GetReasonEffect():GetHandler()==e:GetHandler() then return true
-	else
-		e:Reset()
-		return false
+	local fids={tc:GetFlagEffectLabel(tc,0)}
+	for i=1,#fids do
+		if fids[i]==m then return true end
 	end
+	e:Reset()
+	return false
 end
 function cm.tdop(e,tp,eg,ep,ev,re,r,rp)
 	Duel.SendtoDeck(e:GetLabelObject(),nil,1,REASON_EFFECT)
