@@ -7,7 +7,7 @@ function cm.initial_effect(c)
 	--Set
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(m,0))
-	e1:SetCategory(CATEGORY_TOGRAVE+CATEGORY_GRAVE_ACTION)
+	e1:SetCategory(CATEGORY_TOGRAVE)
 	e1:SetType(EFFECT_TYPE_IGNITION)
 	e1:SetRange(LOCATION_MZONE)
 	e1:SetCost(cm.cost)
