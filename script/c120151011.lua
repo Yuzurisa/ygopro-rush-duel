@@ -1,6 +1,6 @@
 local m=120151011
 local cm=_G["c"..m]
-cm.name="抑龙 隐身翼龙"
+cm.name="抑龙 严峻翼龙"
 function cm.initial_effect(c)
 	--Discard Deck
 	local e1=Effect.CreateEffect(c)

@@ -1,6 +1,6 @@
 local m=120151020
 local cm=_G["c"..m]
-cm.name="恐龙粉碎"
+cm.name="恐力重压"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)

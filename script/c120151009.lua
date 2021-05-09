@@ -1,6 +1,6 @@
 local m=120151009
 local cm=_G["c"..m]
-cm.name="机电报机禽龙"
+cm.name="机械镰刀盗龙"
 function cm.initial_effect(c)
 	--Draw
 	local e1=Effect.CreateEffect(c)
