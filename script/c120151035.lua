@@ -1,6 +1,6 @@
 local m=120151035
 local cm=_G["c"..m]
-cm.name="弧乐姬 号角弯月"
+cm.name="弧乐姬 圆号鸳鸯钺手"
 function cm.initial_effect(c)
 	--Discard Deck
 	local e1=Effect.CreateEffect(c)

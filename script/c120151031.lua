@@ -1,6 +1,6 @@
 local m=120151031
 local cm=_G["c"..m]
-cm.name="幻刃奥义 - 突陷攻事"
+cm.name="幻刃奥义-突陷攻事"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
@@ -35,16 +35,17 @@ function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 		tc=ug:GetNext()
 	end
 	local dg=Duel.GetMatchingGroup(cm.downfilter,tp,0,LOCATION_MZONE,nil)
-	if dg:GetCount()==0 then return end
-	Duel.BreakEffect()
-	tc=dg:GetFirst()
-	while tc do
-		local e1=Effect.CreateEffect(e:GetHandler())
-		e1:SetType(EFFECT_TYPE_SINGLE)
-		e1:SetCode(EFFECT_UPDATE_ATTACK)
-		e1:SetValue(-1200)
-		e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END)
-		tc:RegisterEffect(e1)
-		tc=dg:GetNext()
+	if dg:GetCount()>0 and Duel.SelectYesNo(tp,aux.Stringid(m,1)) then
+		Duel.BreakEffect()
+		tc=dg:GetFirst()
+		while tc do
+			local e1=Effect.CreateEffect(e:GetHandler())
+			e1:SetType(EFFECT_TYPE_SINGLE)
+			e1:SetCode(EFFECT_UPDATE_ATTACK)
+			e1:SetValue(-1200)
+			e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END)
+			tc:RegisterEffect(e1)
+			tc=dg:GetNext()
+		end
 	end
 end
