@@ -13,8 +13,11 @@ function cm.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 --Activate
-function cm.confilter(c)
+function cm.confilter1(c)
 	return c:IsFaceup() and c:IsLevelAbove(8) and c:IsRace(RACE_AQUA)
+end
+function cm.confilter2(c,tp)
+	return c:GetSummonPlayer()==tp
 end
 function cm.tdfilter(c)
 	return c:IsType(TYPE_MONSTER) and c:IsAbleToDeck()
@@ -23,12 +26,11 @@ function cm.exfilter(c)
 	return c:IsFaceup() and c:IsRace(RACE_SPELLCASTER)
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
-	return Duel.IsExistingMatchingCard(cm.confilter,tp,LOCATION_MZONE,0,1,nil)
+	return Duel.IsExistingMatchingCard(cm.confilter1,tp,LOCATION_MZONE,0,1,nil)
+		and eg:IsExists(cm.confilter2,1,nil,1-tp)
 end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
-	local tc=eg:GetFirst()
-	if chk==0 then return ep~=tp and tc:IsLocation(LOCATION_MZONE)
-		and Duel.IsExistingMatchingCard(cm.tdfilter,tp,0,LOCATION_GRAVE,1,nil) end
+	if chk==0 then return Duel.IsExistingMatchingCard(cm.tdfilter,tp,0,LOCATION_GRAVE,1,nil) end
 	local g=Duel.GetMatchingGroup(cm.tdfilter,tp,0,LOCATION_GRAVE,nil)
 	Duel.SetOperationInfo(0,CATEGORY_TODECK,g,1,0,0)
 end
