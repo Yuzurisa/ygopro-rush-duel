@@ -1,6 +1,6 @@
 local m=120151021
 local cm=_G["c"..m]
-cm.name="黑种子粒子机·布拉瑟伦"
+cm.name="种子同步粒子机·布鲁塞尔机"
 function cm.initial_effect(c)
 	--Discard Deck
 	local e1=Effect.CreateEffect(c)

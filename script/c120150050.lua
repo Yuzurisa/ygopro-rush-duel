@@ -27,7 +27,7 @@ function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 	local g=Duel.SelectMatchingCard(tp,cm.filter,tp,LOCATION_HAND,0,1,99,nil)
 	if Duel.SendtoGrave(g,REASON_EFFECT)~=0 then
 		local og=Duel.GetOperatedGroup()
-		local lv=og:Filter(cm.filter,nil):GetSum(Card.GetLevel)
+		local lv=og:Filter(cm.drfilter,nil):GetSum(Card.GetLevel)
 		if lv>=10 and Duel.IsPlayerCanDraw(tp,2) and Duel.SelectYesNo(tp,aux.Stringid(m,1)) then
 			Duel.Draw(tp,2,REASON_EFFECT)
 		end
