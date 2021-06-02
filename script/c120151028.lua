@@ -36,7 +36,7 @@ function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 	local g=Duel.SelectMatchingCard(tp,cm.posfilter,tp,LOCATION_MZONE,0,1,2,nil)
 	if g:GetCount()>0 then
 		Duel.HintSelection(g)
-		if Duel.ChangePosition(sg,POS_FACEUP_DEFENSE)~=0 and Duel.GetFlagEffect(tp,m)==0 then
+		if Duel.ChangePosition(g,POS_FACEUP_DEFENSE)~=0 and Duel.GetFlagEffect(tp,m)==0 then
 			local e1=Effect.CreateEffect(e:GetHandler())
 			e1:SetType(EFFECT_TYPE_FIELD)
 			e1:SetCode(EFFECT_CANNOT_SELECT_BATTLE_TARGET)
@@ -62,5 +62,5 @@ function cm.atkcon(e)
 	return Duel.IsExistingMatchingCard(Card.IsDefensePos,e:GetHandlerPlayer(),LOCATION_MZONE,0,1,nil)
 end
 function cm.atklmt(e,c)
-	return c:IsDefense()
+	return not c:IsDefensePos()
 end
