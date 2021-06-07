@@ -1,6 +1,6 @@
 local m=120151025
 local cm=_G["c"..m]
-cm.name="宿灵椅·按摩式"
+cm.name="宿灵椅·消酸痛式"
 function cm.initial_effect(c)
 	--Discard Deck
 	local e1=Effect.CreateEffect(c)

@@ -1,6 +1,6 @@
 local m=120151024
 local cm=_G["c"..m]
-cm.name="伊苏椅的镜王 达宇·安飞士"
+cm.name="伊苏椅的镜王 达宇·深渊"
 function cm.initial_effect(c)
 	--Atk Up
 	local e1=Effect.CreateEffect(c)

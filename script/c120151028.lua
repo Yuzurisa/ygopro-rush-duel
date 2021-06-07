@@ -1,6 +1,6 @@
 local m=120151028
 local cm=_G["c"..m]
-cm.name="接合之椅"
+cm.name="联合之椅"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
