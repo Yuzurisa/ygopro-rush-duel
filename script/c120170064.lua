@@ -43,6 +43,7 @@ function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 		and Duel.SelectYesNo(tp,aux.Stringid(m,1)) then
 		local ct=Duel.GetMZoneCount(tp)
 		if ct>2 then ct=2 end
+		if Duel.IsPlayerAffectedByEffect(tp,59822133) then ct=1 end
 		local sg=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(cm.spfilter2),tp,LOCATION_GRAVE,0,1,ct,nil,e,tp)
 		if sg:GetCount()>0 then
 			Duel.SpecialSummon(sg,0,tp,tp,false,false,POS_FACEUP)

@@ -7,7 +7,7 @@ function cm.initial_effect(c)
 	--Draw
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(m,0))
-	e1:SetCategory(CATEGORY_TOGRAVE+CATEGORY_DRAW+CATEGORY_TODECK)
+	e1:SetCategory(CATEGORY_TOGRAVE+CATEGORY_DRAW)
 	e1:SetType(EFFECT_TYPE_IGNITION)
 	e1:SetRange(LOCATION_MZONE)
 	e1:SetCost(cm.cost)
@@ -28,15 +28,14 @@ function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.SendtoDeck(sg,nil,0,REASON_COST)
 	Duel.SortDecktop(tp,tp,3)
 	for i=1,3 do
-		local tg=Duel.GetDecktopGroup(tp,1)
-		Duel.MoveSequence(tg:GetFirst(),1)
+		local tc=Duel.GetDecktopGroup(tp,1):GetFirst()
+		Duel.MoveSequence(tc,1)
 	end
 end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return e:GetHandler():IsAbleToGrave() and Duel.IsPlayerCanDraw(tp,3) end
 	Duel.SetOperationInfo(0,CATEGORY_TOGRAVE,e:GetHandler(),1,0,0)
 	Duel.SetOperationInfo(0,CATEGORY_DRAW,nil,0,tp,3)
-	Duel.SetOperationInfo(0,CATEGORY_TOGRAVE,nil,0,tp,3)
 end
 function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()

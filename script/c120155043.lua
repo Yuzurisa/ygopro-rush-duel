@@ -23,7 +23,7 @@ function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 	if ct>1 then Duel.SortDecktop(tp,tp,ct) end
 	if op==0 then return end
 	for i=1,ct do
-		local tg=Duel.GetDecktopGroup(tp,1)
-		Duel.MoveSequence(tg:GetFirst(),1)
+		local tc=Duel.GetDecktopGroup(tp,1):GetFirst()
+		Duel.MoveSequence(tc,1)
 	end
 end

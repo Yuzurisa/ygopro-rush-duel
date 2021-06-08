@@ -33,7 +33,8 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	local g=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(cm.tdfilter),tp,LOCATION_GRAVE,0,1,1,nil)
 	if g:GetCount()>0 then
 		Duel.HintSelection(g)
-		Duel.SendtoDeck(g,nil,1,REASON_EFFECT)
-		Duel.Draw(tp,2,REASON_EFFECT)
+		if Duel.SendtoDeck(g,nil,1,REASON_EFFECT)~=0 then
+			Duel.Draw(tp,2,REASON_EFFECT)
+		end
 	end
 end

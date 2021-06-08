@@ -47,11 +47,13 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 		if ct>2 then ct=2 end
 		if ct>0 and Duel.IsExistingMatchingCard(aux.NecroValleyFilter(cm.setfilter),tp,LOCATION_GRAVE,0,1,nil)
 			and Duel.SelectYesNo(tp,aux.Stringid(m,2)) then
-			Duel.BreakEffect()
 			local mg=Duel.GetMatchingGroup(aux.NecroValleyFilter(cm.setfilter),tp,LOCATION_GRAVE,0,nil)
 			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SET)
-			local sg=mg:SelectSubGroup(tp,aux.dncheck,true,1,ct)
-			Duel.SSet(tp,sg)
+			local sg=mg:SelectSubGroup(tp,aux.dncheck,false,1,ct)
+			if sg:GetCount()>0 then
+				Duel.BreakEffect()
+				Duel.SSet(tp,sg)
+			end
 		end
 	end
 end

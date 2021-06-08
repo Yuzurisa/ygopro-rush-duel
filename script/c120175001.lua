@@ -7,7 +7,7 @@ function cm.initial_effect(c)
 	--To Hand
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(m,0))
-	e1:SetCategory(CATEGORY_TOHAND)
+	e1:SetCategory(CATEGORY_TOHAND+CATEGORY_GRAVE_ACTION)
 	e1:SetType(EFFECT_TYPE_IGNITION)
 	e1:SetRange(LOCATION_MZONE)
 	e1:SetCost(cm.cost)
@@ -46,8 +46,10 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 			and Duel.SelectYesNo(tp,aux.Stringid(m,1)) then
 			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_ATOHAND)
 			local sg=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(cm.thfilter2),tp,LOCATION_GRAVE,0,1,1,nil)
-			Duel.SendtoHand(sg,nil,REASON_EFFECT)
-			Duel.ConfirmCards(1-tp,sg)
+			if sg:GetCount()>0 then
+				Duel.SendtoHand(sg,nil,REASON_EFFECT)
+				Duel.ConfirmCards(1-tp,sg)
+			end
 		end
 	end
 end

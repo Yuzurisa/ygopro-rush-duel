@@ -24,7 +24,7 @@ function cm.tdfilter(c)
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	local g=Duel.GetMatchingGroup(cm.confilter,tp,LOCATION_GRAVE,0,nil)
-	return g:GetClassCount(Card.GetCode)>=3
+	return g:GetClassCount(Card.GetRace)>=3
 end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(cm.filter,tp,0,LOCATION_SZONE,1,nil)

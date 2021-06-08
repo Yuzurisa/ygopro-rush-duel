@@ -14,7 +14,7 @@ function cm.initial_effect(c)
 end
 --Activate
 function cm.tdfilter(c)
-	return c:IsRace(RACE_DRAGON) and c:IsLevelAbove(1) and c:IsAbleToDeck()
+	return c:IsRace(RACE_DRAGON) and c:IsLevelAbove(1)
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	return Duel.GetAttacker():IsControler(1-tp)
@@ -37,6 +37,7 @@ function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 			e1:SetValue(-atk)
 			e1:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_END)
 			tc:RegisterEffect(e1)
+			Duel.BreakEffect()
 			Duel.SendtoDeck(g,nil,2,REASON_EFFECT)
 		end
 	end

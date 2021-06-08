@@ -30,7 +30,6 @@ function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(cm.filter,tp,LOCATION_MZONE,0,1,nil) end
 	local g=Duel.GetMatchingGroup(cm.filter,tp,LOCATION_MZONE,0,nil)
 	Duel.SetOperationInfo(0,CATEGORY_RECOVER,nil,0,tp,200)
-	Duel.SetOperationInfo(0,CATEGORY_TOHAND,g,1,0,0)
 end
 function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_RTOHAND)

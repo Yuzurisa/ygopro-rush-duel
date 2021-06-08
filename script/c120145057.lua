@@ -16,7 +16,7 @@ function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	local tc=Duel.GetAttacker()
 	local c=Duel.GetAttackTarget()
 	return tc:IsControler(1-tp) and tc:IsLevelAbove(1)
-		and c and c:IsControler(tp) and c:IsAttackPos() and c:IsRace(RACE_WINDBEAST)
+		and c and c:IsControler(tp) and c:IsPosition(POS_FACEUP_ATTACK) and c:IsRace(RACE_WINDBEAST)
 end
 function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 	local tc=Duel.GetAttacker()

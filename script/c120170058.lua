@@ -43,6 +43,8 @@ function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 		and Duel.SelectYesNo(tp,aux.Stringid(m,1)) then
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
 		local sg=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(cm.spfilter),tp,LOCATION_GRAVE,0,1,1,nil,e,tp)
-		Duel.SpecialSummon(sg,0,tp,tp,false,false,POS_FACEUP_ATTACK)
+		if sg:GetCount()>0 then
+			Duel.SpecialSummon(sg,0,tp,tp,false,false,POS_FACEUP_ATTACK)
+		end
 	end
 end

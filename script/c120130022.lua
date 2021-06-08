@@ -44,13 +44,13 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 		Duel.BreakEffect()
 		Duel.Hint(HINT_SELECTMSG,p,HINTMSG_TODECK)
 		local sg=g:Select(p,ct,ct,nil)
-		local op=Duel.SelectOption(tp,aux.Stringid(m,1),aux.Stringid(m,2))
-		Duel.SendtoDeck(sg,nil,0,REASON_EFFECT)
-		if ct>1 then Duel.SortDecktop(tp,tp,ct) end
+		local op=Duel.SelectOption(p,aux.Stringid(m,1),aux.Stringid(m,2))
+		if Duel.SendtoDeck(sg,nil,0,REASON_EFFECT)==0 then return end
+		if ct>1 then Duel.SortDecktop(p,p,ct) end
 		if op==0 then return end
 		for i=1,ct do
-			local tg=Duel.GetDecktopGroup(tp,1)
-			Duel.MoveSequence(tg:GetFirst(),1)
+			local tc=Duel.GetDecktopGroup(p,1):GetFirst()
+			Duel.MoveSequence(tc,1)
 		end
 	end
 end

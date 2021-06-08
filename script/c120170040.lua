@@ -6,7 +6,7 @@ function cm.initial_effect(c)
 	aux.AddCodeList(c,list[1])
 	--Activate
 	local e1=Effect.CreateEffect(c)
-	e1:SetCategory(CATEGORY_TOHAND+CATEGORY_RECOVER)
+	e1:SetCategory(CATEGORY_TOHAND+CATEGORY_GRAVE_ACTION+CATEGORY_RECOVER)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_FREE_CHAIN)
 	e1:SetCost(cm.cost)
@@ -33,8 +33,8 @@ function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.SendtoDeck(sg,nil,0,REASON_COST)
 	Duel.SortDecktop(tp,tp,2)
 	for i=1,2 do
-		local tg=Duel.GetDecktopGroup(tp,1)
-		Duel.MoveSequence(tg:GetFirst(),1)
+		local tc=Duel.GetDecktopGroup(tp,1):GetFirst()
+		Duel.MoveSequence(tc,1)
 	end
 end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)

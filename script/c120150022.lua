@@ -25,7 +25,6 @@ function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.SetTargetPlayer(1-tp)
 	Duel.SetTargetParam(ct)
 	Duel.SetOperationInfo(0,CATEGORY_DRAW,nil,0,1-tp,ct)
-	Duel.SetOperationInfo(0,CATEGORY_RECOVER,nil,0,tp,ct*300)
 end
 function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	local p=Duel.GetChainInfo(0,CHAININFO_TARGET_PLAYER)
@@ -33,6 +32,6 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	local d=Duel.Draw(p,ct,REASON_EFFECT)
 	if d>0 then
 		Duel.BreakEffect()
-		Duel.Recover(tp,ct*300,REASON_EFFECT)
+		Duel.Recover(tp,d*300,REASON_EFFECT)
 	end
 end

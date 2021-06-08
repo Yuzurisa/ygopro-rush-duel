@@ -28,7 +28,6 @@ function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return e:GetHandler():IsAbleToGrave() and Duel.IsPlayerCanDraw(tp,2) end
 	Duel.SetOperationInfo(0,CATEGORY_TOGRAVE,e:GetHandler(),1,0,0)
 	Duel.SetOperationInfo(0,CATEGORY_DRAW,nil,0,tp,2)
-	Duel.SetOperationInfo(0,CATEGORY_TODECK,nil,0,tp,2)
 end
 function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
@@ -40,8 +39,8 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 			local ct=Duel.SendtoDeck(g,nil,0,REASON_EFFECT)
 			Duel.SortDecktop(tp,tp,ct)
 			for i=1,ct do
-				local tg=Duel.GetDecktopGroup(tp,1)
-				Duel.MoveSequence(tg:GetFirst(),1)
+				local tc=Duel.GetDecktopGroup(tp,1):GetFirst()
+				Duel.MoveSequence(tc,1)
 			end
 		end
 	end

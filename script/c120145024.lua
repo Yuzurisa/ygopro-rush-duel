@@ -7,7 +7,7 @@ function cm.initial_effect(c)
 	--Atk Up
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(m,0))
-	e1:SetCategory(CATEGORY_ATKCHANGE+CATEGORY_TODECK+CATEGORY_DESTROY+CATEGORY_GRAVE_ACTION)
+	e1:SetCategory(CATEGORY_ATKCHANGE+CATEGORY_TODECK+CATEGORY_GRAVE_ACTION+CATEGORY_DESTROY)
 	e1:SetType(EFFECT_TYPE_IGNITION)
 	e1:SetRange(LOCATION_MZONE)
 	e1:SetCost(cm.cost)
@@ -42,7 +42,8 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 			and Duel.SelectYesNo(tp,aux.Stringid(m,1)) then
 			local mg=Duel.GetMatchingGroup(aux.NecroValleyFilter(cm.tdfilter2),tp,LOCATION_GRAVE,0,nil)
 			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TODECK)
-			local sg=mg:SelectSubGroup(tp,aux.dncheck,true,2,2)
+			local sg=mg:SelectSubGroup(tp,aux.dncheck,false,2,2)
+			if sg:GetCount()==0 then return end
 			Duel.ConfirmCards(1-tp,sg)
 			if Duel.SendtoDeck(sg,nil,2,REASON_EFFECT)~=0
 				and Duel.IsExistingMatchingCard(cm.desfilter,tp,0,LOCATION_MZONE,1,nil)
@@ -50,7 +51,9 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 				Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_DESTROY)
 				local g=Duel.SelectMatchingCard(tp,cm.desfilter,tp,0,LOCATION_MZONE,1,1,nil)
 				Duel.HintSelection(g)
-				Duel.Destroy(g,REASON_EFFECT)
+				if g:GetCount()>0 then
+					Duel.Destroy(g,REASON_EFFECT)
+				end
 			end
 		end
 	end

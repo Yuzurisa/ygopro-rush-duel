@@ -39,7 +39,7 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	end
 	Duel.SortDecktop(1-tp,1-tp,5)
 	for i=1,5 do
-		local g=Duel.GetDecktopGroup(1-tp,1)
-		Duel.MoveSequence(g:GetFirst(),1)
+		local tc=Duel.GetDecktopGroup(1-tp,1):GetFirst()
+		Duel.MoveSequence(tc,1)
 	end
 end

@@ -15,7 +15,7 @@ function cm.initial_effect(c)
 end
 --Direct Attack
 function cm.filter(c)
-	return c:IsFaceup() and c:IsRace(RACE_FISH) and c:IsAttackBelow(1000) and c:IsAttackable()
+	return c:IsFaceup() and c:IsRace(RACE_FISH) and c:IsAttackBelow(1000)
 		and not c:IsHasEffect(EFFECT_DIRECT_ATTACK)
 		and not c:IsHasEffect(EFFECT_CANNOT_ATTACK)
 		and not c:IsHasEffect(EFFECT_CANNOT_DIRECT_ATTACK)

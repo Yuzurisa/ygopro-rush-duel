@@ -45,10 +45,10 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 		if Duel.SendtoHand(g,nil,REASON_EFFECT)~=0
 			and Duel.IsExistingMatchingCard(Card.IsFaceup,tp,0,LOCATION_MZONE,1,nil)
 			and Duel.SelectYesNo(tp,aux.Stringid(m,1)) then
-			Duel.BreakEffect()
 			Duel.Hint(HINT_SELECTMSG,tp,aux.Stringid(m,2))
 			local sg=Duel.SelectMatchingCard(tp,Card.IsFaceup,tp,0,LOCATION_MZONE,1,1,nil)
 			if sg:GetCount()>0 then
+				Duel.BreakEffect()
 				Duel.HintSelection(sg)
 				local tc=sg:GetFirst()
 				local e1=Effect.CreateEffect(e:GetHandler())

@@ -47,8 +47,10 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 			and Duel.SelectYesNo(tp,aux.Stringid(m,1)) then
 			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_ATOHAND)
 			local sg=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(cm.thfilter),tp,LOCATION_GRAVE,0,1,1,nil)
-			Duel.SendtoHand(sg,nil,REASON_EFFECT)
-			Duel.ConfirmCards(1-tp,sg)
+			if sg:GetCount()>0 then
+				Duel.SendtoHand(sg,nil,REASON_EFFECT)
+				Duel.ConfirmCards(1-tp,sg)
+			end
 		end
 	end
 end

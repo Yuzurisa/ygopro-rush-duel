@@ -5,7 +5,7 @@ function cm.initial_effect(c)
 	--Special Summon
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(m,0))
-	e1:SetCategory(CATEGORY_SPECIAL_SUMMON)
+	e1:SetCategory(CATEGORY_SPECIAL_SUMMON+CATEGORY_GRAVE_SPSUMMON)
 	e1:SetType(EFFECT_TYPE_IGNITION)
 	e1:SetRange(LOCATION_MZONE)
 	e1:SetCost(cm.cost)
@@ -33,8 +33,8 @@ function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.SendtoDeck(sg,nil,0,REASON_COST)
 	Duel.SortDecktop(tp,tp,2)
 	for i=1,2 do
-		local tg=Duel.GetDecktopGroup(tp,1)
-		Duel.MoveSequence(tg:GetFirst(),1)
+		local tc=Duel.GetDecktopGroup(tp,1):GetFirst()
+		Duel.MoveSequence(tc,1)
 	end
 end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)

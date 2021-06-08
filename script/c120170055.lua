@@ -4,7 +4,7 @@ cm.name="美☆魔女封禁"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
-	e1:SetCategory(CATEGORY_TODECK)
+	e1:SetCategory(CATEGORY_TODECK+CATEGORY_GRAVE_ACTION)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_SUMMON_SUCCESS)
 	e1:SetCondition(cm.condition)

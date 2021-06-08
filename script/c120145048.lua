@@ -13,11 +13,11 @@ function cm.initial_effect(c)
 	e2:SetCode(EFFECT_UPDATE_ATTACK)
 	e2:SetRange(LOCATION_FZONE)
 	e2:SetTargetRange(LOCATION_MZONE,LOCATION_MZONE)
-	e2:SetTarget(cm.uptg)
+	e2:SetTarget(cm.atktg)
 	e2:SetValue(200)
 	c:RegisterEffect(e2)
 end
 --Atk Up
-function cm.uptg(e,c)
+function cm.atktg(e,c)
 	return c:IsFaceup() and c:IsAttribute(ATTRIBUTE_LIGHT)
 end

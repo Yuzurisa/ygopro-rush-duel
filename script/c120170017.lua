@@ -47,7 +47,9 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 			Duel.BreakEffect()
 			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SET)
 			local sg=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(cm.setfilter),tp,LOCATION_GRAVE,0,1,1,nil)
-			Duel.SSet(tp,sg)
+			if sg:GetCount()>0 then
+				Duel.SSet(tp,sg)
+			end
 		end
 	end
 end

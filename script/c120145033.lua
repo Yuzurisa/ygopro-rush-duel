@@ -21,7 +21,6 @@ function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(cm.costfilter,tp,LOCATION_MZONE,0,1,nil) end
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOGRAVE)
 	local g=Duel.SelectMatchingCard(tp,cm.costfilter,tp,LOCATION_MZONE,0,1,1,nil)
-	e:SetLabel(g:GetSum(Card.GetLevel))
 	Duel.SendtoGrave(g,REASON_COST)
 end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)

@@ -40,8 +40,10 @@ function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 			and Duel.SelectYesNo(tp,aux.Stringid(m,1)) then
 			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TODECK)
 			local sg=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(cm.tdfilter),tp,LOCATION_GRAVE,0,1,1,nil)
-			Duel.SendtoDeck(sg,nil,0,REASON_EFFECT)
-			Duel.ConfirmDecktop(tp,1)
+			if sg:GetCount()>0 then
+				Duel.SendtoDeck(sg,nil,0,REASON_EFFECT)
+				Duel.ConfirmDecktop(tp,1)
+			end
 		end
 	end
 end

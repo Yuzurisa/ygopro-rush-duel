@@ -29,7 +29,7 @@ function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 	local g=Duel.SelectMatchingCard(tp,cm.thfilter,tp,LOCATION_MZONE,0,1,1,nil)
 	if g:GetCount()>0 then
 		Duel.HintSelection(g)
-		if Duel.SendtoHand(g,nil,REASON_EFFECT)~=0 then
+		if Duel.SendtoHand(g,nil,REASON_EFFECT)~=0 and g:GetFirst():IsLocation(LOCATION_HAND) then
 			Duel.NegateAttack()
 		end
 	end

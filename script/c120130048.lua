@@ -13,8 +13,8 @@ function cm.initial_effect(c)
 end
 --Activate
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
-	return Duel.GetAttacker():IsControler(1-tp)
-		and Duel.IsExistingMatchingCard(Card.IsRace,tp,0,LOCATION_GRAVE,1,nil,Duel.GetAttacker():GetRace())
+	local tc=Duel.GetAttacker()
+	return tc:IsControler(1-tp) and Duel.IsExistingMatchingCard(Card.IsRace,tp,0,LOCATION_GRAVE,1,nil,tc:GetRace())
 end
 function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 	local tc=Duel.GetAttacker()

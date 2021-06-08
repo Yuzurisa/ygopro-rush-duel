@@ -28,8 +28,9 @@ function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.DiscardDeck(tp,3,REASON_COST)
 end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return e:GetHandler():IsCanChangePosition() end
-	Duel.SetOperationInfo(0,CATEGORY_POSITION,e:GetHandler(),1,0,0)
+	local c=e:GetHandler()
+	if chk==0 then return c:IsCanChangePosition() and RushDuel.IsHasDefense(c) end
+	Duel.SetOperationInfo(0,CATEGORY_POSITION,c,1,0,0)
 end
 function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()

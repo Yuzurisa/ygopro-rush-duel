@@ -35,7 +35,8 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	local g=Duel.GetFieldGroup(1-tp,LOCATION_HAND,0)
 	if g:GetCount()==0 then return end
 	local ct=1
-	if g:GetCount()>1 then ct=Duel.SelectOption(tp,aux.Stringid(m,1),aux.Stringid(m,2))+1 end
+	Duel.Hint(HINT_SELECTMSG,tp,aux.Stringid(m,1))
+	if g:GetCount()>1 then ct=Duel.SelectOption(tp,aux.Stringid(m,2),aux.Stringid(m,3))+1 end
 	local sg=g:RandomSelect(1-tp,ct)
 	Duel.SendtoGrave(sg,REASON_EFFECT)
 end

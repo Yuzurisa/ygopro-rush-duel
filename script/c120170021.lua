@@ -5,7 +5,7 @@ function cm.initial_effect(c)
 	--Special Summon
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(m,0))
-	e1:SetCategory(CATEGORY_SPECIAL_SUMMON)
+	e1:SetCategory(CATEGORY_SPECIAL_SUMMON+CATEGORY_GRAVE_SPSUMMON)
 	e1:SetType(EFFECT_TYPE_IGNITION)
 	e1:SetRange(LOCATION_MZONE)
 	e1:SetCondition(cm.condition)
@@ -36,6 +36,7 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	local ct=Duel.GetMZoneCount(tp)
 	if ct<1 then return end
 	if ct>2 then ct=2 end
+	if Duel.IsPlayerAffectedByEffect(tp,59822133) then ct=1 end
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
 	local g=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(cm.spfilter),tp,LOCATION_GRAVE,0,1,ct,nil,e,tp)
 	if g:GetCount()>0 then

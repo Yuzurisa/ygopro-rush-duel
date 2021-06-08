@@ -4,7 +4,7 @@ cm.name="传开的耳语"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
-	e1:SetCategory(CATEGORY_TODECK)
+	e1:SetCategory(CATEGORY_TODECK+CATEGORY_GRAVE_ACTION)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_MSET)
 	e1:SetCondition(cm.condition)

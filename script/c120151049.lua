@@ -12,9 +12,6 @@ function cm.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 --Activate
-function cm.filter(c)
-	return c:IsAbleToGrave()
-end
 function cm.exfilter(c)
 	return c:IsLocation(LOCATION_GRAVE)
 end
@@ -22,13 +19,13 @@ function cm.spfilter(c,e,tp)
 	return c:IsLevelBelow(8) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return Duel.IsExistingMatchingCard(cm.filter,tp,LOCATION_MZONE,0,1,nil) end
-	local g=Duel.GetMatchingGroup(cm.filter,tp,LOCATION_MZONE,0,nil)
+	if chk==0 then return Duel.IsExistingMatchingCard(Card.IsAbleToGrave,tp,LOCATION_MZONE,0,1,nil) end
+	local g=Duel.GetMatchingGroup(Card.IsAbleToGrave,tp,LOCATION_MZONE,0,nil)
 	Duel.SetOperationInfo(0,CATEGORY_TOGRAVE,g,1,0,0)
 end
 function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TOGRAVE)
-	local g=Duel.SelectMatchingCard(tp,cm.filter,tp,LOCATION_MZONE,0,1,7,nil)
+	local g=Duel.SelectMatchingCard(tp,Card.IsAbleToGrave,tp,LOCATION_MZONE,0,1,7,nil)
 	if Duel.SendtoGrave(g,REASON_EFFECT)~=0 then
 		local og=Duel.GetOperatedGroup()
 		local lv=og:Filter(cm.exfilter,nil):GetSum(Card.GetOriginalLevel)

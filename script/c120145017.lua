@@ -28,8 +28,8 @@ function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.SendtoDeck(g,nil,0,REASON_COST)
 	Duel.SortDecktop(tp,tp,4)
 	for i=1,4 do
-		local tg=Duel.GetDecktopGroup(tp,1)
-		Duel.MoveSequence(tg:GetFirst(),1)
+		local tc=Duel.GetDecktopGroup(tp,1):GetFirst()
+		Duel.MoveSequence(tc,1)
 	end
 end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)

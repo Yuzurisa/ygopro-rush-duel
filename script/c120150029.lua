@@ -29,8 +29,9 @@ function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 		if (opt==0 and not tc:IsType(TYPE_MONSTER))
 			or (opt==1 and not tc:IsType(TYPE_SPELL))
 			or (opt==2 and not tc:IsType(TYPE_TRAP)) then
-			Duel.NegateAttack()
-			Duel.Damage(1-tp,300,REASON_EFFECT)
+			if Duel.NegateAttack() then
+				Duel.Damage(1-tp,300,REASON_EFFECT)
+			end
 		end
 	end
 end

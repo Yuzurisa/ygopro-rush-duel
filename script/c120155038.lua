@@ -5,7 +5,7 @@ function cm.initial_effect(c)
 	--To Deck
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(m,0))
-	e1:SetCategory(CATEGORY_TODECK)
+	e1:SetCategory(CATEGORY_TODECK+CATEGORY_GRAVE_ACTION)
 	e1:SetType(EFFECT_TYPE_IGNITION)
 	e1:SetRange(LOCATION_MZONE)
 	e1:SetCondition(cm.condition)
@@ -38,7 +38,7 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TODECK)
 	local g=Duel.SelectMatchingCard(tp,aux.NecroValleyFilter(cm.tdfilter),tp,0,LOCATION_GRAVE,1,ct,nil)
 	if g:GetCount()>0 then
-		Duel.HintSelection(g)
+		Duel.ConfirmCards(1-tp,g)
 		Duel.SendtoDeck(g,nil,2,REASON_EFFECT)
 	end
 end

@@ -13,7 +13,7 @@ function cm.initial_effect(c)
 	e2:SetCode(EFFECT_UPDATE_ATTACK)
 	e2:SetRange(LOCATION_FZONE)
 	e2:SetTargetRange(LOCATION_MZONE,LOCATION_MZONE)
-	e2:SetTarget(cm.uptg)
+	e2:SetTarget(cm.adtg)
 	e2:SetValue(200)
 	c:RegisterEffect(e2)
 	local e3=e2:Clone()
@@ -21,6 +21,6 @@ function cm.initial_effect(c)
 	c:RegisterEffect(e3)
 end
 --Atk & Def
-function cm.uptg(e,c)
+function cm.adtg(e,c)
 	return c:IsFaceup() and c:IsRace(RACE_WARRIOR+RACE_BEASTWARRIOR)
 end

@@ -36,7 +36,7 @@ function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 	local g=Duel.SelectMatchingCard(tp,Card.IsAbleToHand,tp,LOCATION_MZONE,0,1,1,nil)
 	if g:GetCount()>0 then
 		Duel.HintSelection(g)
-		Duel.SendtoHand(g,nil,REASON_EFFECT)
+		if Duel.SendtoHand(g,nil,REASON_EFFECT)==0 then return end
 		local sg=Duel.GetMatchingGroup(cm.posfilter,tp,LOCATION_MZONE,0,nil)
 		if sg:GetCount()>0 and Duel.SelectYesNo(tp,aux.Stringid(m,1)) then
 			Duel.ChangePosition(sg,POS_FACEUP_DEFENSE)

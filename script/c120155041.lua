@@ -35,7 +35,9 @@ function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 		if g:CheckSubGroup(cm.check,2,2,nil) then
 			Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
 			local sg=g:SelectSubGroup(tp,cm.check,false,2,2,nil)
-			Duel.SpecialSummon(sg,0,tp,tp,false,false,POS_FACEUP_ATTACK)
+			if sg:GetCount()>0 then
+				Duel.SpecialSummon(sg,0,tp,tp,false,false,POS_FACEUP_ATTACK)
+			end
 		end
 	end
 	if Duel.GetFlagEffect(tp,m)~=0 then return end

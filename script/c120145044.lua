@@ -26,7 +26,7 @@ end
 function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 	if Duel.DiscardDeck(tp,1,REASON_EFFECT)~=0 then
 		local oc=Duel.GetOperatedGroup():GetFirst()
-		if oc:IsType(TYPE_MONSTER) and oc:IsLocation(LOCATION_GRAVE) then
+		if oc and oc:IsType(TYPE_MONSTER) and oc:IsLocation(LOCATION_GRAVE) then
 			Duel.Hint(HINT_SELECTMSG,tp,aux.Stringid(m,1))
 			local g=Duel.SelectMatchingCard(tp,cm.filter,tp,LOCATION_MZONE,0,1,1,nil)
 			if g:GetCount()>0 then

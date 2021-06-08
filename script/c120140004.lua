@@ -50,6 +50,7 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	end
 end
 function cm.actlimit(e,tp,eg,ep,ev,re,r,rp)
+	Duel.Hint(HINT_CARD,0,m)
 	Duel.SetChainLimitTillChainEnd(cm.chainlimit)
 end
 function cm.chainlimit(e,rp,tp)

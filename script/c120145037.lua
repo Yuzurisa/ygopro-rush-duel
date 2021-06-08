@@ -18,8 +18,9 @@ function cm.filter(c)
 	return c:IsFaceup() and c:IsType(TYPE_NORMAL) and c:IsDefenseAbove(2000) and RushDuel.IsHasDefense(c)
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
-	if chk==0 then return e:GetHandler():IsCanChangePosition() and RushDuel.IsHasDefense(e:GetHandler()) end
-	Duel.ChangePosition(e:GetHandler(),POS_FACEUP_DEFENSE,POS_FACEDOWN_DEFENSE,POS_FACEUP_ATTACK,POS_FACEUP_ATTACK)
+	local c=e:GetHandler()
+	if chk==0 then return c:IsCanChangePosition() and RushDuel.IsHasDefense(c) end
+	Duel.ChangePosition(c,POS_FACEUP_DEFENSE,POS_FACEDOWN_DEFENSE,POS_FACEUP_ATTACK,POS_FACEUP_ATTACK)
 end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(cm.filter,tp,LOCATION_MZONE,0,1,nil) end

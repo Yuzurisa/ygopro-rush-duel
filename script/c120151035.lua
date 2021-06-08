@@ -14,6 +14,9 @@ function cm.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 --Discard Deck
+function cm.exfilter(c)
+	return c:IsRace(RACE_WARRIOR) and c:IsLocation(LOCATION_GRAVE)
+end
 function cm.thfilter(c)
 	return c:IsType(TYPE_NORMAL) and c:IsRace(RACE_WARRIOR) and c:IsAbleToHand()
 end
@@ -28,7 +31,7 @@ end
 function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	if Duel.DiscardDeck(tp,1,REASON_EFFECT)==0 then return end
 	local g=Duel.GetOperatedGroup()
-	if g:IsExists(Card.IsRace,1,nil,RACE_WARRIOR)
+	if g:IsExists(cm.exfilter,1,nil)
 		and Duel.IsExistingMatchingCard(aux.NecroValleyFilter(cm.thfilter),tp,LOCATION_GRAVE,0,1,nil)
 		and Duel.SelectYesNo(tp,aux.Stringid(m,1)) then
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_ATOHAND)
