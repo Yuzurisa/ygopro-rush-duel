@@ -16,8 +16,11 @@ function cm.initial_effect(c)
 end
 --Activate
 function cm.confilter(c,tp)
-	return (RushDuel.IsLegendCode(c,list[1]) or (c:IsType(TYPE_NORMAL) and c:IsLevelAbove(7) and c:IsRace(RACE_FIEND)))
-		and c:GetPreviousControler()==tp and c==Duel.GetAttackTarget()
+	return (RushDuel.IsLegendCode(c,list[1]) or c:GetPreviousCodeOnField()==list[1] or (
+			bit.band(c:GetPreviousTypeOnField(),TYPE_NORMAL)~=0
+			and c:GetPreviousLevelOnField()>=7
+			and bit.band(c:GetPreviousRaceOnField(),RACE_FIEND)~=0
+		)) and c:GetPreviousControler()==tp and c==Duel.GetAttackTarget()
 end
 function cm.spfilter(c,e,tp)
 	return c:IsType(TYPE_NORMAL) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
