@@ -3,6 +3,7 @@ https://yugipedia.com/wiki/Category:Rush_Duel_cards
 
 - **March 20, 2021**: Rush Duel Starter Deck Enhancement Pack (RD/P003-JP): `120175XXX`
 - **June 5, 2021**: Maximum Ultra Evolution Pack (RD/MAX2-JP): `120151XXX`
+- **July 24, 2021**: Deck Modification Pack - Fierce Thunder Storm!! (RD/KP06-JP): `120183XXX`
 
 ## Starter decks
 - **April 4, 2020** : Starter Deck Yuga - Cut Through! Sevens Road!! (RD/ST01-JP): `120105XXX`
