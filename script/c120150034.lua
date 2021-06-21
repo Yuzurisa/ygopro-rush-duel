@@ -29,7 +29,7 @@ function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 end
 function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 	local g=Duel.GetMatchingGroup(cm.desfilter,tp,0,LOCATION_MZONE,nil)
-	if Duel.Destroy(g,REASON_EFFECT)~=0 and Duel.GetFlagEffect(tp,m)==0 then
+	if g:GetCount()>0 and Duel.Destroy(g,REASON_EFFECT)~=0 and Duel.GetFlagEffect(tp,m)==0 then
 		local e1=Effect.CreateEffect(e:GetHandler())
 		e1:SetDescription(aux.Stringid(m,1))
 		e1:SetType(EFFECT_TYPE_FIELD)
