@@ -30,6 +30,6 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	g1:Merge(g2)
 	if g1:GetCount()>0 then
 		Duel.DisableShuffleCheck()
-		Duel.SendtoGrave(g,REASON_EFFECT)
+		Duel.SendtoGrave(g1,REASON_EFFECT)
 	end
 end
