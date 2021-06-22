@@ -1,6 +1,6 @@
 local m=120161003
 local cm=_G["c"..m]
-cm.name="明星界光"
+cm.name="星途之光"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
