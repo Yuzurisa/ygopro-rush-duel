@@ -32,19 +32,18 @@ function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.SetTargetPlayer(tp)
 	Duel.SetTargetParam(ct)
 	Duel.SetOperationInfo(0,CATEGORY_DRAW,nil,0,tp,ct)
-	Duel.SetOperationInfo(0,CATEGORY_TODECK,nil,0,tp,ct)
+	Duel.SetOperationInfo(0,CATEGORY_TODECK,nil,ct,tp,LOCATION_HAND)
 end
 function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	local p=Duel.GetChainInfo(0,CHAININFO_TARGET_PLAYER)
 	local d=Duel.GetFieldGroupCount(p,0,LOCATION_MZONE)
 	local ct=Duel.Draw(p,d,REASON_EFFECT)
-	if ct>0 then
-		local g=Duel.GetMatchingGroup(Card.IsAbleToDeck,p,LOCATION_HAND,0,nil)
-		if g:GetCount()==0 then return end
-		Duel.BreakEffect()
-		Duel.Hint(HINT_SELECTMSG,p,HINTMSG_TODECK)
-		local sg=g:Select(p,ct,ct,nil)
+	if ct==0 then return end
+	Duel.Hint(HINT_SELECTMSG,p,HINTMSG_TODECK)
+	local g=Duel.SelectMatchingCard(p,Card.IsAbleToDeck,p,LOCATION_HAND,0,ct,ct,nil)
+	if g:GetCount()>0 then
 		local op=Duel.SelectOption(p,aux.Stringid(m,1),aux.Stringid(m,2))
+		Duel.BreakEffect()
 		if Duel.SendtoDeck(sg,nil,0,REASON_EFFECT)==0 then return end
 		if ct>1 then Duel.SortDecktop(p,p,ct) end
 		if op==0 then return end
