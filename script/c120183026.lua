@@ -15,7 +15,7 @@ function cm.initial_effect(c)
 end
 --Special Summon
 function cm.spfilter(c,e,tp)
-	return c:IsType(TYPE_NORMAL) and c:IsLevelAbove(6) and c:IsRace(RACE_BEAST)
+	return c:IsType(TYPE_NORMAL) and c:IsLevelBelow(6) and c:IsRace(RACE_BEAST)
 		and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
 function cm.exfilter(c)
