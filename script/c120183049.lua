@@ -1,6 +1,6 @@
 local m=120183049
 local cm=_G["c"..m]
-cm.name="B·B·Q"
+cm.name="燃烧野兽品质"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)

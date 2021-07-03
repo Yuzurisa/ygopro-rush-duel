@@ -1,6 +1,6 @@
 local m=120183048
 local cm=_G["c"..m]
-cm.name="只要肉"
+cm.name="适时击肉"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
