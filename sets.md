@@ -5,6 +5,7 @@ https://yugipedia.com/wiki/Category:Rush_Duel_cards
 - **June 5, 2021**: Maximum Ultra Evolution Pack (RD/MAX2-JP): `120151XXX`
 - **July 24, 2021**: Deck Modification Pack - Fierce Thunder Storm!! (RD/KP06-JP): `120183XXX`
 - **July 2021**: Battle Pack Vol.2 (RD/B002-JP): `120184XXX`
+- **August 2021**: Jump Victory Carnival Treasure Box (RD/VC21-JP): `120185XXX`
 
 ## Starter decks
 - **April 4, 2020** : Starter Deck Yuga - Cut Through! Sevens Road!! (RD/ST01-JP): `120105XXX`
