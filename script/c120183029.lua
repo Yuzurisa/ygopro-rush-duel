@@ -1,11 +1,11 @@
-local m=120170027
+local m=120183029
 local cm=_G["c"..m]
-cm.name="花牙僧 银荆"
+cm.name="花牙祭 茉莉"
 function cm.initial_effect(c)
 	--Position
 	local e1=Effect.CreateEffect(c)
 	e1:SetDescription(aux.Stringid(m,0))
-	e1:SetCategory(CATEGORY_POSITION+CATEGORY_RECOVER)
+	e1:SetCategory(CATEGORY_POSITION+CATEGORY_DRAW)
 	e1:SetType(EFFECT_TYPE_IGNITION)
 	e1:SetRange(LOCATION_MZONE)
 	e1:SetCondition(cm.condition)
@@ -15,7 +15,7 @@ function cm.initial_effect(c)
 end
 --Position
 function cm.confilter(c)
-	return c:IsFaceup() and c:IsLevelAbove(7) and c:IsRace(RACE_PLANT)
+	return c:IsFaceup() and c:IsType(TYPE_NORMAL) and c:IsRace(RACE_PLANT)
 end
 function cm.posfilter(c)
 	return c:IsDefensePos() and c:IsCanChangePosition()
@@ -33,8 +33,11 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	local g=Duel.SelectMatchingCard(tp,cm.posfilter,tp,0,LOCATION_MZONE,1,1,nil)
 	if g:GetCount()>0 then
 		Duel.HintSelection(g)
-		if Duel.ChangePosition(g,POS_FACEUP_ATTACK)~=0 then
-			Duel.Recover(tp,g:GetFirst():GetBaseAttack(),REASON_EFFECT)
+		if Duel.ChangePosition(g,POS_FACEUP_ATTACK)~=0  
+			and g:GetFirst():IsAttribute(ATTRIBUTE_EARTH)
+			and Duel.IsPlayerCanDraw(tp,1)
+			and Duel.SelectYesNo(tp,aux.Stringid(m,1)) then
+			Duel.Draw(tp,1,REASON_EFFECT)
 		end
 	end
 end

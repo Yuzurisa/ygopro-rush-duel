@@ -1,6 +1,6 @@
 local m=120183031
 local cm=_G["c"..m]
-cm.name="突击 阿尔玛特"
+cm.name="突击坦克"
 function cm.initial_effect(c)
 	--Atk & Def Down
 	local e1=Effect.CreateEffect(c)

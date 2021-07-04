@@ -1,6 +1,6 @@
 local m=120183036
 local cm=_G["c"..m]
-cm.name="卓越风之维特尔"
+cm.name="卓越风之维埃托"
 function cm.initial_effect(c)
 	--Pierce
 	local e1=Effect.CreateEffect(c)
