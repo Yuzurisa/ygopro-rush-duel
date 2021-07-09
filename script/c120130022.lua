@@ -44,7 +44,7 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	if g:GetCount()>0 then
 		local op=Duel.SelectOption(p,aux.Stringid(m,1),aux.Stringid(m,2))
 		Duel.BreakEffect()
-		if Duel.SendtoDeck(sg,nil,0,REASON_EFFECT)==0 then return end
+		if Duel.SendtoDeck(g,nil,0,REASON_EFFECT)==0 then return end
 		if ct>1 then Duel.SortDecktop(p,p,ct) end
 		if op==0 then return end
 		for i=1,ct do
