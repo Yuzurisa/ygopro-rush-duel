@@ -1,6 +1,6 @@
 local m=120186003
 local cm=_G["c"..m]
-cm.name="最强旗兽 瞄鹰"
+cm.name="最强旗兽 瞄准鹰"
 function cm.initial_effect(c)
 	--Special Summon
 	local e1=Effect.CreateEffect(c)

@@ -1,6 +1,6 @@
 local m=120187001
 local cm=_G["c"..m]
-cm.name="最强旗兽 电涌双角兽"
+cm.name="最强旗兽 浪涌双角兽"
 function cm.initial_effect(c)
 	--Extra Tribute
 	local e1=Effect.CreateEffect(c)

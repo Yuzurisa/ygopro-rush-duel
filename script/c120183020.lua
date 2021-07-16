@@ -1,6 +1,6 @@
 local m=120183020
 local cm=_G["c"..m]
-cm.name="和平的刺者"
+cm.name="和平刺者"
 function cm.initial_effect(c)
 	--Position
 	local e1=Effect.CreateEffect(c)
