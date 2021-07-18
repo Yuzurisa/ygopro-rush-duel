@@ -1,6 +1,6 @@
 local m=120190027
 local cm=_G["c"..m]
-cm.name="鞠躬石膏绷带"
+cm.name="行礼公会"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)

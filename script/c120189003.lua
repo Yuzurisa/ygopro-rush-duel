@@ -1,6 +1,6 @@
 local m=120189003
 local cm=_G["c"..m]
-cm.name="龙队锁定扣球手"
+cm.name="龙队岩神终结者"
 function cm.initial_effect(c)
 	--Atk Up
 	local e1=Effect.CreateEffect(c)
@@ -21,7 +21,7 @@ function cm.exfilter(c)
 	return c:IsType(TYPE_MONSTER)
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
-	return not Duel.IsExistingMatchingCard(cm.confilter,tp,0,LOCATION_MZONE,1,nil)
+	return Duel.IsExistingMatchingCard(cm.confilter,tp,0,LOCATION_MZONE,1,nil)
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.CheckLPCost(tp,3000) end
