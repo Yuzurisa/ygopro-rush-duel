@@ -6,6 +6,14 @@ https://yugipedia.com/wiki/Category:Rush_Duel_cards
 - **July 24, 2021**: Deck Modification Pack - Fierce Thunder Storm!! (RD/KP06-JP): `120183XXX`
 - **July 2021**: Battle Pack Vol.2 (RD/B002-JP): `120184XXX`
 - **August 2021**: Jump Victory Carnival Treasure Box (RD/VC21-JP): `120185XXX`
+- **August 21, 2021**: Strongest Battle Deck Yuga - Hyper Machine Road (RD/SBD1-JP): `120186XXX`
+- **August 21, 2021**: Strongest Battle Deck Luke - Dragon's Dragons (RD/SBD2-JP): `120187XXX`
+- **August 21, 2021**: Strongest Battle Deck Gakuto - Fiendish Commander Three Legions (RD/SBD3-JP): `120188XXX`
+- **August 21, 2021**: Strongest Battle Deck Romin - Psychic Beat (RD/SBD4-JP): `120189XXX`
+- **August 21, 2021**: Strongest Battle Deck Roa - Demon's Rock (RD/SBD5-JP): `120190XXX`
+- **August 21, 2021**: Strongest Battle Deck Nail - Maximum Haven (RD/SBD6-JP): `120191XXX`
+- **August 21, 2021**: Strongest Battle Deck Asana - Pride of the Heavy Mequestrian Style (RD/SBD7-JP): `120192XXX`
+- **August 4, 2021**: Saikyo Battle Pack (RD/SBP1-JP): `120193XXX`
 
 ## Starter decks
 - **April 4, 2020** : Starter Deck Yuga - Cut Through! Sevens Road!! (RD/ST01-JP): `120105XXX`
