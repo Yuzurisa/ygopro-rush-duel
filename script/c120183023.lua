@@ -1,7 +1,7 @@
 local m=120183023
 local list={120183046,120183047}
 local cm=_G["c"..m]
-cm.name="SP职员守卫"
+cm.name="SP社员·警备"
 function cm.initial_effect(c)
 	aux.AddCodeList(c,list[1],list[2])
 	--Set

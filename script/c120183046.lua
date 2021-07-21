@@ -1,7 +1,7 @@
 local m=120183046
 local list={120183024}
 local cm=_G["c"..m]
-cm.name="名片的命死交换"
+cm.name="刺名的命死交换"
 function cm.initial_effect(c)
 	aux.AddCodeList(c,list[1])
 	--Activate
