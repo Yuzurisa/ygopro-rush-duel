@@ -1,4 +1,4 @@
-local m=120193015
+local m=120191015
 local cm=_G["c"..m]
 cm.name="粒子加速"
 function cm.initial_effect(c)

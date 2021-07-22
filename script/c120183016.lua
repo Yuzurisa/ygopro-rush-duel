@@ -1,6 +1,6 @@
 local m=120183016
 local cm=_G["c"..m]
-cm.name="恐攻龙 股票破坏者"
+cm.name="恐攻龙 股市破坏者"
 function cm.initial_effect(c)
 	--Atk Up
 	local e1=Effect.CreateEffect(c)

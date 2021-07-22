@@ -1,4 +1,4 @@
-local m=120194010
+local m=120192010
 local cm=_G["c"..m]
 cm.name="幻刃斗士 搅拌龙"
 function cm.initial_effect(c)

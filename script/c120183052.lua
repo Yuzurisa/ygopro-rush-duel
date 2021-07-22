@@ -1,6 +1,6 @@
 local m=120183052
 local cm=_G["c"..m]
-cm.name="渡来古讨 过去装饰"
+cm.name="渡来古讨 果脯过去装饰"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
