@@ -33,7 +33,7 @@ namespace WindBot.Game.AI.Decks
             public const int 七星道法师 = 120130016;
             public const int sionmax = 120150007;
             public const int 对死者的供奉 = 120151023;
-            public const int 落穴 = 120150009;
+            public const int 落穴 = 120150019;
             public const int 暗黑释放 = 120105013;
            
         }
