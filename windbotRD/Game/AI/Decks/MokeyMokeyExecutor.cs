@@ -52,6 +52,7 @@ namespace WindBot.Game.AI.Decks
             AddExecutor(ExecutorType.Activate, CardId.神秘庄家);
             AddExecutor(ExecutorType.SpellSet, CardId.暗黑释放);
             AddExecutor(ExecutorType.SpellSet, CardId.落穴);
+            AddExecutor(ExecutorType.Activate, CardId.落穴, 落穴Effect);
             AddExecutor(ExecutorType.Activate, CardId.对死者的供奉, 死供Effect);
             AddExecutor(ExecutorType.SpellSet, CardId.对死者的供奉);
             AddExecutor(ExecutorType.MonsterSet, CardId.凤凰龙, monsterset);
@@ -169,12 +170,13 @@ namespace WindBot.Game.AI.Decks
 
         }
         private bool 落穴Effect()
-        {
-            if (Util.IsOneEnemyBetterThanValue(1900, true))
-            {
-                AI.SelectCard();
-                return true;
-            }
+        {           
+                foreach (ClientCard n in Duel.LastSummonedCards)
+                {
+                    if (n.Attack >= 1900)
+                        return true;
+                }
+            
             return false;
         }
         private bool 死供Effect()
