@@ -1,6 +1,6 @@
 local m=120183027
 local cm=_G["c"..m]
-cm.name="甜美土偶 猫舌饼遮光器"
+cm.name="土偶甜点·遮光器猫舌饼干"
 function cm.initial_effect(c)
 	--Discard Deck
 	local e1=Effect.CreateEffect(c)
