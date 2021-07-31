@@ -1,6 +1,6 @@
 local m=120191004
 local cm=_G["c"..m]
-cm.name="单状态溶胶"
+cm.name="系统屠龙者·苏尔"
 function cm.initial_effect(c)
 	--Damage
 	local e1=Effect.CreateEffect(c)
