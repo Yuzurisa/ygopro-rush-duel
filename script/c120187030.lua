@@ -1,6 +1,6 @@
 local m=120187030
 local cm=_G["c"..m]
-cm.name="龙力无序"
+cm.name="龙咒惊恐障碍"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)

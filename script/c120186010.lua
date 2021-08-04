@@ -1,6 +1,6 @@
 local m=120186010
 local cm=_G["c"..m]
-cm.name="加速魔杖手·烈焰魔女"
+cm.name="加速魔杖手·闪焰魔女"
 function cm.initial_effect(c)
 	--Damage
 	local e1=Effect.CreateEffect(c)
