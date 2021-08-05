@@ -1,6 +1,6 @@
 local m=120192017
 local cm=_G["c"..m]
-cm.name="幻刃工兵 测距龙"
+cm.name="幻刃工兵 绘图大龙"
 function cm.initial_effect(c)
 	--Confirm Card
 	local e1=Effect.CreateEffect(c)
