@@ -14,6 +14,7 @@ https://yugipedia.com/wiki/Category:Rush_Duel_cards
 - **August 21, 2021**: Strongest Battle Deck Nail - Maximum Haven (RD/SBD6-JP): `120191XXX`
 - **August 21, 2021**: Strongest Battle Deck Asana - Pride of the Heavy Mequestrian Style (RD/SBD7-JP): `120192XXX`
 - **August 4, 2021**: Saikyo Battle Pack (RD/SBP1-JP): `120193XXX`
+- **August 21, 2021**: Strongest Battle Deck +1 Bonus Card (RD/SBD0-JP): `120194XXX`
 
 ## Starter decks
 - **April 4, 2020** : Starter Deck Yuga - Cut Through! Sevens Road!! (RD/ST01-JP): `120105XXX`
@@ -33,6 +34,7 @@ https://yugipedia.com/wiki/Category:Rush_Duel_cards
 - **February 4, 2021**: Saikyō Jump March 2021 promotional card (RD/SJMP-JP): `120112XXX`
 - **April 30, 2021**: Yu-Gi-Oh! SEVENS Luke! Explosive Supremacy Legend!! Volume 1 promotional card (RD/CL01-JP): `120180XXX`
 - **August 12, 2021**: Yu-Gi-Oh! Rush Duel Saikyo Battle Royale promotional cards (RD/G001-JP): `120181XXX`
+- **November 24, 2021**: Yu-Gi-Oh! SEVENS Duel-5 Blu-ray & DVD promotional card (RD/BD05-JP): `120195XX`
 
 # Archived
 - **2020** : Victory Pack Legendary Red-Eyes (RD/VJMP-JP): `120125XXX`
