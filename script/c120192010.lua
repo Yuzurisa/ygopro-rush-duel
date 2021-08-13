@@ -15,7 +15,7 @@ function cm.initial_effect(c)
 end
 --Discard Deck
 function cm.exfilter(c)
-	return c:IsRace(RACE_WYRM) and c:IsLocation(LOCATION_GRAVE)
+	return c:IsType(TYPE_NORMAL) and c:IsRace(RACE_WYRM) and c:IsLocation(LOCATION_GRAVE)
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()
