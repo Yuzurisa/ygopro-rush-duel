@@ -69,15 +69,8 @@ namespace WindBot.Game.AI.Decks
             AddExecutor(ExecutorType.Summon, CardId.凤凰龙);
             AddExecutor(ExecutorType.Activate, CardId.凤凰龙);
             AddExecutor(ExecutorType.SummonOrSet, DefaultMonsterSummon);
-
             AddExecutor(ExecutorType.Repos, DefaultMonsterRepos);
-
-            
-            AddExecutor(ExecutorType.Activate, CardId.落穴, 落穴Effect);
-            AddExecutor(ExecutorType.SpellSet);
-           
-
-            
+            AddExecutor(ExecutorType.SpellSet);           
             //AddExecutor(ExecutorType.Activate, CardId.sionmax, sionmaxEffect);
             AddExecutor(ExecutorType.Activate, CardId.耳语妖精, 耳语妖精Effect);
             AddExecutor(ExecutorType.Activate, CardId.火星心少女, 火星心少女Effect);
@@ -195,12 +188,14 @@ namespace WindBot.Game.AI.Decks
         {
             if (Util.IsOneEnemyBetterThanValue(1900, true))
             {
-                AI.SelectNextCard(Enemy.GetMonsters().GetHighestAttackMonster()); 
-            return true;
+                foreach (ClientCard m in Bot.Hand)
+                    AI.SelectCard(m);
+                AI.SelectNextCard(Enemy.GetMonsters().GetHighestAttackMonster());
+                return true;
             }
             return false;
         }
-        
+
         private bool 火星心少女Effect()
         {
             foreach (ClientCard m in Bot.Hand)
