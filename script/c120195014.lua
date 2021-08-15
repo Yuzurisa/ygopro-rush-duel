@@ -1,6 +1,6 @@
-local m=120151033
+local m=120195014
 local cm=_G["c"..m]
-cm.name="幻刃复归"
+cm.name="虚钢演机再动"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)
@@ -15,11 +15,12 @@ end
 --Activate
 function cm.confilter(c,tp)
 	return c:GetPreviousControler()==tp and c==Duel.GetAttackTarget()
-		and bit.band(c:GetPreviousRaceOnField(),RACE_WYRM)~=0
-		and c:GetPreviousLevelOnField()>=7
+		and c:IsPreviousPosition(POS_ATTACK)
+		and bit.band(c:GetPreviousAttributeOnField(),ATTRIBUTE_LIGHT)~=0
 end
 function cm.spfilter(c,e,tp)
-	return c:IsLevelAbove(7) and c:IsRace(RACE_WYRM) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
+	return (c:IsRace(0x2000000) or (c:IsType(TYPE_NORMAL) and c:IsAttribute(ATTRIBUTE_LIGHT) and c:IsDefense(500)))
+		and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	return eg:IsExists(cm.confilter,1,nil,tp)
