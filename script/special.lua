@@ -1,5 +1,6 @@
 --Constant
 SUMMON_TYPE_MAXIMUM = 0x45000000
+RACE_CYBORG = 0x2000000
 
 RushDuel={}
 
@@ -80,11 +81,11 @@ function Auxiliary.PreloadUds()
 	e9:SetTargetRange(1,1)
 	e9:SetValue(RushDuel.ActivateLimit)
 	Duel.RegisterEffect(e9,0)
-	local e10=Effect.GlobalEffect()
-	e10:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
-	e10:SetCode(EVENT_CHAIN_SOLVING)
-	e10:SetOperation(RushDuel.ActivateCount)
-	Duel.RegisterEffect(e10,0)
+	local e9=Effect.GlobalEffect()
+	e9:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
+	e9:SetCode(EVENT_CHAIN_SOLVING)
+	e9:SetOperation(RushDuel.ActivateCount)
+	Duel.RegisterEffect(e9,0)
 end
 function RushDuel.DrawCount(e)
 	local p=Duel.GetTurnPlayer()
@@ -252,4 +253,43 @@ end
 function RushDuel.IsHasDefense(c)
 	return c:IsDefenseAbove(0)
 		and not (c:IsSummonType(SUMMON_TYPE_MAXIMUM) and c:GetOverlayCount()>0)
+end
+--Select Effect
+function RushDuel.BaseSelectEffect(c,eff1hint,eff1con,eff1op,eff2hint,eff2con,eff2op)
+    local e=Effect.CreateEffect(c)
+    e:SetType(EFFECT_TYPE_IGNITION)
+    e:SetRange(LOCATION_MZONE)
+    e:SetTarget(RushDuel.SelectEffectTarget(eff1con,eff2con))
+    e:SetOperation(RushDuel.SelectEffectOperation(eff1hint,eff1con,eff1op,eff2hint,eff2con,eff2op))
+    return e
+end
+function RushDuel.SelectEffectCondition(eff1con,eff2con)
+	return function(e,tp,eg,ep,ev,re,r,rp)
+		return eff1con(e,tp,eg,ep,ev,re,r,rp) or eff2con(e,tp,eg,ep,ev,re,r,rp)
+	end
+end
+function RushDuel.SelectEffectTarget(eff1con,eff2con)
+	return function(e,tp,eg,ep,ev,re,r,rp,chk)
+		if chk==0 then return eff1con(e,tp,eg,ep,ev,re,r,rp) or eff2con(e,tp,eg,ep,ev,re,r,rp) end
+	end
+end
+function RushDuel.SelectEffectOperation(eff1hint,eff1con,eff1op,eff2hint,eff2con,eff2op)
+	return function(e,tp,eg,ep,ev,re,r,rp)
+		local eff1=eff1con(e,tp,eg,ep,ev,re,r,rp)
+		local eff2=eff2con(e,tp,eg,ep,ev,re,r,rp)
+		local select=0
+		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_EFFECT)
+		if eff1 and eff2 then
+			select=Duel.SelectOption(tp,eff1hint,eff2hint)+1
+		elseif eff1 then
+			Duel.SelectOption(tp,eff1hint)
+			select=1
+		elseif eff2 then
+			Duel.SelectOption(tp,eff2hint)
+			select=2
+		end
+		if select==1 then eff1op(e,tp,eg,ep,ev,re,r,rp)
+		elseif select==2 then eff2op(e,tp,eg,ep,ev,re,r,rp)
+		end
+	end
 end

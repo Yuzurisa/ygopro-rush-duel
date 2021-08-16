@@ -1,7 +1,7 @@
-local m=120195045
-local list={120195050}
+local m=120196045
+local list={120196050}
 local cm=_G["c"..m]
-cm.name="星光重现"
+cm.name="星之再起"
 function cm.initial_effect(c)
 	aux.AddCodeList(c,list[1])
 	--Activate

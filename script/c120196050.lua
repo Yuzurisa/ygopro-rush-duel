@@ -1,6 +1,6 @@
-local m=120195050
+local m=120196050
 local cm=_G["c"..m]
-cm.name="Fusion"
+cm.name="融合术"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)

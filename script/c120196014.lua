@@ -1,4 +1,4 @@
-local m=120195014
+local m=120196014
 local cm=_G["c"..m]
 cm.name="虚钢演机再动"
 function cm.initial_effect(c)
@@ -19,7 +19,7 @@ function cm.confilter(c,tp)
 		and bit.band(c:GetPreviousAttributeOnField(),ATTRIBUTE_LIGHT)~=0
 end
 function cm.spfilter(c,e,tp)
-	return (c:IsRace(0x2000000) or (c:IsType(TYPE_NORMAL) and c:IsAttribute(ATTRIBUTE_LIGHT) and c:IsDefense(500)))
+	return (c:IsRace(RACE_CYBORG) or (c:IsType(TYPE_NORMAL) and c:IsAttribute(ATTRIBUTE_LIGHT) and c:IsDefense(500)))
 		and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)

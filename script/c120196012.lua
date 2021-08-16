@@ -1,4 +1,4 @@
-local m=120195012
+local m=120196012
 local cm=_G["c"..m]
 cm.name="虚钢演机塔"
 function cm.initial_effect(c)
@@ -29,7 +29,7 @@ function cm.initial_effect(c)
 end
 --Activate
 function cm.confilter(c)
-	return c:IsAttribute(ATTRIBUTE_LIGHT) and c:IsDefense(500)
+	return c:IsType(TYPE_NORMAL) and c:IsAttribute(ATTRIBUTE_LIGHT) and c:IsDefense(500)
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	return Duel.IsExistingMatchingCard(cm.confilter,tp,LOCATION_GRAVE,0,1,nil)
