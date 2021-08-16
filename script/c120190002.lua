@@ -15,7 +15,7 @@ function cm.initial_effect(c)
 end
 --Atk Up
 function cm.costfilter(c)
-	return c:IsPosition(POS_FACEUP_ATTACK) and c:IsLevelAbove(5) and c:IsRace(RACE_FAIRY)
+	return c:IsPosition(POS_FACEUP_ATTACK) and c:IsLevelAbove(5) and c:IsRace(RACE_FIEND)
 		and c:IsCanChangePosition() and RushDuel.IsHasDefense(c)
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
