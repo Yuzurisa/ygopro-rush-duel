@@ -1,7 +1,7 @@
 local m=120196035
 local list={120150014,120151022}
 local cm=_G["c"..m]
-cm.name="千环高旋粒子机"
+cm.name="千分率毫米鳞虫高等回旋粒子机"
 function cm.initial_effect(c)
 	aux.AddCodeList(c,list[1],list[2])
 	--Fusion Material

@@ -1,7 +1,7 @@
 local m=120196033
 local list={120140007,120188015}
 local cm=_G["c"..m]
-cm.name="三日月的剑豪将军"
+cm.name="三日月之剑豪将军"
 function cm.initial_effect(c)
 	aux.AddCodeList(c,list[1],list[2])
 	--Fusion Material
