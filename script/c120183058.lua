@@ -36,5 +36,6 @@ function cm.activate(e,tp,eg,ep,ev,re,r,rp)
 		if ct>1 then
 			Duel.Recover(tp,ct*1500,REASON_EFFECT)
 		end
+		Duel.ShuffleHand(p)
 	end
 end
