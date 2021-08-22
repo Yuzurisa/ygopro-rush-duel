@@ -95,7 +95,7 @@ function RushDuel.DrawCount(e)
 end
 --Lock Zone
 function RushDuel.DisableZone(e,tp)
-	return 0x11111111
+	return 0x11711171
 end
 --Trap Chain
 function RushDuel.TrapChainLimitOperation(e,tp,eg,ep,ev,re,r,rp)
