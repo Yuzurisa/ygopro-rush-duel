@@ -31,7 +31,7 @@ function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TODECK)
 	local g=Duel.SelectMatchingCard(tp,cm.costfilter,tp,LOCATION_GRAVE,0,1,1,nil)
 	Duel.ConfirmCards(1-tp,g)
-	local op=Duel.SelectOption(p,aux.Stringid(m,1),aux.Stringid(m,2))
+	local op=Duel.SelectOption(tp,aux.Stringid(m,1),aux.Stringid(m,2))
 	Duel.SendtoDeck(g,nil,op,REASON_COST)
 end
 function cm.operation(e,tp,eg,ep,ev,re,r,rp)
