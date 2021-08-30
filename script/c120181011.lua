@@ -1,4 +1,4 @@
-local m=120181101
+local m=120181011
 local cm=_G["c"..m]
 cm.name="最强旗兽 浪涌双角兽"
 function cm.initial_effect(c)
