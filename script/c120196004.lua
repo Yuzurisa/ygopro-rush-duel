@@ -1,5 +1,5 @@
 local m=120196004
-local list={120196006,120196010}
+local list={120196006,120196007}
 local cm=_G["c"..m]
 cm.name="钢铁徽章之拉登明星"
 function cm.initial_effect(c)
