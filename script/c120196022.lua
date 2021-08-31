@@ -16,7 +16,7 @@ function cm.initial_effect(c)
 end
 --Select Effect
 function cm.confilter1(c)
-	return c:IsRace(RACE_DRAGON) or c:IsRace(0x8000000)
+	return c:IsRace(RACE_DRAGON) or c:IsRace(RACE_HYDRAGON)
 end
 function cm.confilter2(c)
 	return c:IsType(TYPE_MONSTER) and not cm.confilter1(c)
