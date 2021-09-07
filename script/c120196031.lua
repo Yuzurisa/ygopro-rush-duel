@@ -1,7 +1,7 @@
-local m=120155017
-local list={120130044}
+local m=120196031
+local list={120196032}
 local cm=_G["c"..m]
-cm.name="化学药剂师·蓝"
+cm.name="化学药剂师·红"
 function cm.initial_effect(c)
 	aux.AddCodeList(c,list[1])
 	--Recover
@@ -10,6 +10,7 @@ function cm.initial_effect(c)
 	e1:SetCategory(CATEGORY_RECOVER+CATEGORY_TOHAND+CATEGORY_GRAVE_ACTION)
 	e1:SetType(EFFECT_TYPE_IGNITION)
 	e1:SetRange(LOCATION_MZONE)
+	e1:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
 	e1:SetCost(cm.cost)
 	e1:SetTarget(cm.target)
 	e1:SetOperation(cm.operation)
@@ -26,8 +27,8 @@ end
 function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return true end
 	Duel.SetTargetPlayer(tp)
-	Duel.SetTargetParam(400)
-	Duel.SetOperationInfo(0,CATEGORY_RECOVER,nil,0,tp,400)
+	Duel.SetTargetParam(500)
+	Duel.SetOperationInfo(0,CATEGORY_RECOVER,nil,0,tp,500)
 end
 function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	local p,d=Duel.GetChainInfo(0,CHAININFO_TARGET_PLAYER,CHAININFO_TARGET_PARAM)
