@@ -11,6 +11,7 @@ function cm.initial_effect(c)
 	e1:SetType(EFFECT_TYPE_IGNITION)
 	e1:SetRange(LOCATION_MZONE)
 	e1:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
+	e1:SetCondition(cm.condition)
 	e1:SetCost(cm.cost)
 	e1:SetTarget(cm.target)
 	e1:SetOperation(cm.operation)
@@ -19,6 +20,9 @@ end
 --Recover
 function cm.thfilter(c)
 	return c:IsCode(list[1]) and c:IsAbleToHand()
+end
+function cm.condition(e,tp,eg,ep,ev,re,r,rp)
+	return Duel.GetFieldGroupCount(tp,0,LOCATION_MZONE)>0
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsPlayerCanDiscardDeckAsCost(tp,1) end
