@@ -1,5 +1,5 @@
-local m=120183024
-local list={120130029,120196039,120183062,120183063}
+local m=120196038
+local list={120183024,120196039,120183062,120183063}
 local cm=_G["c"..m]
 cm.name="漆黑社员王 雄伟恶德话术大王"
 function cm.initial_effect(c)
