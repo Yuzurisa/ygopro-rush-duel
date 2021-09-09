@@ -48,7 +48,7 @@ function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 			Duel.ConfirmCards(1-tp,g)
 			if Duel.SendtoDeck(g,nil,1,REASON_EFFECT)~=0
 				and Duel.IsPlayerCanDraw(tp,1)
-				and Duel.SelectYesNo(tp,aux.Stringid(m,1)) then
+				and Duel.SelectYesNo(tp,aux.Stringid(m,2)) then
 				Duel.Draw(tp,1,REASON_EFFECT)
 			end
 		end
