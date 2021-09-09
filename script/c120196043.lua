@@ -20,7 +20,7 @@ function cm.costfilter(c)
 	return c:IsType(TYPE_SPELL+TYPE_TRAP) and c:IsAbleToGraveAsCost()
 end
 function cm.exfilter(c)
-	return c:IsCode(list[1])
+	return RushDuel.IsLegendCode(c,list[1])
 end
 function cm.desfilter(c)
 	return c:IsType(TYPE_SPELL+TYPE_TRAP)

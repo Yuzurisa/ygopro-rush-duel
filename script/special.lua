@@ -267,18 +267,18 @@ function RushDuel.BaseSelectEffect(c,eff1hint,eff1con,eff1op,eff2hint,eff2con,ef
 end
 function RushDuel.SelectEffectCondition(eff1con,eff2con)
 	return function(e,tp,eg,ep,ev,re,r,rp)
-		return eff1con(e,tp,eg,ep,ev,re,r,rp) or eff2con(e,tp,eg,ep,ev,re,r,rp)
+		return eff1con(e,tp,eg,ep,ev,re,r,rp,false) or eff2con(e,tp,eg,ep,ev,re,r,rp,false)
 	end
 end
 function RushDuel.SelectEffectTarget(eff1con,eff2con)
 	return function(e,tp,eg,ep,ev,re,r,rp,chk)
-		if chk==0 then return eff1con(e,tp,eg,ep,ev,re,r,rp) or eff2con(e,tp,eg,ep,ev,re,r,rp) end
+		if chk==0 then return eff1con(e,tp,eg,ep,ev,re,r,rp,false) or eff2con(e,tp,eg,ep,ev,re,r,rp,false) end
 	end
 end
 function RushDuel.SelectEffectOperation(eff1hint,eff1con,eff1op,eff2hint,eff2con,eff2op)
 	return function(e,tp,eg,ep,ev,re,r,rp)
-		local eff1=eff1con(e,tp,eg,ep,ev,re,r,rp)
-		local eff2=eff2con(e,tp,eg,ep,ev,re,r,rp)
+		local eff1=eff1con(e,tp,eg,ep,ev,re,r,rp,true)
+		local eff2=eff2con(e,tp,eg,ep,ev,re,r,rp,true)
 		local select=0
 		Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_EFFECT)
 		if eff1 and eff2 then

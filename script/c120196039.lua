@@ -1,7 +1,7 @@
 local m=120196039
 local list={120183024}
 local cm=_G["c"..m]
-cm.name="刷新战士社员·组织者"
+cm.name="刷新战士 社员·组织王"
 function cm.initial_effect(c)
 	aux.AddCodeList(c,list[1])
 	--Special Summon

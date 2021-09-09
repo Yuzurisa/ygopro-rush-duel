@@ -1,7 +1,7 @@
 local m=120196038
 local list={120183024,120196039,120183062,120183063}
 local cm=_G["c"..m]
-cm.name="漆黑社员王 雄伟恶德话术大王"
+cm.name="漆黑社员王 巨恶德话术大王"
 function cm.initial_effect(c)
 	aux.AddCodeList(c,list[1],list[2],list[3],list[4])
 	--Fusion Material
@@ -21,7 +21,7 @@ end
 function cm.filter(c)
 	return c:IsRace(RACE_MACHINE)
 end
-function cm.thfilter(c)
+function cm.tdfilter(c)
 	return c:IsCode(list[3],list[4]) and c:IsAbleToDeck()
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
