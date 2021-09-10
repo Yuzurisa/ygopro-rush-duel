@@ -17,6 +17,8 @@ https://yugipedia.com/wiki/Category:Rush_Duel_cards
 - **August 21, 2021**: Strongest Battle Deck +1 Bonus Card (RD/SBD0-JP): `120194XXX`
 - **September 18, 2021**: Extra Transcend Enhancement Pack (RD/EXT1-JP): `120196XXX`
 - **July 22, 2021**: 7-Eleven Campaign (RD/711A-JP): `120197XXX`
+- **December 18, 2021**: Yu-Gi-Oh! Rush Duel Duel Disk (RD/DD01-JP): `120198XXX`
+- **December 18, 2021**: Yu-Gi-Oh! Rush Duel Duel Disk (RD/DD01-JP): `120199XXX`
 
 ## Starter decks
 - **April 4, 2020** : Starter Deck Yuga - Cut Through! Sevens Road!! (RD/ST01-JP): `120105XXX`
