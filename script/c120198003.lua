@@ -1,4 +1,4 @@
-local m=120197003
+local m=120198003
 local cm=_G["c"..m]
 cm.name="神圣防护罩 -反射镜力-"
 function cm.initial_effect(c)

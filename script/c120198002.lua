@@ -1,4 +1,4 @@
-local m=120197002
+local m=120198002
 local list={120105001}
 local cm=_G["c"..m]
 cm.name="七星道附魔师"
