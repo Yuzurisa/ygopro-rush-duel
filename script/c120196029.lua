@@ -20,7 +20,7 @@ function cm.initial_effect(c)
 end
 --Damage
 function cm.costfilter(c)
-	return c:IsCode(list[1],list[2]) and c:IsAbleToDeckAsCost()
+	return c:IsCode(list[1],list[2]) and c:IsAbleToDeckOrExtraAsCost()
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(cm.costfilter,tp,LOCATION_GRAVE,0,1,nil) end

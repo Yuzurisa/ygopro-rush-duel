@@ -19,7 +19,7 @@ function cm.confilter(c,tp)
 	return c:GetSummonPlayer()==tp and c:IsFaceup() and c:IsAttackAbove(1500)
 end
 function cm.costfilter(c)
-	return c:IsType(TYPE_NORMAL) and c:IsAbleToDeckAsCost()
+	return c:IsType(TYPE_NORMAL) and c:IsAbleToDeckOrExtraAsCost()
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	return eg:IsExists(cm.confilter,1,nil,1-tp)

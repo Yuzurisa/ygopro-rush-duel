@@ -15,7 +15,7 @@ function cm.initial_effect(c)
 end
 --Activate
 function cm.costfilter(c)
-	return c:IsRace(RACE_PLANT) and c:IsAbleToDeckAsCost()
+	return c:IsRace(RACE_PLANT) and c:IsAbleToDeckOrExtraAsCost()
 end
 function cm.spfilter(c,e,tp)
 	return c:IsRace(RACE_PLANT) and c:IsCanBeSpecialSummoned(e,0,tp,false,false,POS_FACEUP_ATTACK)

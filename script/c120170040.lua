@@ -16,7 +16,7 @@ function cm.initial_effect(c)
 end
 --Activate
 function cm.costfilter(c)
-	return c:IsRace(RACE_PSYCHO) and c:IsAbleToDeckAsCost()
+	return c:IsRace(RACE_PSYCHO) and c:IsAbleToDeckOrExtraAsCost()
 end
 function cm.thfilter(c)
 	return c:IsType(TYPE_NORMAL) and c:IsRace(RACE_PSYCHO) and c:IsAbleToHand()

@@ -18,7 +18,7 @@ function cm.initial_effect(c)
 end
 --Atk Up
 function cm.costfilter(c)
-	return c:IsRace(RACE_DINOSAUR) and c:IsAbleToDeckAsCost()
+	return c:IsRace(RACE_DINOSAUR) and c:IsAbleToDeckOrExtraAsCost()
 end
 function cm.exfilter(c)
 	return RushDuel.IsLegendCode(c,list[3])

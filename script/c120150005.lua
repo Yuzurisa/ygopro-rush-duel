@@ -17,7 +17,7 @@ function cm.initial_effect(c)
 end
 --Activate
 function cm.costfilter(c)
-	return c:IsCode(list[1]) and c:IsAbleToDeckAsCost()
+	return c:IsCode(list[1]) and c:IsAbleToDeckOrExtraAsCost()
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	local g=Duel.GetMatchingGroup(cm.costfilter,tp,LOCATION_GRAVE,0,nil)

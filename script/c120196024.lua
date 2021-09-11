@@ -19,7 +19,7 @@ function cm.initial_effect(c)
 end
 --Destroy
 function cm.costfilter(c)
-	return c:IsCode(list[3],list[4]) and c:IsAbleToDeckAsCost()
+	return c:IsCode(list[3],list[4]) and c:IsAbleToDeckOrExtraAsCost()
 end
 function cm.desfilter(c)
 	return c:IsType(TYPE_SPELL+TYPE_TRAP)

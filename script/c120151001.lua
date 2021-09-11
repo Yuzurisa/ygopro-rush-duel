@@ -16,7 +16,7 @@ function cm.initial_effect(c)
 end
 --Damage
 function cm.costfilter(c,tp)
-	return c:IsType(TYPE_MONSTER) and c:IsAbleToDeckAsCost()
+	return c:IsType(TYPE_MONSTER) and c:IsAbleToDeckOrExtraAsCost()
 		and Duel.IsExistingMatchingCard(cm.filter,tp,LOCATION_GRAVE,0,1,c)
 end
 function cm.filter(c)

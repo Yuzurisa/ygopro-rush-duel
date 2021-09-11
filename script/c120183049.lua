@@ -14,7 +14,7 @@ function cm.initial_effect(c)
 end
 --Activate
 function cm.costfilter(c)
-	return c:IsRace(RACE_BEAST) and c:IsAbleToDeckAsCost()
+	return c:IsRace(RACE_BEAST) and c:IsAbleToDeckOrExtraAsCost()
 end
 function cm.filter(c)
 	return c:IsFaceup() and c:IsAttribute(ATTRIBUTE_FIRE)

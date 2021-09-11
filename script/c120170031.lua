@@ -15,7 +15,7 @@ function cm.initial_effect(c)
 end
 --Special Summon
 function cm.costfilter(c)
-	return c:IsRace(RACE_PLANT) and c:IsAbleToDeckAsCost()
+	return c:IsRace(RACE_PLANT) and c:IsAbleToDeckOrExtraAsCost()
 end
 function cm.spfilter(c,e,tp)
 	return c:IsLevelBelow(7) and c:IsRace(RACE_PLANT) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)

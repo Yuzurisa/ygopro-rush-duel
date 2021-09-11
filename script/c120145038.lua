@@ -14,7 +14,7 @@ function cm.initial_effect(c)
 end
 --Confirm
 function cm.costfilter(c)
-	return c:IsType(TYPE_NORMAL) and c:IsAbleToDeckAsCost()
+	return c:IsType(TYPE_NORMAL) and c:IsAbleToDeckOrExtraAsCost()
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(cm.costfilter,tp,LOCATION_GRAVE,0,1,nil) end

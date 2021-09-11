@@ -15,7 +15,7 @@ function cm.initial_effect(c)
 end
 --Activate
 function cm.costfilter(c)
-	return c:IsRace(RACE_PLANT) and c:IsAbleToDeckAsCost()
+	return c:IsRace(RACE_PLANT) and c:IsAbleToDeckOrExtraAsCost()
 end
 function cm.posfilter(c)
 	return c:IsAttackPos() and c:IsCanChangePosition() and RushDuel.IsHasDefense(c)

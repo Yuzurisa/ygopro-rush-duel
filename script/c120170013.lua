@@ -16,7 +16,7 @@ function cm.initial_effect(c)
 end
 --To Hand
 function cm.costfilter(c,tp)
-	return c:IsAttribute(ATTRIBUTE_WATER) and c:IsAbleToDeckAsCost()
+	return c:IsAttribute(ATTRIBUTE_WATER) and c:IsAbleToDeckOrExtraAsCost()
 end
 function cm.thfilter(c)
 	return c:IsType(TYPE_SPELL+TYPE_TRAP) and c:IsAbleToHand()

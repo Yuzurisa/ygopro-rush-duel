@@ -15,7 +15,7 @@ function cm.initial_effect(c)
 end
 --To Deck
 function cm.costfilter(c)
-	return c:IsLevelBelow(5) and c:IsRace(RACE_DRAGON) and c:IsAbleToDeckAsCost()
+	return c:IsLevelBelow(5) and c:IsRace(RACE_DRAGON) and c:IsAbleToDeckOrExtraAsCost()
 end
 function cm.tdfilter(c)
 	return c:IsType(TYPE_MONSTER) and c:IsAbleToDeck()

@@ -16,7 +16,7 @@ function cm.initial_effect(c)
 end
 --Special Summon
 function cm.costfilter(c)
-	return c:IsAttack(0) and c:IsAbleToDeckAsCost()
+	return c:IsAttack(0) and c:IsAbleToDeckOrExtraAsCost()
 end
 function cm.spfilter(c,e,tp)
 	return c:IsLevelAbove(5) and c:IsAttack(0) and c:IsCanBeSpecialSummoned(e,0,tp,false,false,POS_FACEUP_ATTACK)

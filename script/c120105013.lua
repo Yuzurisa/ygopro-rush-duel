@@ -15,7 +15,7 @@ function cm.initial_effect(c)
 end
 --Activate
 function cm.costfilter(c)
-	return c:IsRace(RACE_SPELLCASTER) and c:IsAbleToDeckAsCost()
+	return c:IsRace(RACE_SPELLCASTER) and c:IsAbleToDeckOrExtraAsCost()
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	return Duel.GetAttacker():IsControler(1-tp)

@@ -14,7 +14,7 @@ function cm.initial_effect(c)
 end
 --Direct Attack
 function cm.costfilter(c)
-	return c:IsRace(RACE_PSYCHO) and c:IsAbleToDeckAsCost()
+	return c:IsRace(RACE_PSYCHO) and c:IsAbleToDeckOrExtraAsCost()
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()

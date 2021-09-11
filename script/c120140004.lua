@@ -15,7 +15,7 @@ function cm.initial_effect(c)
 end
 --Cannot Activate
 function cm.costfilter(c)
-	return c:IsAttack(0) and c:IsAbleToDeckAsCost()
+	return c:IsAttack(0) and c:IsAbleToDeckOrExtraAsCost()
 end
 function cm.filter(c)
 	return c:IsFaceup() and c:IsRace(RACE_WARRIOR)

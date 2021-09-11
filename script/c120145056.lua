@@ -14,7 +14,7 @@ function cm.initial_effect(c)
 end
 --Activate
 function cm.costfilter(c)
-	return c:IsType(TYPE_NORMAL) and c:IsDefenseAbove(1000) and c:IsAbleToDeckAsCost()
+	return c:IsType(TYPE_NORMAL) and c:IsDefenseAbove(1000) and c:IsAbleToDeckOrExtraAsCost()
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	local c=Duel.GetAttackTarget()

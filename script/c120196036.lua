@@ -19,7 +19,7 @@ function cm.initial_effect(c)
 end
 --Discard Deck
 function cm.costfilter(c)
-	return c:IsRace(RACE_WYRM) and c:IsAbleToDeckAsCost()
+	return c:IsRace(RACE_WYRM) and c:IsAbleToDeckOrExtraAsCost()
 end
 function cm.exfilter(c)
 	return c:IsType(TYPE_SPELL) and c:IsLocation(LOCATION_GRAVE)

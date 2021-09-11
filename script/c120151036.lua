@@ -14,7 +14,7 @@ function cm.initial_effect(c)
 end
 --Activate
 function cm.costfilter(c)
-	return c:IsAttribute(ATTRIBUTE_WIND) and c:IsRace(RACE_WARRIOR) and c:IsAbleToDeckAsCost()
+	return c:IsAttribute(ATTRIBUTE_WIND) and c:IsRace(RACE_WARRIOR) and c:IsAbleToDeckOrExtraAsCost()
 end
 function cm.filter(c)
 	return c:IsFaceup() and c:IsLevel(7,8)

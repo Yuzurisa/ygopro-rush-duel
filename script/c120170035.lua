@@ -17,7 +17,7 @@ function cm.initial_effect(c)
 end
 --Position
 function cm.costfilter(c)
-	return c:IsType(TYPE_MONSTER) and c:IsAbleToDeckAsCost()
+	return c:IsType(TYPE_MONSTER) and c:IsAbleToDeckOrExtraAsCost()
 end
 function cm.posfilter(c)
 	return c:IsPosition(POS_FACEUP_ATTACK) and c:IsLevelBelow(8) and RushDuel.IsHasDefense(c) and c:IsCanTurnSet()

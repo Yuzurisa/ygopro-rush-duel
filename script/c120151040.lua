@@ -17,7 +17,7 @@ function cm.initial_effect(c)
 end
 --Draw
 function cm.costfilter(c)
-	return c:IsRace(RACE_FAIRY) and c:IsAbleToDeckAsCost()
+	return c:IsRace(RACE_FAIRY) and c:IsAbleToDeckOrExtraAsCost()
 end
 function cm.condition(e,tp,eg,ep,ev,re,r,rp)
 	local c=e:GetHandler()

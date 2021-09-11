@@ -14,7 +14,7 @@ function cm.initial_effect(c)
 end
 --Activate
 function cm.costfilter(c)
-	return c:IsType(TYPE_NORMAL) and c:IsLevel(1) and c:IsRace(RACE_FIEND) and c:IsAbleToDeckAsCost()
+	return c:IsType(TYPE_NORMAL) and c:IsLevel(1) and c:IsRace(RACE_FIEND) and c:IsAbleToDeckOrExtraAsCost()
 end
 function cm.desfilter(c)
 	return c:IsFaceup() and c:IsLevelBelow(6)

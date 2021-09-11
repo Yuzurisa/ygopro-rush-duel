@@ -16,7 +16,7 @@ function cm.initial_effect(c)
 end
 --To Hand
 function cm.costfilter(c,tp)
-	return c:IsRace(RACE_PYRO) and c:IsAbleToDeckAsCost()
+	return c:IsRace(RACE_PYRO) and c:IsAbleToDeckOrExtraAsCost()
 		and Duel.IsExistingMatchingCard(cm.thfilter,tp,LOCATION_GRAVE,0,1,c)
 end
 function cm.thfilter(c)

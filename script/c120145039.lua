@@ -19,7 +19,7 @@ function cm.confilter(c)
 	return c:IsFaceup() and c:IsLevel(7) and c:IsRace(RACE_FISH)
 end
 function cm.costfilter(c)
-	return c:IsRace(RACE_FISH) and c:IsAbleToDeckAsCost()
+	return c:IsRace(RACE_FISH) and c:IsAbleToDeckOrExtraAsCost()
 end
 function cm.filter(c)
 	return c:IsFaceup() and c:IsRace(RACE_FISH)
