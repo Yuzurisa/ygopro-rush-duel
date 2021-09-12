@@ -18,6 +18,7 @@ https://yugipedia.com/wiki/Category:Rush_Duel_cards
 - **September 18, 2021**: Extra Transcend Enhancement Pack (RD/EXT1-JP): `120196XXX`
 - **July 22, 2021**: 7-Eleven Campaign (RD/711A-JP): `120197XXX`
 - **December 18, 2021**: Yu-Gi-Oh! Rush Duel Duel Disk (RD/DD01-JP): `120198XXX`
+- **October 30, 2021**: Deck Modification Pack - Chaotic Omega Rising!! (RD/KP07-JP): `120199XXX`
 
 ## Starter decks
 - **April 4, 2020** : Starter Deck Yuga - Cut Through! Sevens Road!! (RD/ST01-JP): `120105XXX`
