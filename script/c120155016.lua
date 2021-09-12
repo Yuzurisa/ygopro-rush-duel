@@ -23,8 +23,9 @@ function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	local g=Duel.SelectMatchingCard(tp,cm.costfilter,tp,LOCATION_GRAVE,0,4,4,nil)
 	Duel.ConfirmCards(1-tp,g)
 	Duel.SendtoDeck(g,nil,0,REASON_COST)
-	Duel.SortDecktop(tp,tp,4)
-	for i=1,4 do
+	local ct=Duel.GetOperatedGroup():FilterCount(Card.IsLocation,nil,LOCATION_DECK)
+	Duel.SortDecktop(tp,tp,ct)
+	for i=1,ct do
 		local tc=Duel.GetDecktopGroup(tp,1):GetFirst()
 		Duel.MoveSequence(tc,1)
 	end
