@@ -32,7 +32,7 @@ function cm.target(e,tp,eg,ep,ev,re,r,rp,chk)
 end
 function cm.operation(e,tp,eg,ep,ev,re,r,rp)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_RTOHAND)
-	local g=Duel.SelectMatchingCard(tp,Card.IsAbleToHand,tp,0,LOCATION_MZONE,1,1,nil)
+	local g=Duel.SelectMatchingCard(tp,Card.cm.filter,tp,LOCATION_MZONE,LOCATION_MZONE,1,1,nil)
 	if g:GetCount()>0 then
 		Duel.HintSelection(g)
 		if Duel.SendtoHand(g,nil,REASON_EFFECT)==0 then return end
