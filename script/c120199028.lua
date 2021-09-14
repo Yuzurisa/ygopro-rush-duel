@@ -12,7 +12,6 @@ function cm.initial_effect(c)
 	e1:SetRange(LOCATION_MZONE)
 	e1:SetCondition(cm.condition)
 	e1:SetCost(cm.cost)
-	e1:SetTarget(cm.target)
 	e1:SetOperation(cm.operation)
 	c:RegisterEffect(e1)
 end
