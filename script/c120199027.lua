@@ -23,8 +23,7 @@ function cm.spfilter(c,e,tp)
 	return c:IsCode(list[1]) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
 function cm.costcheck(g,e,tp)
-	return g:GetClassCount(Card.GetCode,nil)==g:GetCount()
-		and Duel.IsExistingMatchingCard(cm.spfilter,tp,LOCATION_GRAVE,0,1,g,e,tp)
+	return Duel.IsExistingMatchingCard(cm.spfilter,tp,LOCATION_GRAVE,0,1,g,e,tp)
 end
 function cm.cost(e,tp,eg,ep,ev,re,r,rp,chk)
 	local g=Duel.GetMatchingGroup(cm.costfilter,tp,LOCATION_GRAVE,0,nil)
