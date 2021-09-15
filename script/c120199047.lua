@@ -1,6 +1,6 @@
 local m=120199047
 local cm=_G["c"..m]
-cm.name="热血热烈体育场"
+cm.name="热血魂体育场"
 function cm.initial_effect(c)
 	--Activate
 	local e1=Effect.CreateEffect(c)

@@ -1,7 +1,7 @@
 local m=120199025
 local list={120199047}
 local cm=_G["c"..m]
-cm.name="怒怒怒二把手"
+cm.name="怒怒怒二垒手"
 function cm.initial_effect(c)
 	aux.AddCodeList(c,list[1])
 	--Extra Tribute

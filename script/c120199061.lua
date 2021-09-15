@@ -1,7 +1,7 @@
 local m=120199061
 local list={120199028,120199027}
 local cm=_G["c"..m]
-cm.name="请求9"
+cm.name="要求重审9"
 function cm.initial_effect(c)
 	aux.AddCodeList(c,list[1],list[2])
 	--Activate

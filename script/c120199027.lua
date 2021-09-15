@@ -1,7 +1,7 @@
 local m=120199027
 local list={120199028}
 local cm=_G["c"..m]
-cm.name="背编号99 球儿皇龙 主场"
+cm.name="背号99 球儿皇龙 霍姆格兰德拉"
 function cm.initial_effect(c)
 	aux.AddCodeList(c,list[1])
 	--Special Summon
