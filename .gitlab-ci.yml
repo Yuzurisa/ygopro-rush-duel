@@ -52,7 +52,7 @@ server:
   tags: 
     - linux
   script:
-    - aws s3 --endpoint=https://minio.mycard.moe:9000 sync --delete $uploadDir/ s3://mycard/ygopro-rush-duel/$uploadDir
+    - aws s3 --endpoint=https://minio.mycard.moe:9000 sync $uploadDir/ s3://mycard/ygopro-rush-duel/$uploadDir
 
 upload_archive:
   extends: .minio
