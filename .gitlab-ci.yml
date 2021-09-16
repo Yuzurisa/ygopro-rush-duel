@@ -68,7 +68,6 @@ upload_data:
     uploadDir: data
   only:
     - master
-    - tags
 
 deploy:
   stage: deploy
