@@ -1,0 +1,114 @@
+stages:
+  - pack
+  - deploy
+
+variables:
+  GIT_DEPTH: "1"
+
+pack:
+  stage: pack
+  dependencies: []
+  tags: 
+    - linux
+  script:
+    - wget -O - https://cdn02.moecube.com:444/ygopro-rush-duel/images/ygopro-rush-duel-images.tar.zst | tar --zstd -xf -
+    - mkdir expansions
+    - mv *.cdb expansions/
+    - mv pics expansions/
+    - mv script expansions/
+    - mv *.conf expansions/
+    - mkdir -p data/ygopro data/ygopro2 archive
+    - cd expansions
+    - 7z a -mx9 ../archive/ygopro-rush-duel.zip pics script *.cdb *.conf
+    - cd ..
+    - mv archive/ygopro-rush-duel.zip archive/ygopro-rush-duel-$CI_COMMIT_REF_NAME.ypk
+    - cp -rf expansions data/ygopro/
+    - mv expansions data/ygopro2/
+    - mv picture data/ygopro2/
+    - mv server data/
+  artifacts:
+    paths:
+      - data
+      - archive
+
+server:
+  stage: pack
+  dependencies: []
+  tags: 
+    - linux
+  script:
+    - mkdir dist
+    - mv script dist/
+    - mv *.cdb dist/
+    - mv lflist.conf dist/
+  artifacts:
+    paths:
+      - dist
+
+.minio:
+  stage: deploy
+  dependencies:
+    - pack
+  tags: 
+    - linux
+  script:
+    - aws s3 --endpoint=https://minio.mycard.moe:9000 sync --delete $uploadDir/ s3://mycard/ygopro-rush-duel/$uploadDir
+
+upload_archive:
+  extends: .minio
+  variables:
+    uploadDir: archive
+  only:
+    - master
+    - tags
+
+upload_data:
+  extends: .minio
+  variables:
+    uploadDir: data
+  only:
+    - master
+    - tags
+
+deploy:
+  stage: deploy
+  dependencies:
+    - pack
+  tags: 
+    - linux
+  variables:
+    username: $MYCARD_USERNAME
+    password: $MYCARD_PASSWORD
+    appVersion: $CI_COMMIT_TAG
+  script:
+    - apt update; apt -y install tar zstd curl jq
+    - git clone https://code.mycard.moe/mycard/mycard-package-script
+    - cd mycard-package-script
+    - ./index.sh makeBuild ygopro-rush-duel ../data/ygopro || true
+    - ./index.sh makeBuild ygopro2-rush-duel ../data/ygopro2 || true
+    - cd ..
+  only:
+    - tags
+
+.deploy_to_server:
+  stage: deploy
+  dependencies:
+    - server
+  tags:
+    - linux
+  script:
+    - apt update && apt -y install openssh-client rsync coreutils
+    - mkdir ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan $SERVER_HOST >> ~/.ssh/known_hosts
+    - echo $NANAHIRA_SSH_KEY | base64 --decode > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/*
+    - rsync -4cavzP --exclude=pics --delete ./dist/ $SERVER_USER@$SERVER_HOST:~/ygopro/expansions
+  only:
+    - master
+
+deploy_to_rd:
+  extends: .deploy_to_server
+  variables:
+    SERVER_HOST: rd.mycard.moe
+    SERVER_USER: root
