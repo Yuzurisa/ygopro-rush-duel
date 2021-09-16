@@ -24,6 +24,7 @@ pack:
     - mv archive/ygopro-rush-duel.zip archive/ygopro-rush-duel-$CI_COMMIT_REF_NAME.ypk
     - cp -rf expansions data/ygopro/
     - mv expansions data/ygopro2/
+    - 7z a -mx9 ./archive/ygopro-rush-duel-closeup-$CI_COMMIT_REF_NAME.zip picture
     - mv picture data/ygopro2/
     - mv server data/
   artifacts:
